@@ -23,8 +23,8 @@ const SERVICES = [
     icon: FaCar,
     blurb:
       "Professional scratch and scuff repair that restores your vehicle's original finish",
-    beforeImg: "/images/services/scratches-before.jpg",
-    afterImg: "/images/services/scratches-after.jpg",
+    beforeImg: "scratches-before.jpeg",
+    afterImg: "cratches-after.jpeg",
     about:
       "Our advanced scratch repair techniques can handle everything from light surface scratches to deeper paint damage. We use color-matching technology and professional-grade compounds to restore your vehicle's finish to like-new condition.",
     steps: [
@@ -34,9 +34,13 @@ const SERVICES = [
       "Polishing and protective coating application",
     ],
     gallery: [
-      { before: "/images/services/scratches-before.jpg", after: "/images/services/scratches-after.jpg" },
-      { before: "/images/services/scratches-before-2.jpg", after: "/images/services/scratches-after-2.jpg" },
-      { before: "/images/services/scratches-before-3.jpg", after: "/images/services/scratches-after-3.jpg" },
+      { before: "scratches-before.jpeg", after: "scratches-after.jpeg" },
+      { before: "scratches-before-2.jpeg", after: "scratches-after-2.jpeg" },
+       { before: "scratches-before-3.jpeg", after: "scratches-after-3.jpeg" },
+       { before: "scratches-before-4.jpeg", after: "scratches-after-4.jpeg" },
+        { before: "scratches-before-5.jpeg", after: "scratches-after-5.jpeg" },
+        { before: "scratches-before-6.jpeg", after: "scratches-after-6.jpeg" },
+     
     ],
   },
   {
@@ -70,8 +74,8 @@ const SERVICES = [
     icon: FaHammer,
     blurb:
       "Paintless dent repair that maintains your vehicle's original factory finish",
-    beforeImg: "/images/services/dent-before.jpg",
-    afterImg: "/images/services/dent-after.jpg",
+    beforeImg: "dent-before-2.jpeg",
+    afterImg: "dent-after-2.jpeg",
     about:
       "Our paintless dent repair (PDR) technique removes dents without the need for repainting. This method preserves your vehicle's original factory finish while being more cost-effective than traditional bodywork.",
     steps: [
@@ -81,8 +85,13 @@ const SERVICES = [
       "Final inspection and quality check",
     ],
     gallery: [
-      { before: "/images/services/dent-before.jpg", after: "/images/services/dent-after.jpg" },
-      { before: "/images/services/dent-before-2.jpg", after: "/images/services/dent-after-2.jpg" },
+      { before: "dent-before.jpeg", after: "dent-after.jpeg" },
+      { before: "dent-before-2.jpeg", after: "dent-after-2.jpeg" },
+      { before: "dent-before-3.jpeg", after: "dent-after-3.jpeg" },
+      { before: "dent-before-4.jpeg", after: "dent-after-4.jpeg" },
+      { before: "dent-before-5.jpeg", after: "dent-after-5.jpeg" },
+       { before: "dent-before-6.jpeg", after: "dent-after-6.jpeg" },
+       { before: "dent-before-7.jpeg", after: "dent-after-7.jpeg" },
     ],
   },
   {
