@@ -51,9 +51,12 @@ const SERVICES = [
         { before: "scratches-before-15.jpeg", after: "scratches-after-15.jpeg" },
         { before: "scratches-before-16.jpeg", after: "scratches-after-16.jpeg" },
        { before: "scratches-before-17.jpeg", after: "scratches-after-17.jpeg" },     
-        { before: "scratches-before-18.jpeg", after: "scratches-after-18.jpeg" },   
-     
-     
+        { before: "scratches-before-18.jpeg", after: "scratches-after-18.jpeg" },  
+          { before: "scratches-before-19.jpeg", after: "scratches-after-19.jpeg" },    
+       { before: "scratches-before-20.jpeg", after: "scratches-after-20.jpeg" }, 
+       { before: "scratches-before-21.jpeg", after: "scratches-after-21.jpeg" }, 
+        { before: "scratches-before-22.jpeg", after: "scratches-after-22.jpeg" }, 
+     { before: "scratches-before-23.jpeg", after: "scratches-after-23.jpeg" }, 
     ],
   },
   {
