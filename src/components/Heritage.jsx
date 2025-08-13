@@ -160,24 +160,24 @@ const SERVICES = [
 const byId = (arr, id) => arr.find((s) => s.id === id) || null;
 
 // Slider arrows
-function Arrow({ onClick, direction }) {
-  return (
-    <button
-      type="button"
-      aria-label={direction === "next" ? "Next" : "Previous"}
-      onClick={onClick}
-      className={`absolute top-1/2 -translate-y-1/2 z-20 rounded-full bg-white/90 dark:bg-neutral-900/90 hover:bg-white dark:hover:bg-neutral-900 shadow p-2 ${
-        direction === "next" ? "right-2" : "left-2"
-      }`}
-    >
-      {direction === "next" ? (
-        <FiArrowRight className="h-5 w-5 text-gray-900 dark:text-gray-100" />
-      ) : (
-        <FiArrowLeft className="h-5 w-5 text-gray-900 dark:text-gray-100" />
-      )}
-    </button>
-  );
-}
+// function Arrow({ onClick, direction }) {
+//   return (
+//     <button
+//       type="button"
+//       aria-label={direction === "next" ? "Next" : "Previous"}
+//       onClick={onClick}
+//       className={`absolute top-1/2 -translate-y-1/2 z-20 rounded-full bg-white/90 dark:bg-neutral-900/90 hover:bg-white dark:hover:bg-neutral-900 shadow p-2 ${
+//         direction === "next" ? "right-2" : "left-2"
+//       }`}
+//     >
+//       {direction === "next" ? (
+//         <FiArrowRight className="h-5 w-5 text-gray-900 dark:text-gray-100" />
+//       ) : (
+//         <FiArrowLeft className="h-5 w-5 text-gray-900 dark:text-gray-100" />
+//       )}
+//     </button>
+//   );
+// }
 
 export default function ServicesWithModal() {
   const [activeId, setActiveId] = useState(null);
@@ -211,8 +211,7 @@ export default function ServicesWithModal() {
     slidesToShow: 1,
     slidesToScroll: 1,
     adaptiveHeight: true,
-    nextArrow: <Arrow direction="next" />,
-    prevArrow: <Arrow direction="prev" />,
+   
   };
 
   return (
@@ -336,7 +335,7 @@ export default function ServicesWithModal() {
                           <h3 className="mb-2 text-base md:text-lg font-semibold text-red-600 dark:text-red-400">
                             Before
                           </h3>
-                          <div className="rounded-2xl bg-gray-100 dark:bg-neutral-800 h-[320px] md:h-[360px] flex items-center justify-center p-3">
+                          <div className="rounded-2xl bg-white-100 dark:bg-black-800 h-[320px] md:h-[360px] flex items-center justify-center p-3">
                             <img
                               src={pair.before || "/placeholder.svg?height=300&width=400"}
                               alt={`${active.title} — before`}
@@ -351,7 +350,7 @@ export default function ServicesWithModal() {
                           <h3 className="mb-2 text-base md:text-lg font-semibold text-green-600 dark:text-green-400">
                             After
                           </h3>
-                          <div className="rounded-2xl bg-gray-100 dark:bg-neutral-800 h-[320px] md:h-[360px] flex items-center justify-center p-3">
+                          <div className="rounded-2xl bg-white-100 dark:bg-black-800 h-[320px] md:h-[360px] flex items-center justify-center p-3">
                             <img
                               src={pair.after || "/placeholder.svg?height=300&width=400"}
                               alt={`${active.title} — after`}
