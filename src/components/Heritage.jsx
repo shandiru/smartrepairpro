@@ -205,7 +205,7 @@ export default function ServicesWithModal() {
 
   const modalSliderSettings = {
     dots: true,
-    arrows: true,
+    arrows: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
