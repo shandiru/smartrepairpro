@@ -20,30 +20,29 @@ const Navbar = () => {
           <img
             src="/logo-dark.jpg"
             alt="SmartRepair Pro logo"
-            className="h-7 w-auto sm:h-8 block dark:hidden"
+            className="h-12 w-auto sm:h-14 block dark:hidden"
           />
           <img
             src="/logo.png"
             alt="SmartRepair Pro logo (dark)"
-            className="h-7 w-auto sm:h-8 hidden dark:block"
+            className="h-12 w-auto sm:h-14 hidden dark:block"
           />
 
-          {/* Wordmark: swap by theme (if you have it). 
-              If not, delete these 2 <img> and keep the <span> fallback below. */}
+          {/* Wordmark: swap by theme */}
           <img
             src="/logoname.png"
             alt=""
             aria-hidden="true"
-            className="h-5 w-auto hidden sm:block dark:hidden"
+            className="h-8 w-auto hidden sm:block dark:hidden"
           />
           <img
             src="/logoname-dark.png"
             alt=""
             aria-hidden="true"
-            className="h-5 w-auto hidden sm:block dark:block"
+            className="h-8 w-auto hidden sm:block dark:block"
           />
 
-          {/* Accessible name fallback (keeps good a11y even if using images) */}
+          {/* Accessible name fallback */}
           <span className="sr-only">SmartRepair Pro</span>
         </a>
 
