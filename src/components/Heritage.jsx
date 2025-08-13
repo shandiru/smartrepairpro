@@ -43,6 +43,7 @@ const SERVICES = [
          { before: "scratches-before-7.jpeg", after: "scratches-after-7.jpeg" },
       { before: "scratches-before-8.jpeg", after: "scratches-after-8.jpeg" },
        { before: "scratches-before-9.jpeg", after: "scratches-after-9.jpeg" },
+       { before: "scratches-before-10.jpeg", after: "scratches-after-10.jpeg" },
      
     ],
   },
