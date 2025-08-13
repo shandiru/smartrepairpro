@@ -160,24 +160,24 @@ const SERVICES = [
 const byId = (arr, id) => arr.find((s) => s.id === id) || null;
 
 // Slider arrows
-// function Arrow({ onClick, direction }) {
-//   return (
-//     <button
-//       type="button"
-//       aria-label={direction === "next" ? "Next" : "Previous"}
-//       onClick={onClick}
-//       className={`absolute top-1/2 -translate-y-1/2 z-20 rounded-full bg-white/90 dark:bg-neutral-900/90 hover:bg-white dark:hover:bg-neutral-900 shadow p-2 ${
-//         direction === "next" ? "right-2" : "left-2"
-//       }`}
-//     >
-//       {direction === "next" ? (
-//         <FiArrowRight className="h-5 w-5 text-gray-900 dark:text-gray-100" />
-//       ) : (
-//         <FiArrowLeft className="h-5 w-5 text-gray-900 dark:text-gray-100" />
-//       )}
-//     </button>
-//   );
-// }
+function Arrow({ onClick, direction }) {
+  return (
+    <button
+      type="button"
+      aria-label={direction === "next" ? "Next" : "Previous"}
+      onClick={onClick}
+      className={`absolute top-1/2 -translate-y-1/2 z-20 rounded-full bg-white/90 dark:bg-neutral-900/90 hover:bg-white dark:hover:bg-neutral-900 shadow p-2 ${
+        direction === "next" ? "right-2" : "left-2"
+      }`}
+    >
+      {direction === "next" ? (
+        <FiArrowRight className="h-5 w-5 text-gray-900 dark:text-gray-100" />
+      ) : (
+        <FiArrowLeft className="h-5 w-5 text-gray-900 dark:text-gray-100" />
+      )}
+    </button>
+  );
+}
 
 export default function ServicesWithModal() {
   const [activeId, setActiveId] = useState(null);
@@ -204,13 +204,15 @@ export default function ServicesWithModal() {
   }, [active]);
 
   const modalSliderSettings = {
-    dots: true,
-    arrows: false,
+    dots: false,
+    arrows: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     adaptiveHeight: true,
+    nextArrow: <Arrow direction="next" />,
+    prevArrow: <Arrow direction="prev" />,
    
   };
 
