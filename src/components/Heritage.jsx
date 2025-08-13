@@ -49,7 +49,9 @@ const SERVICES = [
         { before: "scratches-before-13.jpeg", after: "scratches-after-13.jpeg" },
          { before: "scratches-before-14.jpeg", after: "scratches-after-14.jpeg" },
         { before: "scratches-before-15.jpeg", after: "scratches-after-15.jpeg" },
-        
+      //   { before: "scratches-before-16.jpeg", after: "scratches-after-16.jpeg" },
+      //  { before: "scratches-before-17.jpeg", after: "scratches-after-17.jpeg" },     
+      //   { before: "scratches-before-18.jpeg", after: "scratches-after-18.jpeg" },   
      
      
     ],
@@ -291,7 +293,7 @@ export default function ServicesWithModal() {
             role="dialog"
             aria-modal="true"
             aria-labelledby="service-title"
-            className="fixed left-1/2 top-1/2 z-50 w-full max-w-5xl -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white shadow-2xl dark:bg-neutral-950"
+            className="fixed left-1/2 top-1/2 z-50 w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white shadow-2xl dark:bg-neutral-950"
           >
             {/* Header */}
             <div className="flex items-start justify-between gap-4 border-b px-6 py-5 border-gray-200 dark:border-neutral-800">
