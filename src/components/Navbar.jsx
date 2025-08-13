@@ -18,14 +18,14 @@ const Navbar = () => {
         <a href="/" className="flex items-center gap-3">
           {/* Icon: swap by theme */}
           <img
-            src="/logo-dark.jpg"
+            src="/logo-dark.png"
             alt="SmartRepair Pro logo"
-            className="h-12 w-auto sm:h-14 block dark:hidden"
+            className="h-16 w-auto sm:h-20 block dark:hidden"
           />
           <img
             src="/logo.png"
             alt="SmartRepair Pro logo (dark)"
-            className="h-12 w-auto sm:h-14 hidden dark:block"
+            className="h-16 w-auto sm:h-20 hidden dark:block"
           />
 
           {/* Wordmark: swap by theme */}
@@ -33,13 +33,13 @@ const Navbar = () => {
             src="/logoname.png"
             alt=""
             aria-hidden="true"
-            className="h-8 w-auto hidden sm:block dark:hidden"
+            className="h-10 w-auto hidden sm:block dark:hidden"
           />
           <img
             src="/logoname-dark.png"
             alt=""
             aria-hidden="true"
-            className="h-8 w-auto hidden sm:block dark:block"
+            className="h-10 w-auto hidden sm:block dark:block"
           />
 
           {/* Accessible name fallback */}
