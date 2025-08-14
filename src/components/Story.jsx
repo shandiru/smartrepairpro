@@ -7,7 +7,10 @@ const CallToAction = ({
   return (
     <section className="w-full bg-gray-50 text-gray-900 dark:bg-[#171717] dark:text-white">
       <div className="mx-auto max-w-5xl px-4 py-16 sm:py-20 text-center">
-        <h2 className="mb-3 text-3xl font-extrabold sm:text-4xl text-gray-900 dark:text-white">
+        <h2
+          className="mb-3 text-3xl font-extrabold sm:text-4xl"
+          style={{ color: "#D10806" }}
+        >
           Ready to Restore Your Vehicle?
         </h2>
 
@@ -19,9 +22,8 @@ const CallToAction = ({
           {/* Filled button */}
           <a
             href="#quote"
-            className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-lg font-semibold shadow-sm transition
-                       bg-black text-white hover:opacity-90
-                       dark:bg-white dark:text-black"
+            className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-lg font-semibold shadow-sm transition text-white hover:opacity-90"
+            style={{ backgroundColor: "#D10806" }}
           >
             Get Free Quote
           </a>
