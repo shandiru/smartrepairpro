@@ -3,14 +3,19 @@ import { FiArrowRight } from "react-icons/fi";
 
 const HeroSection = () => {
   return (
-    <section className="
+    <section
+      className="
       py-20
       bg-gradient-to-b from-gray-100 to-white
       dark:from-neutral-950 dark:to-neutral-900
-    ">
+    "
+    >
       <div className="container mx-auto px-4 text-center">
         {/* Heading */}
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 text-black dark:text-white">
+        <h1
+          className="text-4xl md:text-6xl font-bold mb-6"
+          style={{ color: "#D10806" }}
+        >
           Professional Smart Repair Services
         </h1>
 
@@ -25,12 +30,8 @@ const HeroSection = () => {
           {/* Primary CTA */}
           <a
             href="#services"
-            className="
-              inline-flex items-center justify-center gap-2 px-6 py-3
-              bg-black text-white hover:opacity-90
-              dark:bg-white dark:text-black dark:hover:opacity-90
-              font-semibold rounded-md transition
-            "
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 text-white font-semibold rounded-md transition hover:opacity-90"
+            style={{ backgroundColor: "#D10806" }}
           >
             View Our Services
             <FiArrowRight className="text-lg" />
