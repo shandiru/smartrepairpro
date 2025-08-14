@@ -9,7 +9,7 @@ const points = [
 ];
 
 export default function WeAreTheBest({
-  imageSrcs = ["wash.png", "wash-2.png", "wash.png"],
+  imageSrcs = ["wash.png", "wash.png", "wash.png"],
   secondsPerImage = 4, // speed control (lower = faster)
 }) {
   const n = imageSrcs.length || 1;
