@@ -2,40 +2,50 @@ import React from "react";
 import { FiSettings, FiUser, FiTruck, FiAward } from "react-icons/fi";
 
 const points = [
-  { id: 1, icon: FiSettings, text: "We're Experts" },
-  { id: 2, icon: FiUser, text: "We are young talented certified engineers" },
-  { id: 3, icon: FiTruck, text: "Fast Car Searvice" }, // keep text exactly like the mock
-  { id: 4, icon: FiAward, text: "Our Best Workers" },
+  {
+    id: 1,
+    icon: FiSettings,
+    text: "Firefighter by Trade – Serving the community with dedication and pride.",
+  },
+  {
+    id: 2,
+    icon: FiUser,
+    text: "Complimentary Car Wash – Every vehicle leaves looking as good as it runs.",
+  },
+  {
+    id: 3,
+    icon: FiTruck,
+    text: "Customer Gift Pack – A little thank-you to make your visit extra special.",
+  },
+  {
+    id: 4,
+    icon: FiAward,
+    text: "Home-Based Workshop – Always on call… whether it’s the fire station or your motor misbehaving.",
+  },
 ];
 
-export default function WeAreTheBest({
+export default function Expertise({
   imageSrcs = ["wash.png", "wash.png", "wash.png"],
-  secondsPerImage = 4,   // speed
-  gapPx = 16,            // <— gap between slides (in px)
+  secondsPerImage = 4,
+  gapPx = 16,
 }) {
   const n = imageSrcs.length || 1;
 
   return (
-    <section className="w-full py-14 bg-white dark:bg-neutral-900">
+    <section className="w-full py-12 bg-white dark:bg-neutral-900">
       <div className="mx-auto max-w-7xl px-4">
-        <div className="grid items-center gap-10 lg:grid-cols-2">
-          {/* Left: continuous auto-scroller with gaps */}
+        <div className="grid items-center gap-8 lg:grid-cols-2">
+          {/* Left: continuous auto-scroller */}
           <div
-            className="relative overflow-hidden rounded group"
-            style={{ ["--gap"]: `${gapPx}px` }}
+            className="relative overflow-hidden rounded-lg group"
+            style={{ "--gap": `${gapPx}px` }}
           >
-            {/* Mask removes outer gap using negative margins */}
-            <div
-              className="relative"
-              style={{ margin: "0 calc(var(--gap) * -1)" }}
-            >
-              {/* Track */}
+            <div className="relative" style={{ margin: "0 calc(var(--gap) * -1)" }}>
               <div
                 className="flex will-change-transform"
                 style={{
-                  // duration = number of unique slides * secondsPerImage
-                  ["--n"]: n,
-                  ["--dur"]: `${n * secondsPerImage}s`,
+                  "--n": n,
+                  "--dur": `${n * secondsPerImage}s`,
                   animation: "wastrip var(--dur) linear infinite",
                 }}
               >
@@ -45,13 +55,13 @@ export default function WeAreTheBest({
                     className="w-full flex-[0_0_100%]"
                     style={{
                       boxSizing: "border-box",
-                      padding: "0 var(--gap)", // actual visual gap
+                      padding: "0 var(--gap)",
                     }}
                   >
                     <img
                       src={src}
                       alt={`Slide ${i + 1}`}
-                      className="h-full w-full object-cover rounded"
+                      className="h-full w-full object-cover rounded-lg"
                       loading="lazy"
                       decoding="async"
                     />
@@ -60,7 +70,6 @@ export default function WeAreTheBest({
               </div>
             </div>
 
-            {/* Pause on hover */}
             <style jsx>{`
               .group:hover div[style*='wastrip'] {
                 animation-play-state: paused;
@@ -70,33 +79,32 @@ export default function WeAreTheBest({
                   transform: translateX(0);
                 }
                 to {
-                  /* move exactly the width of the first set (n * 100%) */
                   transform: translateX(calc(-100% * var(--n)));
                 }
               }
             `}</style>
           </div>
 
-          {/* Right: content (unchanged) */}
+          {/* Right: content */}
           <div>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white">
-              We Are The Best
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
+              Always Ready, Always Nearby
             </h2>
-            <div className="mt-2 h-1 w-16 bg-red-500" />
+            <div className="mt-1 h-0.5 w-14 bg-red-500" />
 
-            <p className="mt-6 text-gray-500 dark:text-gray-300 text-lg leading-relaxed max-w-2xl">
-              There are many variations of passages of Lorem Ipsum typesetting
-              industry has been the industry's standard dummy text ever since the
-              been when an unknown printer.
+            <p className="mt-4 text-gray-600 dark:text-gray-300 text-base leading-relaxed max-w-2xl">
+              There are times when the fire station calls, and I need to be ready in an instant.
+              That’s why I work from home — staying close means I can respond quickly, while still
+              giving your car the care and attention it deserves.
             </p>
 
-            <ul className="mt-10 divide-y divide-gray-200 dark:divide-neutral-800 border-t border-b border-gray-200 dark:border-neutral-800">
+            <ul className="mt-8 divide-y divide-gray-200 dark:divide-neutral-800 border-t border-b border-gray-200 dark:border-neutral-800">
               {points.map(({ id, icon: Icon, text }) => (
-                <li key={id} className="flex items-center gap-5 py-6">
-                  <span className="inline-flex h-10 w-10 flex-none items-center justify-center rounded-md border border-red-200 text-red-500 dark:border-red-400 dark:text-red-400">
-                    <Icon className="h-6 w-6" />
+                <li key={id} className="flex items-start gap-4 py-5">
+                  <span className="inline-flex h-9 w-9 flex-none items-center justify-center rounded-md border border-red-200 text-red-500 dark:border-red-400 dark:text-red-400">
+                    <Icon className="h-5 w-5" />
                   </span>
-                  <p className="text-2xl font-semibold text-gray-900 dark:text-white">
+                  <p className="text-base font-medium text-gray-900 dark:text-white">
                     {text}
                   </p>
                 </li>
