@@ -7,6 +7,7 @@ import Qa from "./components/Journey";
 import Navbar from "./components/Navbar";
 import Call from "./components/Story";
 import TestimonialSection from "./components/TestimonialSection";
+import ContactSection from "./components/ContactSection"; // Import the contact component
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Call />
       <Wash imageSrc="/wash.png" />
       <TestimonialSection />
+      <ContactSection /> {/* Added here */}
       <Footer />
     </div>
   );
