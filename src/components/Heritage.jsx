@@ -12,8 +12,6 @@ import "slick-carousel/slick/slick-theme.css";
  * - In the modal: BEFORE & AFTER side-by-side (desktop) / stacked (mobile)
  * - Slider for multiple pairs
  * - ESC to close, overlay click to close, scroll lock while open
- *
- * NOTE: Replace image paths with yours. Each service supports many before/after pairs via `gallery`.
  */
 
 const SERVICES = [
@@ -24,7 +22,7 @@ const SERVICES = [
     blurb:
       "Professional scratch and scuff repair that restores your vehicle's original finish",
     beforeImg: "scratches-before.jpeg",
-    afterImg: "cratches-after.jpeg",
+    afterImg: "scratches-after.jpeg",
     about:
       "Our advanced scratch repair techniques can handle everything from light surface scratches to deeper paint damage. We use color-matching technology and professional-grade compounds to restore your vehicle's finish to like-new condition.",
     steps: [
@@ -36,12 +34,11 @@ const SERVICES = [
     gallery: [
       { before: "scratches-before.jpeg", after: "scratches-after.jpeg" },
       { before: "scratches-before-2.jpeg", after: "scratches-after-2.jpeg" },
-       { before: "scratches-before-3.jpeg", after: "scratches-after-3.jpeg" },
-       { before: "scratches-before-4.jpeg", after: "scratches-after-4.jpeg" },
-        { before: "scratches-before-5.jpeg", after: "scratches-after-5.jpeg" },
-        { before: "scratches-before-6.jpeg", after: "scratches-after-6.jpeg" },
-         { before: "scratches-before-7.jpeg", after: "scratches-after-7.jpeg" },
-     
+      { before: "scratches-before-3.jpeg", after: "scratches-after-3.jpeg" },
+      { before: "scratches-before-4.jpeg", after: "scratches-after-4.jpeg" },
+      { before: "scratches-before-5.jpeg", after: "scratches-after-5.jpeg" },
+      { before: "scratches-before-6.jpeg", after: "scratches-after-6.jpeg" },
+      { before: "scratches-before-7.jpeg", after: "scratches-after-7.jpeg" },
     ],
   },
   {
@@ -94,8 +91,8 @@ const SERVICES = [
       { before: "dent-before-6.jpeg", after: "dent-after-6.jpeg" },
       { before: "dent-before-7.jpeg", after: "dent-after-7.jpeg" },
       { before: "dent-before-8.jpeg", after: "dent-after-8.jpeg" },
-        { before: "dent-before-9.jpeg", after: "dent-after-9.jpeg" },
-        { before: "dent-before-10.jpeg", after: "dent-after-10.jpeg" },
+      { before: "dent-before-9.jpeg", after: "dent-after-9.jpeg" },
+      { before: "dent-before-10.jpeg", after: "dent-after-10.jpeg" },
       { before: "dent-before-11.jpeg", after: "dent-after-11.jpeg" },
     ],
   },
@@ -104,8 +101,8 @@ const SERVICES = [
     title: "Wheels & Calipers",
     icon: FaCog,
     blurb: "Complete wheel refurbishment and brake caliper restoration services",
-    beforeImg: "wheels-after.jpeg",
-    afterImg: "wheels-before.jpeg",
+    beforeImg: "wheels-before.jpeg",
+    afterImg: "wheels-after.jpeg",
     about:
       "We provide comprehensive wheel refurbishment including alloy wheel repair, powder coating, and brake caliper restoration. Our services handle curb damage, corrosion, and general wear to restore your wheels to perfect condition.",
     steps: [
@@ -123,7 +120,7 @@ const SERVICES = [
     ],
   },
 
-  /* NEW: Bumper Scuffs */
+  /* Bumper Scuffs */
   {
     id: "bumper",
     title: "Bumper Scuffs",
@@ -141,22 +138,22 @@ const SERVICES = [
       "Clearcoat blend & polish for a seamless finish",
     ],
     gallery: [
-     { before: "scratches-before-8.jpeg", after: "scratches-after-8.jpeg" },
-       { before: "scratches-before-9.jpeg", after: "scratches-after-9.jpeg" },
-       { before: "scratches-before-10.jpeg", after: "scratches-after-10.jpeg" },
-           { before: "scratches-before-11.jpeg", after: "scratches-after-11.jpeg" },
-             { before: "scratches-before-12.jpeg", after: "scratches-after-12.jpeg" },
-        { before: "scratches-before-13.jpeg", after: "scratches-after-13.jpeg" },
-         { before: "scratches-before-14.jpeg", after: "scratches-after-14.jpeg" },
-        { before: "scratches-before-15.jpeg", after: "scratches-after-15.jpeg" },
-        { before: "scratches-before-16.jpeg", after: "scratches-after-16.jpeg" },
-       { before: "scratches-before-17.jpeg", after: "scratches-after-17.jpeg" },     
-        { before: "scratches-before-18.jpeg", after: "scratches-after-18.jpeg" },  
-          { before: "scratches-before-19.jpeg", after: "scratches-after-19.jpeg" },    
-       { before: "scratches-before-20.jpeg", after: "scratches-after-20.jpeg" }, 
-       { before: "scratches-before-21.jpeg", after: "scratches-after-21.jpeg" }, 
-        { before: "scratches-before-22.jpeg", after: "scratches-after-22.jpeg" }, 
-     { before: "scratches-before-23.jpeg", after: "scratches-after-23.jpeg" }, 
+      { before: "scratches-before-8.jpeg", after: "scratches-after-8.jpeg" },
+      { before: "scratches-before-9.jpeg", after: "scratches-after-9.jpeg" },
+      { before: "scratches-before-10.jpeg", after: "scratches-after-10.jpeg" },
+      { before: "scratches-before-11.jpeg", after: "scratches-after-11.jpeg" },
+      { before: "scratches-before-12.jpeg", after: "scratches-after-12.jpeg" },
+      { before: "scratches-before-13.jpeg", after: "scratches-after-13.jpeg" },
+      { before: "scratches-before-14.jpeg", after: "scratches-after-14.jpeg" },
+      { before: "scratches-before-15.jpeg", after: "scratches-after-15.jpeg" },
+      { before: "scratches-before-16.jpeg", after: "scratches-after-16.jpeg" },
+      { before: "scratches-before-17.jpeg", after: "scratches-after-17.jpeg" },
+      { before: "scratches-before-18.jpeg", after: "scratches-after-18.jpeg" },
+      { before: "scratches-before-19.jpeg", after: "scratches-after-19.jpeg" },
+      { before: "scratches-before-20.jpeg", after: "scratches-after-20.jpeg" },
+      { before: "scratches-before-21.jpeg", after: "scratches-after-21.jpeg" },
+      { before: "scratches-before-22.jpeg", after: "scratches-after-22.jpeg" },
+      { before: "scratches-before-23.jpeg", after: "scratches-after-23.jpeg" },
     ],
   },
 
@@ -239,7 +236,6 @@ export default function ServicesWithModal() {
     adaptiveHeight: true,
     nextArrow: <Arrow direction="next" />,
     prevArrow: <Arrow direction="prev" />,
-   
   };
 
   return (
@@ -247,7 +243,10 @@ export default function ServicesWithModal() {
       <div className="mx-auto max-w-7xl px-4">
         {/* Heading */}
         <div className="mb-12 text-center">
-          <h2 className="mb-3 text-3xl font-bold md:text-4xl text-gray-900 dark:text-white">
+          <h2
+            className="mb-3 text-3xl font-bold md:text-4xl"
+            style={{ color: "#D10806" }}
+          >
             Our Expert Services
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-gray-500 dark:text-gray-300">
@@ -274,7 +273,10 @@ export default function ServicesWithModal() {
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 dark:bg-neutral-800">
                     {Icon ? <Icon className="text-black dark:text-white" /> : null}
                   </span>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                  <h3
+                    className="text-xl font-semibold"
+                    style={{ color: "#D10806" }}
+                  >
                     {service.title}
                   </h3>
                 </header>
@@ -288,7 +290,7 @@ export default function ServicesWithModal() {
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                     loading="lazy"
                   />
-                  <span className="absolute left-2 top-2 inline-flex w-fit items-center justify-center rounded-md bg-red-500 px-2 py-0.5 text-xs font-semibold text-white">
+                  <span className="absolute left-2 top-2 inline-flex w-fit items-center justify-center rounded-md bg-[#D10806] px-2 py-0.5 text-xs font-semibold text-white">
                     Before
                   </span>
                 </div>
@@ -326,9 +328,18 @@ export default function ServicesWithModal() {
             <div className="flex items-start justify-between gap-4 border-b px-6 py-5 border-gray-200 dark:border-neutral-800">
               <div className="flex items-center gap-3">
                 <span className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-gray-100 dark:bg-neutral-800">
-                  {active.icon ? (() => { const Icon = active.icon; return <Icon className="text-black dark:text-white" />; })() : null}
+                  {active.icon
+                    ? (() => {
+                        const Icon = active.icon;
+                        return <Icon className="text-black dark:text-white" />;
+                      })()
+                    : null}
                 </span>
-                <h2 id="service-title" className="text-2xl font-semibold text-gray-900 dark:text-white">
+                <h2
+                  id="service-title"
+                  className="text-2xl font-semibold"
+                  style={{ color: "#D10806" }}
+                >
                   {active.title}
                 </h2>
               </div>
@@ -349,47 +360,51 @@ export default function ServicesWithModal() {
             >
               <p className="text-lg text-gray-600 dark:text-gray-300">{active.blurb}</p>
 
-              {/* Slider: EACH SLIDE shows BEFORE & AFTER side-by-side on desktop */}
+              {/* Slider */}
               <div className="mt-6 relative">
                 <Slider {...modalSliderSettings}>
                   {(active.gallery && active.gallery.length > 0
                     ? active.gallery
-                    : [{ before: active.beforeImg, after: active.afterImg }]
-                  ).map((pair, idx) => (
-                    <div key={idx} className="px-2">
-                      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                        {/* BEFORE */}
-                        <div>
-                          <h3 className="mb-2 text-base md:text-lg font-semibold text-red-600 dark:text-red-400">
-                            Before
-                          </h3>
-                          <div className="rounded-2xl bg-white-100 dark:bg-black-800 h-[320px] md:h-[360px] flex items-center justify-center p-3">
-                            <img
-                              src={pair.before || "/placeholder.svg?height=300&width=400"}
-                              alt={`${active.title} — before`}
-                              className="h-full w-64 object-cover rounded-lg"
-                              loading="lazy"
-                            />
+                    : [{ before: active.beforeImg, after: active.afterImg }]).map(
+                    (pair, idx) => (
+                      <div key={idx} className="px-2">
+                        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                          {/* BEFORE */}
+                          <div>
+                            <h3
+                              className="mb-2 text-base md:text-lg font-semibold"
+                              style={{ color: "#D10806" }}
+                            >
+                              Before
+                            </h3>
+                            <div className="rounded-2xl h-[320px] md:h-[360px] flex items-center justify-center p-3 bg-gray-50 dark:bg-neutral-900">
+                              <img
+                                src={pair.before || "/placeholder.svg?height=300&width=400"}
+                                alt={`${active.title} — before`}
+                                className="h-full w-64 object-cover rounded-lg"
+                                loading="lazy"
+                              />
+                            </div>
                           </div>
-                        </div>
 
-                        {/* AFTER */}
-                        <div>
-                          <h3 className="mb-2 text-base md:text-lg font-semibold text-green-600 dark:text-green-400">
-                            After
-                          </h3>
-                          <div className="rounded-2xl bg-white-100 dark:bg-black-800 h-[320px] md:h-[360px] flex items-center justify-center p-3">
-                            <img
-                              src={pair.after || "/placeholder.svg?height=300&width=400"}
-                              alt={`${active.title} — after`}
-                              className="h-full w-64 object-cover rounded-lg"
-                              loading="lazy"
-                            />
+                          {/* AFTER */}
+                          <div>
+                            <h3 className="mb-2 text-base md:text-lg font-semibold text-green-600 dark:text-green-400">
+                              After
+                            </h3>
+                            <div className="rounded-2xl h-[320px] md:h-[360px] flex items-center justify-center p-3 bg-gray-50 dark:bg-neutral-900">
+                              <img
+                                src={pair.after || "/placeholder.svg?height=300&width=400"}
+                                alt={`${active.title} — after`}
+                                className="h-full w-64 object-cover rounded-lg"
+                                loading="lazy"
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    )
+                  )}
                 </Slider>
               </div>
 
