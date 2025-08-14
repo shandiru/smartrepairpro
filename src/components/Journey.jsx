@@ -20,10 +20,10 @@ const WhyChoose = () => {
               <FaCar className="text-2xl text-black dark:text-white" />
             </div>
             <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
-              Expert Technicians
+              Expert Hands You Can Trust
             </h3>
             <p className="text-gray-500 dark:text-gray-300">
-              Certified professionals with years of experience in automotive repair
+              As a firefighter, protecting and helping people is in my nature — I bring that same dedication to every repair.
             </p>
           </div>
 
@@ -33,10 +33,10 @@ const WhyChoose = () => {
               <FaCog className="text-2xl text-black dark:text-white" />
             </div>
             <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
-              Advanced Techniques
+              Advanced Repair Techniques
             </h3>
             <p className="text-gray-500 dark:text-gray-300">
-              State-of-the-art equipment and proven repair methods
+              Using professional-grade tools and proven methods to deliver flawless results without unnecessary replacements.
             </p>
           </div>
 
@@ -46,10 +46,10 @@ const WhyChoose = () => {
               <FaFileAlt className="text-2xl text-black dark:text-white" />
             </div>
             <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
-              Quality Guarantee
+              Quality You Can Rely On
             </h3>
             <p className="text-gray-500 dark:text-gray-300">
-              All work backed by our comprehensive warranty
+              Every job is backed by our satisfaction guarantee, because your car deserves nothing less than the best.
             </p>
           </div>
         </div>
