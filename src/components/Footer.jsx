@@ -10,11 +10,19 @@ const Footer = () => {
           {/* Brand */}
           <div className="max-w-sm">
             <div className="mb-4 flex items-center gap-2">
+              {/* Light mode logo */}
               <img
-                src="/logo.png" // swap to a light logo in dark mode if needed
-                alt="SmartRepair Pro"
-                className="h-6 w-auto"
+                src="/logo-dark.png"
+                alt="SmartRepair Pro logo"
+                className="h-6 w-auto block dark:hidden"
               />
+              {/* Dark mode logo */}
+              <img
+                src="/logo.png"
+                alt="SmartRepair Pro logo (dark)"
+                className="h-6 w-auto hidden dark:block"
+              />
+
               <span className="text-xl font-bold text-gray-900 dark:text-white">
                 SmartRepair Pro
               </span>
