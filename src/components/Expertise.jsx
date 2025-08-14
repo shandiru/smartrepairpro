@@ -8,23 +8,59 @@ const points = [
   { id: 4, icon: FiAward, text: "Our Best Workers" },
 ];
 
-export default function WeAreTheBest({ imageSrc = "/images/wash.jpg" }) {
+export default function WeAreTheBest({
+  imageSrcs = ["wash.png", "wash-2.png", "wash.png"],
+  secondsPerImage = 4, // speed control (lower = faster)
+}) {
+  const n = imageSrcs.length || 1;
+
   return (
     <section className="w-full py-14 bg-white dark:bg-neutral-900">
       <div className="mx-auto max-w-7xl px-4">
         <div className="grid items-center gap-10 lg:grid-cols-2">
-          {/* Left: image */}
-          <div className="overflow-hidden rounded">
-            <img
-              src={imageSrc}
-              alt="Car wash"
-              className="h-full w-full object-cover"
-              loading="lazy"
-              decoding="async"
-            />
+          {/* Left: continuous auto-scroller */}
+          <div className="relative overflow-hidden rounded group">
+            <div
+              className="flex will-change-transform"
+              style={{
+                // distance = number of unique slides * 100%
+                // duration = slides * secondsPerImage
+                ["--n"]: n,
+                ["--dur"]: `${n * secondsPerImage}s`,
+                animation: "wastrip var(--dur) linear infinite",
+              }}
+            >
+              {[...imageSrcs, ...imageSrcs].map((src, i) => (
+                <div key={i} className="w-full flex-[0_0_100%]">
+                  <img
+                    src={src}
+                    alt={`Slide ${i + 1}`}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Pause on hover */}
+            <style jsx>{`
+              .group:hover div[style*='wastrip'] {
+                animation-play-state: paused;
+              }
+              @keyframes wastrip {
+                from {
+                  transform: translateX(0);
+                }
+                to {
+                  /* move exactly the width of the first set (n * 100%) */
+                  transform: translateX(calc(-100% * var(--n)));
+                }
+              }
+            `}</style>
           </div>
 
-          {/* Right: content */}
+          {/* Right: content (unchanged) */}
           <div>
             <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white">
               We Are The Best
