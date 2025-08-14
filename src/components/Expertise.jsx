@@ -10,7 +10,8 @@ const points = [
 
 export default function WeAreTheBest({
   imageSrcs = ["wash.png", "wash.png", "wash.png"],
-  secondsPerImage = 4, // speed control (lower = faster)
+  secondsPerImage = 4,   // speed
+  gapPx = 16,            // <— gap between slides (in px)
 }) {
   const n = imageSrcs.length || 1;
 
@@ -18,29 +19,45 @@ export default function WeAreTheBest({
     <section className="w-full py-14 bg-white dark:bg-neutral-900">
       <div className="mx-auto max-w-7xl px-4">
         <div className="grid items-center gap-10 lg:grid-cols-2">
-          {/* Left: continuous auto-scroller */}
-          <div className="relative overflow-hidden rounded group">
+          {/* Left: continuous auto-scroller with gaps */}
+          <div
+            className="relative overflow-hidden rounded group"
+            style={{ ["--gap"]: `${gapPx}px` }}
+          >
+            {/* Mask removes outer gap using negative margins */}
             <div
-              className="flex will-change-transform"
-              style={{
-                // distance = number of unique slides * 100%
-                // duration = slides * secondsPerImage
-                ["--n"]: n,
-                ["--dur"]: `${n * secondsPerImage}s`,
-                animation: "wastrip var(--dur) linear infinite",
-              }}
+              className="relative"
+              style={{ margin: "0 calc(var(--gap) * -1)" }}
             >
-              {[...imageSrcs, ...imageSrcs].map((src, i) => (
-                <div key={i} className="w-full flex-[0_0_100%]">
-                  <img
-                    src={src}
-                    alt={`Slide ${i + 1}`}
-                    className="h-full w-full object-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-              ))}
+              {/* Track */}
+              <div
+                className="flex will-change-transform"
+                style={{
+                  // duration = number of unique slides * secondsPerImage
+                  ["--n"]: n,
+                  ["--dur"]: `${n * secondsPerImage}s`,
+                  animation: "wastrip var(--dur) linear infinite",
+                }}
+              >
+                {[...imageSrcs, ...imageSrcs].map((src, i) => (
+                  <div
+                    key={i}
+                    className="w-full flex-[0_0_100%]"
+                    style={{
+                      boxSizing: "border-box",
+                      padding: "0 var(--gap)", // actual visual gap
+                    }}
+                  >
+                    <img
+                      src={src}
+                      alt={`Slide ${i + 1}`}
+                      className="h-full w-full object-cover rounded"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Pause on hover */}
