@@ -41,22 +41,7 @@ const SERVICES = [
         { before: "scratches-before-5.jpeg", after: "scratches-after-5.jpeg" },
         { before: "scratches-before-6.jpeg", after: "scratches-after-6.jpeg" },
          { before: "scratches-before-7.jpeg", after: "scratches-after-7.jpeg" },
-      { before: "scratches-before-8.jpeg", after: "scratches-after-8.jpeg" },
-       { before: "scratches-before-9.jpeg", after: "scratches-after-9.jpeg" },
-       { before: "scratches-before-10.jpeg", after: "scratches-after-10.jpeg" },
-           { before: "scratches-before-11.jpeg", after: "scratches-after-11.jpeg" },
-             { before: "scratches-before-12.jpeg", after: "scratches-after-12.jpeg" },
-        { before: "scratches-before-13.jpeg", after: "scratches-after-13.jpeg" },
-         { before: "scratches-before-14.jpeg", after: "scratches-after-14.jpeg" },
-        { before: "scratches-before-15.jpeg", after: "scratches-after-15.jpeg" },
-        { before: "scratches-before-16.jpeg", after: "scratches-after-16.jpeg" },
-       { before: "scratches-before-17.jpeg", after: "scratches-after-17.jpeg" },     
-        { before: "scratches-before-18.jpeg", after: "scratches-after-18.jpeg" },  
-          { before: "scratches-before-19.jpeg", after: "scratches-after-19.jpeg" },    
-       { before: "scratches-before-20.jpeg", after: "scratches-after-20.jpeg" }, 
-       { before: "scratches-before-21.jpeg", after: "scratches-after-21.jpeg" }, 
-        { before: "scratches-before-22.jpeg", after: "scratches-after-22.jpeg" }, 
-     { before: "scratches-before-23.jpeg", after: "scratches-after-23.jpeg" }, 
+     
     ],
   },
   {
@@ -137,6 +122,44 @@ const SERVICES = [
       { before: "wheels-before-5.jpeg", after: "wheels-after-5.jpeg" },
     ],
   },
+
+  /* NEW: Bumper Scuffs */
+  {
+    id: "bumper",
+    title: "Bumper Scuffs",
+    icon: FaCar,
+    blurb:
+      "Quick, seamless bumper scuff repairs that blend perfectly with your paintwork.",
+    beforeImg: "scratches-before-8.jpeg",
+    afterImg: "scratches-after-8.jpeg",
+    about:
+      "We repair bumper scuffs, scrapes and minor cracks using colour-matched refinishing to restore a factory look on-site. Most repairs are completed the same day without replacing panels.",
+    steps: [
+      "Clean, mask and assess paint damage",
+      "Feather-edge sanding & filling (if needed)",
+      "Colour-matched basecoat application",
+      "Clearcoat blend & polish for a seamless finish",
+    ],
+    gallery: [
+     { before: "scratches-before-8.jpeg", after: "scratches-after-8.jpeg" },
+       { before: "scratches-before-9.jpeg", after: "scratches-after-9.jpeg" },
+       { before: "scratches-before-10.jpeg", after: "scratches-after-10.jpeg" },
+           { before: "scratches-before-11.jpeg", after: "scratches-after-11.jpeg" },
+             { before: "scratches-before-12.jpeg", after: "scratches-after-12.jpeg" },
+        { before: "scratches-before-13.jpeg", after: "scratches-after-13.jpeg" },
+         { before: "scratches-before-14.jpeg", after: "scratches-after-14.jpeg" },
+        { before: "scratches-before-15.jpeg", after: "scratches-after-15.jpeg" },
+        { before: "scratches-before-16.jpeg", after: "scratches-after-16.jpeg" },
+       { before: "scratches-before-17.jpeg", after: "scratches-after-17.jpeg" },     
+        { before: "scratches-before-18.jpeg", after: "scratches-after-18.jpeg" },  
+          { before: "scratches-before-19.jpeg", after: "scratches-after-19.jpeg" },    
+       { before: "scratches-before-20.jpeg", after: "scratches-after-20.jpeg" }, 
+       { before: "scratches-before-21.jpeg", after: "scratches-after-21.jpeg" }, 
+        { before: "scratches-before-22.jpeg", after: "scratches-after-22.jpeg" }, 
+     { before: "scratches-before-23.jpeg", after: "scratches-after-23.jpeg" }, 
+    ],
+  },
+
   {
     id: "lease",
     title: "Lease Returns",
