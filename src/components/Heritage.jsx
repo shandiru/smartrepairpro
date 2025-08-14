@@ -434,18 +434,19 @@ export default function ServicesWithModal() {
 
               {/* Actions */}
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                <a
-                  href="#quote"
-                  className="flex-1 inline-flex items-center justify-center rounded-md bg-black px-4 py-2 text-sm font-semibold text-white hover:opacity-90 dark:bg-white dark:text-black"
-                >
-                  Get Quote for This Service
-                </a>
-                <a
-                  href="#contact"
-                  className="flex-1 inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100 dark:border-neutral-700 dark:bg-neutral-900 dark:text-gray-100 dark:hover:bg-neutral-800"
-                >
-                  Book Consultation
-                </a>
+               <a
+  href="#quote"
+  className="flex-1 inline-flex items-center justify-center rounded-md bg-black px-4 py-2 text-sm font-semibold text-white hover:opacity-90 dark:bg-white dark:text-black"
+>
+  Get Quote for This Service
+</a>
+<a
+  href="#contact"
+  className="flex-1 inline-flex items-center justify-center rounded-md border border-[#D10806] bg-[#D10806] px-4 py-2 text-sm font-semibold text-white hover:opacity-90 dark:border-[#D10806] dark:bg-[#D10806] dark:text-white"
+>
+  Book Consultation
+</a>
+
               </div>
             </div>
           </div>
