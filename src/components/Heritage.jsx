@@ -19,7 +19,7 @@ import "slick-carousel/slick/slick-theme.css";
 const SERVICES = [
   {
     id: "scratches",
-    title: "Scratches & Scuffs",
+    title: "Scratches",
     icon: FaCar,
     blurb:
       "Professional scratch and scuff repair that restores your vehicle's original finish",
