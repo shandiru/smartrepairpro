@@ -7,7 +7,10 @@ const WhyChoose = () => {
       <div className="container mx-auto px-4">
         {/* Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+          <h2
+            className="text-3xl md:text-4xl font-bold"
+            style={{ color: "#D10806" }}
+          >
             Why Choose SmartRepair Pro?
           </h2>
         </div>
@@ -19,7 +22,10 @@ const WhyChoose = () => {
             <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 bg-gray-200 dark:bg-neutral-800 border border-gray-300 dark:border-neutral-700">
               <FaCar className="text-2xl text-black dark:text-white" />
             </div>
-            <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+            <h3
+              className="text-xl font-semibold mb-2"
+              style={{ color: "#D10806" }}
+            >
               Expert Hands You Can Trust
             </h3>
             <p className="text-gray-500 dark:text-gray-300">
@@ -32,7 +38,10 @@ const WhyChoose = () => {
             <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 bg-gray-200 dark:bg-neutral-800 border border-gray-300 dark:border-neutral-700">
               <FaCog className="text-2xl text-black dark:text-white" />
             </div>
-            <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+            <h3
+              className="text-xl font-semibold mb-2"
+              style={{ color: "#D10806" }}
+            >
               Advanced Repair Techniques
             </h3>
             <p className="text-gray-500 dark:text-gray-300">
@@ -45,7 +54,10 @@ const WhyChoose = () => {
             <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 bg-gray-200 dark:bg-neutral-800 border border-gray-300 dark:border-neutral-700">
               <FaFileAlt className="text-2xl text-black dark:text-white" />
             </div>
-            <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+            <h3
+              className="text-xl font-semibold mb-2"
+              style={{ color: "#D10806" }}
+            >
               Quality You Can Rely On
             </h3>
             <p className="text-gray-500 dark:text-gray-300">
