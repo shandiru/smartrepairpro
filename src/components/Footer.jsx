@@ -86,7 +86,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom bar */}
+        {/* Bottom bars */}
         <div className="mt-12 border-t dark:border-neutral-800 pt-8 text-center text-gray-500 dark:text-gray-400">
           © {new Date().getFullYear()} SmartRepair Pro. All rights reserved.
         </div>
