@@ -14,7 +14,10 @@ export default function ContactSection() {
   return (
     <section className="bg-gray-50 dark:bg-neutral-900 py-12 px-4 transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-center text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100">
+        <h2
+          className="text-center text-2xl md:text-3xl font-bold"
+          style={{ color: "#D10806" }}
+        >
           Ready to Get Your Car Fixed?
         </h2>
         <p className="text-center text-gray-500 dark:text-gray-400 mt-2 max-w-2xl mx-auto">
@@ -43,14 +46,16 @@ export default function ContactSection() {
                 <p className="font-medium dark:text-gray-200">Phone</p>
                 <a
                   href="tel:+447989668752"
-                  className="text-blue-500 dark:text-blue-400 hover:underline"
+                  style={{ color: "#D10806" }}
+                  className="hover:underline"
                 >
                   07989 668752
                 </a>
                 <div className="mt-1">
                   <a
                     href="https://wa.me/447989668752"
-                    className="text-blue-500 dark:text-blue-400 hover:underline"
+                    style={{ color: "#D10806" }}
+                    className="hover:underline"
                   >
                     Message on WhatsApp
                   </a>
@@ -85,46 +90,54 @@ export default function ContactSection() {
               <input
                 type="text"
                 placeholder="Your name"
-                className="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2"
+                style={{ "--tw-ring-color": "#D10806" }}
               />
               <input
                 type="email"
                 placeholder="your.email@example.com"
-                className="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2"
+                style={{ "--tw-ring-color": "#D10806" }}
               />
               <input
                 type="tel"
                 placeholder="07989 668752"
-                className="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2"
+                style={{ "--tw-ring-color": "#D10806" }}
               />
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <input
                   type="text"
                   placeholder="Car Registration"
-                  className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2"
+                  style={{ "--tw-ring-color": "#D10806" }}
                 />
                 <input
                   type="text"
                   placeholder="Make and Model"
-                  className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2"
+                  style={{ "--tw-ring-color": "#D10806" }}
                 />
                 <input
                   type="text"
                   placeholder="Location"
-                  className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2"
+                  style={{ "--tw-ring-color": "#D10806" }}
                 />
               </div>
 
               <textarea
                 placeholder="Tell us about your car issue"
                 rows="4"
-                className="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2"
+                style={{ "--tw-ring-color": "#D10806" }}
               ></textarea>
 
               <button
                 type="submit"
-                className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-full flex items-center justify-center gap-2 transition"
+                className="w-full text-white font-semibold py-3 rounded-full flex items-center justify-center gap-2 transition"
+                style={{ backgroundColor: "#D10806" }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
