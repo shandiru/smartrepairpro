@@ -12,7 +12,10 @@ const HOURS = [
 
 export default function ContactSection() {
   return (
-    <section className="bg-gray-50 dark:bg-neutral-900 py-12 px-4 transition-colors duration-300">
+    <section
+      id="contact"
+      className="bg-gray-50 dark:bg-neutral-900 py-12 px-4 transition-colors duration-300 scroll-mt-24"
+    >
       <div className="max-w-6xl mx-auto">
         <h2
           className="text-center text-2xl md:text-3xl font-bold"
