@@ -4,7 +4,7 @@ import { Quote } from "lucide-react";
 // background image
 const BG_IMG = "/src/assets/testimonials-bg.jpg";
 
-// 10 reviews (UK). Avatars should exist in /public or /src as you set.
+// 10 reviews (UK)
 const DATA = [
   {
     quote: `Great service with excellent customer care - the price was very reasonable and great value for money. I have an unusual coloured car, so in advance Shane paint matched my car colour — it was a perfect match & spot on. I then had a small dent removal and respray on part of my car. Shane also sorted a couple of extra little old scuffs & door opening chips (from previous ownership) and even put right a small scuff mark on the wheel trim for free when I picked the car up. Thanks Shane for going above and beyond and doing a great job — a trustworthy tradesman who really cares about customers. I would definitely recommend and use again!`,
@@ -105,8 +105,8 @@ export default function TestimonialSection() {
         className="relative w-full bg-center bg-cover"
         style={{ backgroundImage: `url(${BG_IMG})` }}
       >
-        {/* red overlay */}
-        <div className="absolute inset-0 bg-[#e53935]/90" />
+        {/* brand red overlay */}
+        <div className="absolute inset-0 bg-[#D10806]/90" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-28 text-center text-white">
           <h2
@@ -170,7 +170,7 @@ export default function TestimonialSection() {
                     alt={item.name}
                   />
                   {/* bottom-left badge */}
-                  <span className="absolute bottom-0 -left-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#e53935] text-white shadow-md">
+                  <span className="absolute bottom-0 -left-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#D10806] text-white shadow-md">
                     <Quote className="h-4 w-4 text-white rotate-180" strokeWidth={2} />
                   </span>
                 </div>
@@ -183,7 +183,7 @@ export default function TestimonialSection() {
 
                 <div className="mt-8">
                   <h3 className="text-xl sm:text-2xl font-semibold text-black dark:text-white">{item.name}</h3>
-                  <p className="mt-1 text-sm sm:text-base text-[#e53935] italic">{item.city}</p>
+                  <p className="mt-1 text-sm sm:text-base text-[#D10806] italic">{item.city}</p>
                 </div>
               </div>
             </div>
@@ -196,7 +196,7 @@ export default function TestimonialSection() {
                   onClick={() => setI(idx)}
                   className={`h-2.5 w-2.5 rounded-full ${
                     i === idx
-                      ? "bg-[#e53935]"
+                      ? "bg-[#D10806]"
                       : "bg-black/20 dark:bg-white/30"
                   }`}
                   aria-label={`Go to slide ${idx + 1}`}
