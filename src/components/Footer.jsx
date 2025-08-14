@@ -44,10 +44,10 @@ const Footer = () => {
               <li>
                 Phone:{" "}
                 <a
-                  href="tel:5551234567"
+                  href="tel:07989668752"
                   className="hover:text-gray-700 dark:hover:text-gray-200"
                 >
-                  (555) 123-4567
+                  07989 668752
                 </a>
               </li>
               <li>
@@ -59,7 +59,7 @@ const Footer = () => {
                   info@smartrepairpro.com
                 </a>
               </li>
-              <li>Address: 123 Repair St, City, State</li>
+              <li>Address: Leicester, Wigston LE18 3WJ</li>
             </ul>
           </div>
 
@@ -67,8 +67,12 @@ const Footer = () => {
           <div>
             <h3 className="mb-4 font-semibold text-gray-900 dark:text-white">Hours</h3>
             <ul className="space-y-2 text-gray-500 dark:text-gray-300">
-              <li>Mon–Fri: 8AM – 6PM</li>
-              <li>Saturday: 9AM – 4PM</li>
+              <li>Monday: 9 AM – 5 PM</li>
+              <li>Tuesday: 9 AM – 6 PM</li>
+              <li>Wednesday: 9 AM – 6 PM</li>
+              <li>Thursday: 9 AM – 6 PM</li>
+              <li>Friday: 9 AM – 6 PM</li>
+              <li>Saturday: Closed</li>
               <li>Sunday: Closed</li>
             </ul>
           </div>
