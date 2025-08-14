@@ -85,9 +85,10 @@ export default function Expertise({
 
           {/* Right: content */}
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
-              Always Ready, Always Nearby
-            </h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#D10806]">
+  Always Ready, Always Nearby
+</h2>
+
             <div className="mt-1 h-0.5 w-14 bg-red-500" />
             <p className="mt-4 text-gray-600 dark:text-gray-300 text-base leading-relaxed max-w-2xl">
               There are times when the fire station calls, and I need to be ready in an instant.
