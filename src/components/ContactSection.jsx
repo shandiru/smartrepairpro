@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import emailjs from "emailjs-com";
 
 const HOURS = [
   { day: "Monday", time: "9:00 am – 5:00 pm" },
@@ -11,6 +12,41 @@ const HOURS = [
 ];
 
 export default function ContactSection() {
+  const formRef = useRef(null);
+  const [status, setStatus] = useState({ state: "idle", message: "" });
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
+    if (!formRef.current) return;
+
+    setStatus({ state: "sending", message: "Sending your message..." });
+
+    try {
+      const result = await emailjs.sendForm(
+        "service_imwsuei",   // Your EmailJS service ID
+        "template_ph7ntdh",  // Your EmailJS template ID
+        formRef.current,
+        "zGzzK5w9VeN4xE84h"  // Your EmailJS public key
+      );
+
+      // Optional: Check result.status/result.text if you want custom messages
+      setStatus({
+        state: "success",
+        message: "Thanks! Your message has been sent. We'll get back to you shortly.",
+      });
+      formRef.current.reset();
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setStatus({
+        state: "error",
+        message:
+          "Sorry, something went wrong while sending. Please try again, or call us directly.",
+      });
+    }
+  };
+
+  const isSending = status.state === "sending";
+
   return (
     <section
       id="contact"
@@ -34,9 +70,7 @@ export default function ContactSection() {
             <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
               Contact Information
             </h3>
-
             <div className="mt-4 space-y-6 text-gray-600 dark:text-gray-300">
-              {/* Address */}
               <div>
                 <p className="font-medium dark:text-gray-200">Address</p>
                 <address className="not-italic">
@@ -44,7 +78,6 @@ export default function ContactSection() {
                 </address>
               </div>
 
-              {/* Phone */}
               <div>
                 <p className="font-medium dark:text-gray-200">Phone</p>
                 <a
@@ -65,7 +98,6 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              {/* Opening Hours */}
               <div>
                 <p className="font-medium dark:text-gray-200">Opening Hours</p>
                 <ul className="mt-2 divide-y divide-gray-200 dark:divide-neutral-700 border border-gray-200 dark:border-neutral-700 rounded-lg overflow-hidden">
@@ -89,75 +121,137 @@ export default function ContactSection() {
 
           {/* Right Side - Contact Form */}
           <div className="bg-white dark:bg-neutral-800 rounded-2xl shadow p-6 md:p-8 transition-colors duration-300">
-            <form className="space-y-4">
+            {/* Inline status message */}
+            <div
+              className="mb-4"
+              aria-live="polite"
+              aria-atomic="true"
+              role="status"
+            >
+              {status.state === "success" && (
+                <div className="rounded-md border border-green-200 bg-green-50 px-4 py-3 text-green-800">
+                  {status.message}
+                </div>
+              )}
+              {status.state === "error" && (
+                <div className="rounded-md border border-red-200 bg-red-50 px-4 py-3 text-red-800">
+                  {status.message}
+                </div>
+              )}
+              {status.state === "sending" && (
+                <div className="rounded-md border border-amber-200 bg-amber-50 px-4 py-3 text-amber-800">
+                  {status.message}
+                </div>
+              )}
+            </div>
+
+            <form ref={formRef} onSubmit={sendEmail} className="space-y-4">
               <input
                 type="text"
+                name="name"
                 placeholder="Your name"
-                className="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2"
-                style={{ "--tw-ring-color": "#D10806" }}
+                required
+                className="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-700"
               />
               <input
                 type="email"
+                name="email"
                 placeholder="your.email@example.com"
-                className="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2"
-                style={{ "--tw-ring-color": "#D10806" }}
+                required
+                className="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-700"
               />
               <input
                 type="tel"
+                name="phone"
                 placeholder="07989 668752"
-                className="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2"
-                style={{ "--tw-ring-color": "#D10806" }}
+                className="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-700"
               />
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <input
                   type="text"
+                  name="car_registration"
                   placeholder="Car Registration"
-                  className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2"
-                  style={{ "--tw-ring-color": "#D10806" }}
+                  className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-700"
                 />
                 <input
                   type="text"
+                  name="make_model"
                   placeholder="Make and Model"
-                  className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2"
-                  style={{ "--tw-ring-color": "#D10806" }}
+                  className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-700"
                 />
                 <input
                   type="text"
+                  name="location"
                   placeholder="Location"
-                  className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2"
-                  style={{ "--tw-ring-color": "#D10806" }}
+                  className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-700"
                 />
               </div>
 
               <textarea
+                name="message"
                 placeholder="Tell us about your car issue"
                 rows="4"
-                className="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2"
-                style={{ "--tw-ring-color": "#D10806" }}
+                required
+                className="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-700"
               ></textarea>
 
               <button
                 type="submit"
-                className="w-full text-white font-semibold py-3 rounded-full flex items-center justify-center gap-2 transition"
+                disabled={isSending}
+                className={`w-full text-white font-semibold py-3 rounded-full flex items-center justify-center gap-2 transition ${
+                  isSending ? "opacity-70 cursor-not-allowed" : ""
+                }`}
                 style={{ backgroundColor: "#D10806" }}
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-5 h-5"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
-                  />
-                </svg>
-                Send Message
+                {isSending ? (
+                  <>
+                    <svg
+                      className="animate-spin h-5 w-5 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                      ></path>
+                    </svg>
+                    Sending…
+                  </>
+                ) : (
+                  <>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-5 h-5"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                      />
+                    </svg>
+                    Send Message
+                  </>
+                )}
               </button>
+
+              <p className="text-sm text-gray-600 text-center">
+                Same-day appointments often available • No obligation consultation
+              </p>
             </form>
           </div>
         </div>
