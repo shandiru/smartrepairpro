@@ -37,11 +37,12 @@ const Footer = () => {
           <div>
             <h3 className="mb-4 font-semibold text-gray-900 dark:text-white">Services</h3>
             <ul className="space-y-2 text-gray-500 dark:text-gray-300">
-              <li>Scratches &amp; Scuffs</li>
+              <li>Scratches</li>
               <li>Headlight Restoration</li>
               <li>Dent Removal</li>
               <li>Wheels &amp; Calipers</li>
               <li>Lease Returns</li>
+              <li>Bumper Scuffs</li>
             </ul>
           </div>
 
