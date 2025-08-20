@@ -20,15 +20,12 @@ export default function ThemeToggle({ className = "" }) {
     <button
       type="button"
       onClick={toggle}
-      className={`rounded-md border px-3 py-1 text-sm flex items-center gap-2
+      className={`rounded-md border px-3 py-1 text-sm flex items-center
                   bg-white text-gray-900 border-gray-300
                   dark:bg-neutral-800 dark:text-gray-100 dark:border-neutral-700 ${className}`}
       aria-label="Toggle dark mode"
     >
       {isDark ? <Moon size={18} /> : <Sun size={18} />}
-      <span className="hidden sm:inline">
-        {isDark ? "Dark" : "Light"}
-      </span>
     </button>
   );
 }
