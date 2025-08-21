@@ -1,8 +1,8 @@
 import React from "react";
 
 const CallToAction = ({
-  phone = "(555) 123-4567",
-  telHref = "tel:5551234567",
+  phone = "07989668752",
+  telHref = "tel:07989668752",
 }) => {
   return (
     <section className="w-full bg-gray-50 text-gray-900 dark:bg-[#171717] dark:text-white">
