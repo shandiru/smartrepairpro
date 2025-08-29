@@ -81,10 +81,10 @@ const Footer = () => {
               <li>
                 Email:{" "}
                 <a
-                  href="mailto:info@smartrepairpro.com"
+                  href="mailto:Sldetailingservices@gmail.com"
                   className="hover:text-gray-700 dark:hover:text-gray-200"
                 >
-                  info@smartrepairpro.com
+                  Sldetailingservices@gmail.com
                 </a>
               </li>
               <li>Address: Leicester, Wigston LE18 3WJ</li>
