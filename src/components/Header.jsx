@@ -39,7 +39,7 @@ const HeroSection = () => {
 
           {/* Secondary CTA */}
           <a
-            href="#quote"
+            href="#contact"
             className="
               inline-flex items-center justify-center gap-2 px-6 py-3
               border border-gray-300 bg-white text-gray-700 hover:bg-gray-100
