@@ -1,5 +1,5 @@
-// src/components/Footer.jsx
 import React from "react";
+import { FaFacebook, FaInstagram } from "react-icons/fa"; // Importing the icons
 
 const Footer = () => {
   return (
@@ -13,24 +13,43 @@ const Footer = () => {
               {/* Light mode logo */}
               <img
                 src="/logo-dark.png"
-                alt="SmartRepair Pro logo"
+                alt="SL Smart Repair logo"
                 className="h-6 w-auto block dark:hidden"
               />
               {/* Dark mode logo */}
               <img
                 src="/logo.png"
-                alt="SmartRepair Pro logo (dark)"
+                alt="SL Smart Repair logo (dark)"
                 className="h-6 w-auto hidden dark:block"
               />
 
               <span className="text-xl font-bold text-gray-900 dark:text-white">
-                SmartRepair Pro
+                SL Smart Repair
               </span>
             </div>
             <p className="text-gray-500 dark:text-gray-300 leading-relaxed">
               Professional automotive repair services that restore your vehicle to
               perfect condition.
             </p>
+            {/* Social Media Links */}
+            <div className="mt-4 flex space-x-4">
+              <a
+                href="https://www.facebook.com/S.LValetingDetailingServices/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200"
+              >
+                <FaFacebook size={24} />
+              </a>
+              <a
+                href="https://www.instagram.com/sl_smart_repair/?hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200"
+              >
+                <FaInstagram size={24} />
+              </a>
+            </div>
           </div>
 
           {/* Services */}
@@ -89,7 +108,7 @@ const Footer = () => {
 
         {/* Bottom bars */}
         <div className="mt-12 border-t dark:border-neutral-800 pt-8 text-center text-gray-500 dark:text-gray-400">
-          © {new Date().getFullYear()} SmartRepair Pro. All rights reserved.
+          © {new Date().getFullYear()} SL Smart Repair. All rights reserved.
         </div>
       </div>
     </footer>

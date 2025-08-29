@@ -19,12 +19,12 @@ const Navbar = () => {
           {/* Icon: swap by theme */}
           <img
             src="/logo-dark.png"
-            alt="SmartRepair Pro logo"
+            alt="SL Smart Repair logo"
             className="h-16 w-auto sm:h-20 block dark:hidden"
           />
           <img
             src="/logo.png"
-            alt="SmartRepair Pro logo (dark)"
+            alt="SL Smart Repair logo (dark)"
             className="h-16 w-auto sm:h-20 hidden dark:block"
           />
 
@@ -43,7 +43,7 @@ const Navbar = () => {
           />
 
           {/* Accessible name fallback */}
-          <span className="sr-only">SmartRepair Pro</span>
+          <span className="sr-only">SL Smart Repair</span>
         </a>
 
         {/* Center: Nav (desktop only) */}

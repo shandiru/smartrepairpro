@@ -11,7 +11,7 @@ const WhyChoose = () => {
             className="text-3xl md:text-4xl font-bold"
             style={{ color: "#D10806" }}
           >
-            Why Choose SmartRepair Pro?
+            Why Choose SL Smart Repair?
           </h2>
         </div>
 
