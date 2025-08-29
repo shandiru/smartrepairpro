@@ -66,7 +66,7 @@ const Navbar = () => {
           </div>
 
           <a
-            href="#quote"
+            href="#contact"
             className="hidden md:inline-block rounded-xl px-4 py-2 text-sm font-semibold text-white bg-black hover:opacity-90 dark:bg-white dark:text-black"
           >
             Get Quote
@@ -97,7 +97,7 @@ const Navbar = () => {
           </ul>
 
           <a
-            href="#quote"
+            href="#contact"
             onClick={() => setOpen(false)}
             className="mt-3 inline-block w-full rounded-2xl px-5 py-3 text-center text-sm font-semibold text-white bg-black hover:opacity-90 dark:bg-white dark:text-black"
           >
