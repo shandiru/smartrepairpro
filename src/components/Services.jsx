@@ -75,12 +75,12 @@ const SERVICES = [
     beforeImg: "dent-before-2.jpeg",
     afterImg: "dent-after-2.jpeg",
     about:
-      "Our paintless dent repair (PDR) technique removes dents without the need for repainting. This method preserves your vehicle's original factory finish while being more cost-effective than traditional bodywork.",
+      "We provide professional dent removal to restore your vehicle’s panels to their original shape. Whether caused by minor knocks, car park damage, or everyday accidents, we remove dents and smooth out bodywork to make your vehicle look its best again.",
     steps: [
-      "Damage assessment and access planning",
-      "Specialized tool positioning",
-      "Gradual pressure application to restore shape",
-      "Final inspection and quality check",
+      "Damage assessment and repair planning",
+      "Panel preparation and access set-up",
+      "Dent removal using specialist techniques",
+      "Final inspection and finishing touches",
     ],
     gallery: [
       { before: "dent-before.jpeg", after: "dent-after.jpeg" },
@@ -104,12 +104,12 @@ const SERVICES = [
     beforeImg: "wheels-before.jpeg",
     afterImg: "wheels-after.jpeg",
     about:
-      "We provide comprehensive wheel refurbishment including alloy wheel repair, powder coating, and brake caliper restoration. Our services handle curb damage, corrosion, and general wear to restore your wheels to perfect condition.",
+      "We specialise in making your wheels look as good as new. Our team carefully removes scratches, scuffs and marks before applying a high-quality paint finish. Whether your wheels have suffered from kerb damage or general wear, we restore their appearance and give them a fresh, clean look.",
     steps: [
-      "Wheel removal and thorough inspection",
-      "Damage repair and surface preparation",
-      "Professional powder coating or painting",
-      "Caliper cleaning and refinishing",
+      "Wheel removal and detailed inspection",
+      "Scratch and kerb damage repair",
+      "urface preparation and priming",
+      "Professional painting and finishing coat",
     ],
     gallery: [
       { before: "wheels-before.jpeg", after: "wheels-after.jpeg" },
@@ -117,6 +117,9 @@ const SERVICES = [
       { before: "wheels-before-3.jpeg", after: "wheels-after-3.jpeg" },
       { before: "wheels-before-4.jpeg", after: "wheels-after-4.jpeg" },
       { before: "wheels-before-5.jpeg", after: "wheels-after-5.jpeg" },
+      { before: "wheels-before-6.jpeg", after: "wheels-after-6.jpeg" },
+      { before: "wheels-before-7.jpeg", after: "wheels-after-7.jpeg" },
+      { before: "wheels-before-8.jpeg", after: "wheels-after-8.jpeg" },
     ],
   },
 
@@ -174,8 +177,14 @@ const SERVICES = [
       "Final quality assurance check",
     ],
     gallery: [
-      { before: "/images/services/lease-before.jpg", after: "/images/services/lease-after.jpg" },
-      { before: "/images/services/lease-before-2.jpg", after: "/images/services/lease-after-2.jpg" },
+       { before: "wheels-before.jpeg", after: "wheels-after.jpeg" },
+    
+     { before: "scratches-before-4.jpeg", after: "scratches-after-4.jpeg" },
+      { before: "scratches-before-5.jpeg", after: "scratches-after-5.jpeg" },
+       { before: "scratches-before-16.jpeg", after: "scratches-after-16.jpeg" },
+      { before: "scratches-before-17.jpeg", after: "scratches-after-17.jpeg" },
+        { before: "wheels-before-2.jpeg", after: "wheels-after-2.jpeg" },
+      { before: "wheels-before-3.jpeg", after: "wheels-after-3.jpeg" },
     ],
   },
 ];

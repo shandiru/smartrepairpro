@@ -15,7 +15,7 @@ const CallToAction = ({
         </h2>
 
         <p className="mx-auto mb-10 max-w-3xl text-base sm:text-xl text-gray-600 dark:text-white/80">
-          Get a free quote today and see the SL Smart Repair difference
+          Get a free quote today, secure your booking with a deposit, and experience the SL Smart Repair difference
         </p>
 
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
