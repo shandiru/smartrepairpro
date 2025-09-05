@@ -177,14 +177,19 @@ const SERVICES = [
       "Final quality assurance check",
     ],
     gallery: [
-       { before: "wheels-before.jpeg", after: "wheels-after.jpeg" },
+        { before: "dent-before.jpeg", after: "dent-after.jpeg" },
+     
     
      { before: "scratches-before-4.jpeg", after: "scratches-after-4.jpeg" },
-      { before: "scratches-before-5.jpeg", after: "scratches-after-5.jpeg" },
+     
+       { before: "dent-before-3.jpeg", after: "dent-after-3.jpeg" },
+        { before: "scratches-before-5.jpeg", after: "scratches-after-5.jpeg" },
+      { before: "dent-before-4.jpeg", after: "dent-after-4.jpeg" },
        { before: "scratches-before-16.jpeg", after: "scratches-after-16.jpeg" },
+        { before: "dent-before-2.jpeg", after: "dent-after-2.jpeg" },
+     
       { before: "scratches-before-17.jpeg", after: "scratches-after-17.jpeg" },
-        { before: "wheels-before-2.jpeg", after: "wheels-after-2.jpeg" },
-      { before: "wheels-before-3.jpeg", after: "wheels-after-3.jpeg" },
+      
     ],
   },
 ];
