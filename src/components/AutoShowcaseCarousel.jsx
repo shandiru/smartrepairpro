@@ -12,161 +12,161 @@ const CARS = [
   {
     id: "c1-lambo-2024",
     brand: "Lamborghini",
-    year: "2024",
+   
     title: "Huracán Performante",
     subtitle: "Full Ceramic Coat • Stage 2 Paint Correction",
     img: "/C1.jpeg",
-    badge: "Best Restoration 2024",
+   
     
   },
   {
     id: "c2-ferrari-2023",
     brand: "Ferrari",
-    year: "2023",
+   
     title: "488 GTB",
     subtitle: "Showroom Detail • Interior Deep Clean • PPF Refresh",
     img: "/C2.jpeg",
-    badge: "Editor’s Pick",
+   
    
   },
   {
     id: "c3-porsche-2023",
     brand: "Porsche",
-    year: "2023",
+   
     title: "911 Turbo S",
     subtitle: "Performance Upgrade • Alloy Decontamination",
     img: "/C3.jpeg",
-    badge: null,
+  
    
   },
   {
     id: "c4-mclaren-2022",
     brand: "McLaren",
-    year: "2022",
+   
     title: "720S",
     subtitle: "Two-Stage Polish • Ceramic Pro • Glass Coating",
     img: "/C4.jpeg",
-    badge: "Award Finalist 2024",
+  
    
   },
   {
     id: "c5-aston-2021",
     brand: "Aston Martin",
-    year: "2021",
+   
     title: "Vantage",
     subtitle: "Swirl Removal • Leather Rejuvenation • Sealant",
     img: "/C5.jpeg",
-    badge: null,
+  
     
   },
   {
     id: "c6-bmw-2020",
     brand: "BMW",
-    year: "2020",
+    
     title: "M4 Competition",
     subtitle: "Track Prep • Brake Dust Treatment • Trim Restore",
     img: "/C6.jpeg",
-    badge: null,
+   
    
   },
   {
     id: "c7-mercedes-2022",
     brand: "Mercedes-AMG",
-    year: "2022",
+   
     title: "GT R Pro",
     subtitle: "Stage 1 Correction • Wheel Ceramic • Engine Bay",
     img: "/C7.jpeg",
-    badge: "Client Favorite",
+   
    
   },
   {
     id: "c8-audi-2021",
     brand: "Audi",
-    year: "2021",
+   
     title: "RS7",
     subtitle: "PPF Front Package • Ceramic Topper • Interior",
     img: "/C8.jpeg",
-    badge: null,
+   
    
   },
   {
     id: "c9-nissan-2020",
     brand: "Nissan",
-    year: "2020",
+   
     title: "GT-R",
     subtitle: "Paint Correction • Hydrophobic Glass • Exhaust Polish",
     img: "/C9.jpeg",
-    badge: null,
+    
    
   },
   {
     id: "c10-toyota-2021",
     brand: "Toyota",
-    year: "2021",
+   
     title: "GR Supra",
     subtitle: "Decon Wash • Clay • One-Step Polish • Sealant",
     img: "/C10.jpeg",
-    badge: null,
+  
     
   },
   {
     id: "c11-bugatti-2019",
     brand: "Bugatti",
-    year: "2019",
+   
     title: "Chiron",
     subtitle: "Concours-Level Finish • Premium Ceramic System",
     img: "/C11.jpeg",
-    badge: "Concours Ready",
+   
    
   },
   {
     id: "c12-bentley-2020",
     brand: "Bentley",
-    year: "2020",
+   
     title: "Continental GT",
     subtitle: "Luxury Interior Spa • Chrome Polish • Sealant",
     img: "/C12.jpeg",
-    badge: null,
+    
    
   },
   {
     id: "c13-rolls-2018",
     brand: "Rolls-Royce",
-    year: "2018",
+   
     title: "Wraith",
     subtitle: "Multi-Stage Refinement • Leather Feed • Protection",
     img: "/C13.jpeg",
-    badge: null,
+    
    
   },
   {
     id: "c14-corvette-2022",
     brand: "Chevrolet",
-    year: "2022",
+  
     title: "Corvette C8",
     subtitle: "Track Wash • Tar Removal • Ceramic Top Coat",
     img: "/C14.jpeg",
-    badge: null,
+   
    
   },
   {
     id: "c15-acura-2021",
     brand: "Acura",
-    year: "2021",
+   
     title: "NSX",
     subtitle: "Two-Bucket Wash • DA Polish • Glass Ceramic",
     img: "/C15.jpeg",
-    badge: "Staff Pick",
+  
    
   },
   {
     id: "c16-maserati-2019",
     brand: "Maserati",
-    year: "2019",
+   
     title: "MC20",
     subtitle: "Full Paint Correction • PPF Track Kit • Wheel Coat",
     img: "/C16.jpeg",
-    badge: null,
+   
    
   },
 ];
@@ -200,7 +200,7 @@ const CarCard = ({ car }) => {
       <div className="space-y-3 p-5">
         <div className="flex flex-wrap items-center gap-2">
           <Pill>{car.brand}</Pill>
-          <Pill>{car.year}</Pill>
+          
         </div>
 
         <h3 className="text-xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
