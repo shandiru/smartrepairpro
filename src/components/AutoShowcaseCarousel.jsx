@@ -131,7 +131,7 @@ const CARS = [
 
 // ----- Tag pill -----
 const Pill = ({ children }) => (
-  <span className="inline-flex items-center rounded-full border border-zinc-300/70 px-2.5 py-0.5 text-xs font-medium text-zinc-700 dark:text-zinc-200 dark:border-zinc-600/60">
+  <span className="inline-flex items-center rounded-full border border-zinc-300/70 px-2.5 py-0.5 text-xs font-medium text-zinc-700 dark:text-zinc-200 dark:border-zinc-600/60" >
     {children}
   </span>
 );
@@ -139,7 +139,7 @@ const Pill = ({ children }) => (
 // ----- Card -----
 const CarCard = ({ car }) => {
   return (
-    <article className="group grid h-full grid-rows-[auto,1fr] overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900">
+    <article className="group grid h-full grid-rows-[auto,1fr] overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900" >
       {/* Image */}
       <div className="relative aspect-[16/10] w-full overflow-hidden">
         <img
@@ -180,7 +180,7 @@ export default function AutoShowcaseCarousel({
   items = CARS,
 }) {
   return (
-    <section className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <section className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8" id="portfolio">
       {/* Header */}
       <div className="mx-auto max-w-3xl text-center">
         <span className="inline-flex items-center justify-center rounded-full border border-red-200 bg-red-50 px-3 py-1 text-[11px] font-semibold text-red-700 dark:border-red-900/60 dark:bg-red-950/40 dark:text-red-300">
