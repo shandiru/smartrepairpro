@@ -1,5 +1,5 @@
 import React from "react";
-import { FaFacebook, FaInstagram } from "react-icons/fa"; // Importing the icons
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -10,34 +10,22 @@ const Footer = () => {
           {/* Brand */}
           <div className="max-w-sm">
             <div className="mb-4 flex items-center gap-2">
-              {/* Light mode logo */}
-              <img
-                src="/logo-dark.png"
-                alt="SL Smart Repair logo"
-                className="h-6 w-auto block dark:hidden"
-              />
-              {/* Dark mode logo */}
-              <img
-                src="/logo.png"
-                alt="SL Smart Repair logo (dark)"
-                className="h-6 w-auto hidden dark:block"
-              />
-
-              <span className="text-xl font-bold text-gray-900 dark:text-white">
-                SL Smart Repair
-              </span>
+              <img src="/logo-dark.png" alt="SL Smart Repair logo" className="h-6 w-auto block dark:hidden" />
+              <img src="/logo.png" alt="SL Smart Repair logo (dark)" className="h-6 w-auto hidden dark:block" />
+              <span className="text-xl font-bold text-gray-900 dark:text-white">SL Smart Repair</span>
             </div>
             <p className="text-gray-500 dark:text-gray-300 leading-relaxed">
-              Professional automotive repair services that restore your vehicle to
-              perfect condition.
+              Professional automotive repair services that restore your vehicle to perfect condition.
             </p>
-            {/* Social Media Links */}
+
+            {/* Socials */}
             <div className="mt-4 flex space-x-4">
               <a
                 href="https://www.facebook.com/S.LValetingDetailingServices/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200"
+                aria-label="Facebook"
               >
                 <FaFacebook size={24} />
               </a>
@@ -46,6 +34,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200"
+                aria-label="Instagram"
               >
                 <FaInstagram size={24} />
               </a>
@@ -56,12 +45,37 @@ const Footer = () => {
           <div>
             <h3 className="mb-4 font-semibold text-gray-900 dark:text-white">Services</h3>
             <ul className="space-y-2 text-gray-500 dark:text-gray-300">
-              <li>Scratches</li>
-              <li>Headlight Restoration</li>
-              <li>Dent Removal</li>
-              <li>Wheels &amp; Calipers</li>
-              <li>Lease Returns</li>
-              <li>Bumper Scuffs</li>
+              {/* All items link to the services section */}
+              <li>
+                <a href="#services" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
+                  Scratches
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
+                  Headlight Restoration
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
+                  Dent Removal
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
+                  Wheels &amp; Calipers
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
+                  Lease Returns
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
+                  Bumper Scuffs
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -71,19 +85,13 @@ const Footer = () => {
             <ul className="space-y-2 text-gray-500 dark:text-gray-300">
               <li>
                 Phone:{" "}
-                <a
-                  href="tel:07989668752"
-                  className="hover:text-gray-700 dark:hover:text-gray-200"
-                >
+                <a href="tel:07989668752" className="hover:text-gray-700 dark:hover:text-gray-200">
                   07989 668752
                 </a>
               </li>
               <li>
                 Email:{" "}
-                <a
-                  href="mailto:Sldetailingservices@gmail.com"
-                  className="hover:text-gray-700 dark:hover:text-gray-200"
-                >
+                <a href="mailto:Sldetailingservices@gmail.com" className="hover:text-gray-700 dark:hover:text-gray-200">
                   Sldetailingservices@gmail.com
                 </a>
               </li>
@@ -106,7 +114,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom bars */}
+        {/* Bottom bar */}
         <div className="mt-12 border-t dark:border-neutral-800 pt-8 text-center text-gray-500 dark:text-gray-400">
           © {new Date().getFullYear()} SL Smart Repair. All rights reserved.
         </div>
