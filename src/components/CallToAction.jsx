@@ -21,7 +21,7 @@ const CallToAction = ({
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           {/* Filled button */}
           <a
-            href="#quote"
+            href="#contact"
             className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-lg font-semibold shadow-sm transition text-white hover:opacity-90"
             style={{ backgroundColor: "#D10806" }}
           >
