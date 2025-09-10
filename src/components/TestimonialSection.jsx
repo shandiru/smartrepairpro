@@ -100,7 +100,7 @@ export default function TestimonialSection() {
   const item = DATA[i];
 
   return (
-    <section aria-labelledby="testimonials-title">
+    <section aria-labelledby="testimonials-title" id="review">
       <div
         className="relative w-full bg-center bg-cover"
         style={{ backgroundImage: `url(${BG_IMG})` }}

@@ -8,7 +8,7 @@ import Navbar from "./components/Navbar";
 import Call from "./components/CallToAction";
 import TestimonialSection from "./components/TestimonialSection";
 import ContactSection from "./components/ContactSection"; // Import the contact component
-
+import AutoShowcaseCarousel from "../src/components/AutoShowcaseCarousel"
 function App() {
   return (
     <div className="min-h-screen bg-white text-gray-900 dark:bg-neutral-900 dark:text-gray-100">
@@ -18,6 +18,7 @@ function App() {
       <Qa />
       <Call />
       <Wash imageSrc="/wash.png" />
+      <AutoShowcaseCarousel />
       <TestimonialSection />
       <ContactSection /> {/* Added here */}
       <Footer />
