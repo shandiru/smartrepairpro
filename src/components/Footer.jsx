@@ -1,5 +1,6 @@
 import React from "react";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -96,6 +97,12 @@ const Footer = () => {
                 </a>
               </li>
               <li>Address: Leicester, Wigston LE18 3WJ</li>
+              <li>
+                <Link to="/privacy-policy" className="hover:text-gray-300">Privacy Policy</Link> {/* Updated link */}
+              </li>
+              <li>
+                <Link to="/terms-conditions" className="hover:text-gray-300">Terms & Conditions</Link> {/* Updated link */}
+              </li>
             </ul>
           </div>
 
