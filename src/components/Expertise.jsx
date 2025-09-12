@@ -17,7 +17,7 @@ export default function Expertise({
   const n = imageSrcs.length || 1;
 
   return (
-    <section className="w-full py-12 bg-white dark:bg-neutral-900" id="always-ready">
+    <section className="w-full py-12 bg-white dark:bg-neutral-900" id="Why-Choose-Us">
       <div className="mx-auto max-w-7xl px-4">
         <div className="grid items-center gap-8 lg:grid-cols-2">
           {/* Left: continuous auto-scroller with fixed height */}

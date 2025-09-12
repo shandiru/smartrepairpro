@@ -1,4 +1,3 @@
-// src/components/Navbar.jsx
 import React, { useState, useEffect } from "react";
 import ThemeToggle from "./ThemeToggle";
 
@@ -46,27 +45,27 @@ const Navbar = () => {
         {/* Center: Nav (desktop only) */}
         <ul className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-10 text-lg text-gray-600 dark:text-gray-300 lg:flex">
           <li>
-            <a href="#services" className="transition-colors hover:text-black dark:hover:text-white">
+            <a href="#services" className="transition-colors hover:text-[#D40000]">
               Services
             </a>
           </li>
           <li>
-            <a href="#always-ready" className="transition-colors hover:text-black dark:hover:text-white">
-              Always Ready
+            <a href="#Why-Choose-Us" className="transition-colors hover:text-[#D40000]">
+              Why Choose Us
             </a>
           </li>
           <li>
-            <a href="#portfolio" className="transition-colors hover:text-black dark:hover:text-white">
+            <a href="#portfolio" className="transition-colors hover:text-[#D40000]">
               Portfolio
             </a>
           </li>
           <li>
-            <a href="#review" className="transition-colors hover:text-black dark:hover:text-white">
-              Review
+            <a href="#Testimonials" className="transition-colors hover:text-[#D40000]">
+              Testimonials
             </a>
           </li>
           <li>
-            <a href="#contact" className="transition-colors hover:text-black dark:hover:text-white">
+            <a href="#contact" className="transition-colors hover:text-[#D40000]">
               Contact
             </a>
           </li>
@@ -120,27 +119,47 @@ const Navbar = () => {
         <div className="mx-auto px-4 py-4 sm:px-6 lg:px-8">
           <ul className="flex flex-col gap-2">
             <li>
-              <a href="#services" onClick={() => setOpen(false)} className="block rounded-xl px-3 py-3 text-base font-medium text-gray-800 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-neutral-900">
+              <a
+                href="#services"
+                onClick={() => setOpen(false)}
+                className="block rounded-xl px-3 py-3 text-base font-medium text-gray-800 dark:text-gray-100 hover:text-[#D40000] hover:bg-gray-50 dark:hover:bg-neutral-900"
+              >
                 Services
               </a>
             </li>
             <li>
-              <a href="#always-ready" onClick={() => setOpen(false)} className="block rounded-xl px-3 py-3 text-base font-medium text-gray-800 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-neutral-900">
-                Always Ready
+              <a
+                href="#Why-Choose-Us"
+                onClick={() => setOpen(false)}
+                className="block rounded-xl px-3 py-3 text-base font-medium text-gray-800 dark:text-gray-100 hover:text-[#D40000] hover:bg-gray-50 dark:hover:bg-neutral-900"
+              >
+                Why Choose Us
               </a>
             </li>
             <li>
-              <a href="#portfolio" onClick={() => setOpen(false)} className="block rounded-xl px-3 py-3 text-base font-medium text-gray-800 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-neutral-900">
+              <a
+                href="#portfolio"
+                onClick={() => setOpen(false)}
+                className="block rounded-xl px-3 py-3 text-base font-medium text-gray-800 dark:text-gray-100 hover:text-[#D40000] hover:bg-gray-50 dark:hover:bg-neutral-900"
+              >
                 Portfolio
               </a>
             </li>
             <li>
-              <a href="#review" onClick={() => setOpen(false)} className="block rounded-xl px-3 py-3 text-base font-medium text-gray-800 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-neutral-900">
-                Review
+              <a
+                href="#Testimonials"
+                onClick={() => setOpen(false)}
+                className="block rounded-xl px-3 py-3 text-base font-medium text-gray-800 dark:text-gray-100 hover:text-[#D40000] hover:bg-gray-50 dark:hover:bg-neutral-900"
+              >
+                Testimonials
               </a>
             </li>
             <li>
-              <a href="#contact" onClick={() => setOpen(false)} className="block rounded-xl px-3 py-3 text-base font-medium text-gray-800 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-neutral-900">
+              <a
+                href="#contact"
+                onClick={() => setOpen(false)}
+                className="block rounded-xl px-3 py-3 text-base font-medium text-gray-800 dark:text-gray-100 hover:text-[#D40000] hover:bg-gray-50 dark:hover:bg-neutral-900"
+              >
                 Contact
               </a>
             </li>
