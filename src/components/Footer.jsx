@@ -46,37 +46,12 @@ const Footer = () => {
           <div>
             <h3 className="mb-4 font-semibold text-gray-900 dark:text-white">Services</h3>
             <ul className="space-y-2 text-gray-500 dark:text-gray-300">
-              {/* All items link to the services section */}
-              <li>
-                <a href="#scratches" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
-                  Scratches
-                </a>
-              </li>
-              <li>
-                <a href="#headlights" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
-                  Headlight Restoration
-                </a>
-              </li>
-              <li>
-                <a href="#dent" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
-                  Dent Removal
-                </a>
-              </li>
-              <li>
-                <a href="#wheels" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
-                  Wheels &amp; Calipers
-                </a>
-              </li>
-              <li>
-                <a href="#lease" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
-                  Lease Returns
-                </a>
-              </li>
-              <li>
-                <a href="#bumper" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
-                  Bumper Scuffs
-                </a>
-              </li>
+              <li><a href="#scratches" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">Scratches</a></li>
+              <li><a href="#headlights" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">Headlight Restoration</a></li>
+              <li><a href="#dent" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">Dent Removal</a></li>
+              <li><a href="#wheels" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">Wheels &amp; Calipers</a></li>
+              <li><a href="#lease" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">Lease Returns</a></li>
+              <li><a href="#bumper" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">Bumper Scuffs</a></li>
             </ul>
           </div>
 
@@ -97,12 +72,8 @@ const Footer = () => {
                 </a>
               </li>
               <li>Address: Leicester, Wigston LE18 3WJ</li>
-              <li>
-                <Link to="/privacy-policy" className="hover:text-gray-300">Privacy Policy</Link> {/* Updated link */}
-              </li>
-              <li>
-                <Link to="/terms-conditions" className="hover:text-gray-300">Terms & Conditions</Link> {/* Updated link */}
-              </li>
+              <li><Link to="/privacy-policy" className="hover:text-gray-300">Privacy Policy</Link></li>
+              <li><Link to="/terms-conditions" className="hover:text-gray-300">Terms & Conditions</Link></li>
             </ul>
           </div>
 
@@ -124,6 +95,17 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="mt-12 border-t dark:border-neutral-800 pt-8 text-center text-gray-500 dark:text-gray-400">
           © {new Date().getFullYear()} SL Smart Repair. All rights reserved.
+          <span className="mx-1">|</span>
+          Powered by{" "}
+          <a
+            href="https://www.ansely.co.uk/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold hover:underline"
+            style={{ color: "#D10806" }}
+          >
+            Ansely
+          </a>
         </div>
       </div>
     </footer>
