@@ -1,18 +1,17 @@
-import React, { useEffect, useMemo, useRef, useState, Fragment } from "react";
+import React, {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  Fragment
+} from "react";
 import { FiArrowRight, FiArrowLeft, FiX } from "react-icons/fi";
 import { FaCar, FaLightbulb, FaHammer, FaCog, FaFileAlt } from "react-icons/fa";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-/**
- * ServicesWithModal (dark-mode ready)
- * - Card grid of services
- * - Click a card to open a modal
- * - In the modal: BEFORE & AFTER side-by-side (desktop) / stacked (mobile)
- * - Slider for multiple pairs
- * - ESC to close, overlay click to close, scroll lock while open
- */
+// 📝 Example SERVICES data with unique IDs
 
 const SERVICES = [
   {
@@ -194,9 +193,9 @@ const SERVICES = [
   },
 ];
 
+
 const byId = (arr, id) => arr.find((s) => s.id === id) || null;
 
-// Slider arrows
 function Arrow({ onClick, direction }) {
   return (
     <button
@@ -221,7 +220,6 @@ export default function ServicesWithModal() {
   const active = useMemo(() => byId(SERVICES, activeId), [activeId]);
   const dialogRef = useRef(null);
 
-  // lock scroll when modal open
   useEffect(() => {
     if (!active) return;
     const prev = document.body.style.overflow;
@@ -231,7 +229,6 @@ export default function ServicesWithModal() {
     };
   }, [active]);
 
-  // close on ESC + focus dialog
   useEffect(() => {
     if (!active) return;
     const onKey = (e) => e.key === "Escape" && setActiveId(null);
@@ -249,13 +246,12 @@ export default function ServicesWithModal() {
     slidesToScroll: 1,
     adaptiveHeight: true,
     nextArrow: <Arrow direction="next" />,
-    prevArrow: <Arrow direction="prev" />,
+    prevArrow: <Arrow direction="prev" />
   };
 
   return (
-    <section id="services" className="py-20">
+    <section id="services" className="py-20 scroll-mt-24">
       <div className="mx-auto max-w-7xl px-4">
-        {/* Heading */}
         <div className="mb-12 text-center">
           <h2
             className="mb-3 text-3xl font-bold md:text-4xl"
@@ -268,7 +264,7 @@ export default function ServicesWithModal() {
           </p>
         </div>
 
-        {/* Grid */}
+        {/* 🔴 Service cards with unique IDs */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((service) => {
             const Icon = service.icon;
@@ -280,12 +276,15 @@ export default function ServicesWithModal() {
             return (
               <article
                 key={service.id}
+                id={service.id} // ✅ add id here
                 onClick={() => setActiveId(service.id)}
                 className="group flex cursor-pointer flex-col gap-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:bg-neutral-900 dark:border-neutral-800"
               >
                 <header className="flex items-center gap-3">
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 dark:bg-neutral-800">
-                    {Icon ? <Icon className="text-black dark:text-white" /> : null}
+                    {Icon ? (
+                      <Icon className="text-black dark:text-white" />
+                    ) : null}
                   </span>
                   <h3
                     className="text-xl font-semibold"
@@ -295,7 +294,9 @@ export default function ServicesWithModal() {
                   </h3>
                 </header>
 
-                <p className="text-gray-500 dark:text-gray-300">{service.blurb}</p>
+                <p className="text-gray-500 dark:text-gray-300">
+                  {service.blurb}
+                </p>
 
                 <div className="relative overflow-hidden rounded-lg">
                   <img
@@ -324,21 +325,17 @@ export default function ServicesWithModal() {
       {/* Modal */}
       {active && (
         <Fragment>
-          {/* Overlay */}
           <div
             className="fixed inset-0 z-50 bg-black/50"
             aria-hidden="true"
             onClick={() => setActiveId(null)}
           />
-
-          {/* Dialog */}
           <div
             role="dialog"
             aria-modal="true"
             aria-labelledby="service-title"
             className="fixed left-1/2 top-1/2 z-50 w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white shadow-2xl dark:bg-neutral-950"
           >
-            {/* Header */}
             <div className="flex items-start justify-between gap-4 border-b px-6 py-5 border-gray-200 dark:border-neutral-800">
               <div className="flex items-center gap-3">
                 <span className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-gray-100 dark:bg-neutral-800">
@@ -366,15 +363,15 @@ export default function ServicesWithModal() {
               </button>
             </div>
 
-            {/* Scrollable content */}
             <div
               ref={dialogRef}
               tabIndex={-1}
               className="max-h-[80vh] overflow-y-auto px-6 py-6 focus:outline-none"
             >
-              <p className="text-lg text-gray-600 dark:text-gray-300">{active.blurb}</p>
+              <p className="text-lg text-gray-600 dark:text-gray-300">
+                {active.blurb}
+              </p>
 
-              {/* Slider */}
               <div className="mt-6 relative">
                 <Slider {...modalSliderSettings}>
                   {(active.gallery && active.gallery.length > 0
@@ -383,7 +380,6 @@ export default function ServicesWithModal() {
                     (pair, idx) => (
                       <div key={idx} className="px-2">
                         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                          {/* BEFORE */}
                           <div>
                             <h3
                               className="mb-2 text-base md:text-lg font-semibold"
@@ -393,7 +389,7 @@ export default function ServicesWithModal() {
                             </h3>
                             <div className="rounded-2xl h-[320px] md:h-[360px] flex items-center justify-center p-3 bg-gray-50 dark:bg-neutral-900">
                               <img
-                                src={pair.before || "/placeholder.svg?height=300&width=400"}
+                                src={pair.before}
                                 alt={`${active.title} — before`}
                                 className="h-full w-64 object-cover rounded-lg"
                                 loading="lazy"
@@ -401,14 +397,13 @@ export default function ServicesWithModal() {
                             </div>
                           </div>
 
-                          {/* AFTER */}
                           <div>
                             <h3 className="mb-2 text-base md:text-lg font-semibold text-green-600 dark:text-green-400">
                               After
                             </h3>
                             <div className="rounded-2xl h-[320px] md:h-[360px] flex items-center justify-center p-3 bg-gray-50 dark:bg-neutral-900">
                               <img
-                                src={pair.after || "/placeholder.svg?height=300&width=400"}
+                                src={pair.after}
                                 alt={`${active.title} — after`}
                                 className="h-full w-64 object-cover rounded-lg"
                                 loading="lazy"
@@ -422,23 +417,28 @@ export default function ServicesWithModal() {
                 </Slider>
               </div>
 
-              {/* About */}
               <div className="mt-6 rounded-lg bg-gray-100/70 dark:bg-neutral-900 p-6">
                 <h3 className="mb-3 text-lg font-semibold text-gray-900 dark:text-white">
                   About This Service
                 </h3>
-                <p className="mb-4 text-gray-600 dark:text-gray-300">{active.about}</p>
+                <p className="mb-4 text-gray-600 dark:text-gray-300">
+                  {active.about}
+                </p>
 
                 {!!active.steps?.length && (
                   <>
-                    <h4 className="mb-2 font-semibold text-gray-900 dark:text-white">Our Process:</h4>
+                    <h4 className="mb-2 font-semibold text-gray-900 dark:text-white">
+                      Our Process:
+                    </h4>
                     <ul className="space-y-2">
                       {active.steps.map((step, i) => (
                         <li key={i} className="flex items-start gap-2">
                           <span className="mt-0.5 inline-flex min-w-6 justify-center rounded border px-2 text-xs font-medium border-gray-300 dark:border-neutral-700 text-gray-700 dark:text-gray-200">
                             {i + 1}
                           </span>
-                          <span className="text-sm text-gray-600 dark:text-gray-300">{step}</span>
+                          <span className="text-sm text-gray-600 dark:text-gray-300">
+                            {step}
+                          </span>
                         </li>
                       ))}
                     </ul>
@@ -446,21 +446,19 @@ export default function ServicesWithModal() {
                 )}
               </div>
 
-              {/* Actions */}
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-               <a
-  href="#quote"
-  className="flex-1 inline-flex items-center justify-center rounded-md bg-black px-4 py-2 text-sm font-semibold text-white hover:opacity-90 dark:bg-white dark:text-black"
->
-  Get Quote for This Service
-</a>
-<a
-  href="#contact"
-  className="flex-1 inline-flex items-center justify-center rounded-md border border-[#D10806] bg-[#D10806] px-4 py-2 text-sm font-semibold text-white hover:opacity-90 dark:border-[#D10806] dark:bg-[#D10806] dark:text-white"
->
-  Book Consultation
-</a>
-
+                <a
+                  href="#quote"
+                  className="flex-1 inline-flex items-center justify-center rounded-md bg-black px-4 py-2 text-sm font-semibold text-white hover:opacity-90 dark:bg-white dark:text-black"
+                >
+                  Get Quote for This Service
+                </a>
+                <a
+                  href="#contact"
+                  className="flex-1 inline-flex items-center justify-center rounded-md border border-[#D10806] bg-[#D10806] px-4 py-2 text-sm font-semibold text-white hover:opacity-90"
+                >
+                  Book Consultation
+                </a>
               </div>
             </div>
           </div>
@@ -469,3 +467,12 @@ export default function ServicesWithModal() {
     </section>
   );
 }
+
+
+
+
+
+
+
+
+

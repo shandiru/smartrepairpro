@@ -48,32 +48,32 @@ const Footer = () => {
             <ul className="space-y-2 text-gray-500 dark:text-gray-300">
               {/* All items link to the services section */}
               <li>
-                <a href="#services" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
+                <a href="#scratches" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
                   Scratches
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
+                <a href="#headlights" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
                   Headlight Restoration
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
+                <a href="#dent" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
                   Dent Removal
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
+                <a href="#wheels" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
                   Wheels &amp; Calipers
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
+                <a href="#lease" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
                   Lease Returns
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
+                <a href="#bumper" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
                   Bumper Scuffs
                 </a>
               </li>
