@@ -26,19 +26,7 @@ const Navbar = () => {
             className="h-16 w-auto sm:h-20 hidden dark:block"
           />
 
-          {/* Wordmark: swap by theme */}
-          <img
-            src="/logoname.png"
-            alt=""
-            aria-hidden="true"
-            className="h-10 w-auto hidden sm:block dark:hidden"
-          />
-          <img
-            src="/logoname-dark.png"
-            alt=""
-            aria-hidden="true"
-            className="h-10 w-auto hidden sm:block dark:block"
-          />
+         
           <span className="sr-only">SL Smart Repair</span>
         </a>
 
