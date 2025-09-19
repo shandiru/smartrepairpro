@@ -19,7 +19,7 @@ const CARS = [
   {
     id: "c2-ariel-atom",
     brand: "Ariel",
-    title: "Atom 4",
+    title: "Atom",
     subtitle:
       "Lightweight Track Prep • Ceramic Protection • Performance Detail",
     img: "/C2.jpeg",
