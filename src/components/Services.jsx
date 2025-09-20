@@ -107,7 +107,7 @@ const SERVICES = [
     steps: [
       "Wheel removal and detailed inspection",
       "Scratch and kerb damage repair",
-      "urface preparation and priming",
+      "Surface preparation and priming",
       "Professional painting and finishing coat",
     ],
     gallery: [
@@ -184,7 +184,8 @@ const SERVICES = [
        { before: "dent-before-3.jpeg", after: "dent-after-3.jpeg" },
         { before: "scratches-before-5.jpeg", after: "scratches-after-5.jpeg" },
       { before: "dent-before-4.jpeg", after: "dent-after-4.jpeg" },
-       { before: "scratches-before-16.jpeg", after: "scratches-after-16.jpeg" },
+         { before: "scratches-before-2.jpeg", after: "scratches-after-2.jpeg" },
+   //    { before: "scratches-before-16.jpeg", after: "scratches-after-16.jpeg" },
         { before: "dent-before-2.jpeg", after: "dent-after-2.jpeg" },
      
       { before: "scratches-before-17.jpeg", after: "scratches-after-17.jpeg" },
