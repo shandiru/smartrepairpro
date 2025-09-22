@@ -136,8 +136,55 @@ const Pill = ({ children }) => (
   </span>
 );
 
-// ----- Card -----
+// Randomly select two points from the list of comments
+const getRandomDetails = () => {
+  const details = [
+    "Scratch Repair • Dent Removal • Paint Correction",
+    "Bumper Scuff Repair • Colour-Matched Respray • Ceramic Coat",
+    "Alloy Wheel Refurbishment • Kerb Damage Repair • Caliper Painting",
+    "Headlight Restoration • UV Protection • Machine Polishing",
+    "Dent Removal • Panel Refinishing • Paint Protection",
+    "Scratch Removal • Bumper Repair • Luxury Detail",
+    "Alloy Wheel Decontamination • Caliper Respray • Ceramic Coating",
+    "Scratch Repair • Full Paint Correction • Protective Sealant",
+    "Headlight Restoration • Scratch Removal • Paint Refinishing",
+    "Alloy Refurbishment • Caliper Painting • Ceramic Coat",
+    "Paint Correction • Luxury Detail • Ceramic Coating",
+    "Scratch Removal • Alloy Refurbishment • Bumper Respray",
+    "Dent Removal • Panel Respray • Paint Protection",
+    "Scratch Repair • Ceramic Coating • Exterior Detail",
+    "Alloy Refurbishment • Caliper Paint Finish • Scratch Repair",
+    "Bumper Scuff Repair • Machine Polishing • Paint Protection",
+    "Alloy Refurbishment • Caliper Paint • Scuff Removal",
+    "Scratch Repair • Headlight Restoration • Protective Coating",
+    "Dent Repair • Panel Respray • Scratch Removal",
+    "Commercial Dent Repair • Bumper Respray • Protective Sealant",
+    "Luxury Detail • Alloy Decontamination • Ceramic Coat",
+    "Scratch Repair • Paint Protection • Headlight Restoration",
+    "Paint Correction • Ceramic Coating • Luxury Detailing",
+    "Alloy Refurbishment • Scratch Repair • Ceramic Coat",
+    "Full Paint Correction • Ceramic Coating • Protective Sealant",
+    "Dent Removal • Scratch Repair • Paint Protection",
+    "Scratch Removal • Alloy Refurbishment • Ceramic Coating",
+    "Bumper Scuff Repair • Dent Removal • Machine Polishing",
+    "Alloy Wheel Repair • Scratch Removal • Colour-Matched Respray",
+    "Scuff Removal • Alloy Refurbishment • Protective Coating"
+  ];
+
+  // Randomly pick two distinct points
+  const first = details[Math.floor(Math.random() * details.length)];
+  let second;
+  do {
+    second = details[Math.floor(Math.random() * details.length)];
+  } while (first === second); // Ensure the two points are not the same
+
+  return `${first} • ${second}`;
+};
+
+// ----- Card ----- 
 const CarCard = ({ car }) => {
+  const carDetails = getRandomDetails(); // Get the random details for this car
+
   return (
     <article className="group grid h-full grid-rows-[auto,1fr] overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900" >
       {/* Image */}
@@ -163,7 +210,7 @@ const CarCard = ({ car }) => {
         </h3>
 
         <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-300 min-h-[40px]">
-          {car.subtitle}
+          {carDetails} {/* Display the random details */}
         </p>
 
         <div className="mt-auto" />
@@ -172,7 +219,7 @@ const CarCard = ({ car }) => {
   );
 };
 
-// ----- Section (Title + Swiper) -----
+// ----- Section (Title + Swiper) ----- 
 export default function AutoShowcaseCarousel({
   title = "Luxury Automotive Excellence",
   kbd = "Award-Winning Craftsmanship",

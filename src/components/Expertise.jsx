@@ -5,11 +5,11 @@ const points = [
   { id: 1, icon: FiSettings, text: "Firefighter by Trade – Serving the community with dedication and pride." },
   { id: 2, icon: FiUser, text: "Complimentary Car Wash – Every vehicle leaves looking as good as it runs." },
   { id: 3, icon: FiTruck, text: "Customer Gift Pack – A little thank-you to make your visit extra special." },
-  { id: 4, icon: FiAward, text: "Home-Based Workshop – Always on call… whether it’s the fire station or your motor misbehaving." },
+  { id: 4, icon: FiAward, text: "Home-Based Workshop – Always on Call Now with a comfortable waiting area while we fix your motor." },
 ];
 
 export default function Expertise({
-  imageSrcs = ["wash-1.jpeg","wash-2.jpeg","wash-3.jpeg","wash-4.jpeg","wash-5.jpeg","wash-6.jpeg","wash-7.jpeg","wash-8.jpeg","wash-9.jpeg","wash-10.jpeg"],
+  imageSrcs = ["wash-1.jpeg","wash-2.jpeg","wash-3.jpeg","wash-4.jpeg","wash-5.jpeg","wash-6.jpeg","wash-7.jpeg","wash-8.jpeg","wash-9.jpeg","wash-10.jpeg","wash12.jpeg","wash13.jpeg","wash14.jpeg","wash15.jpeg"],
   secondsPerImage = 4,
   gapPx = 16,
   slideHeight = { base: 240, md: 320, lg: 380 }, // px heights per breakpoint

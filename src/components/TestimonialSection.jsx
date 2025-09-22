@@ -194,11 +194,10 @@ export default function TestimonialSection() {
                 <button
                   key={idx}
                   onClick={() => setI(idx)}
-                  className={`h-2.5 w-2.5 rounded-full ${
-                    i === idx
+                  className={`h-2.5 w-2.5 rounded-full ${i === idx
                       ? "bg-[#D10806]"
                       : "bg-black/20 dark:bg-white/30"
-                  }`}
+                    }`}
                   aria-label={`Go to slide ${idx + 1}`}
                 />
               ))}
