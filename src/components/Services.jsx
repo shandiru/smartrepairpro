@@ -74,12 +74,12 @@ const SERVICES = [
     beforeImg: "dent-before-2.jpeg",
     afterImg: "dent-after-2.jpeg",
     about:
-      "We provide professional dent removal to restore your vehicle’s panels to their original shape. Whether caused by minor knocks, car park damage, or everyday accidents, we remove dents and smooth out bodywork to make your vehicle look its best again.",
+      "We provide professional dent repair to restore damaged panels to a like-new condition. Whether from minor knocks, car park damage or everyday accidents, our team carefully repairs the affected area and refinishes it so your vehicle looks flawless again.",
     steps: [
-      "Damage assessment and repair planning",
-      "Panel preparation and access set-up",
-      "Dent removal using specialist techniques",
-      "Final inspection and finishing touches",
+      " Damage Assessment",
+      "Panel Repair & Preparation",
+      "Priming & Painting",
+      " Finishing & Quality Check",
     ],
     gallery: [
       { before: "dent-before.jpeg", after: "dent-after.jpeg" },
