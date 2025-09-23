@@ -1,5 +1,7 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Quote } from "lucide-react";
+import AOS from "aos"; // Import AOS
+import "aos/dist/aos.css"; // Import AOS CSS
 
 // background image
 const BG_IMG = "/src/assets/testimonials-bg.jpg";
@@ -75,6 +77,11 @@ export default function TestimonialSection() {
   const touchStartX = useRef(null);
   const touchActive = useRef(false);
 
+  useEffect(() => {
+    // Initialize AOS
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
   const next = () => setI((p) => (p + 1) % DATA.length);
   const prev = () => setI((p) => (p - 1 + DATA.length) % DATA.length);
 
@@ -112,6 +119,7 @@ export default function TestimonialSection() {
           <h2
             id="testimonials-title"
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight"
+            data-aos="fade-up"
           >
             What People Are Saying
           </h2>
@@ -120,7 +128,7 @@ export default function TestimonialSection() {
             <span className="h-1 w-16 rounded-full bg-white/80" />
           </div>
 
-          <p className="mx-auto mt-5 max-w-3xl text-sm sm:text-base leading-6 sm:leading-7 text-white/90">
+          <p className="mx-auto mt-5 max-w-3xl text-sm sm:text-base leading-6 sm:leading-7 text-white/90" data-aos="fade-up" data-aos-delay="200">
             Real feedback from happy customers across the UK. Swipe on mobile or use the arrows.
           </p>
 
@@ -152,6 +160,7 @@ export default function TestimonialSection() {
               onTouchStart={onTouchStart}
               onTouchMove={onTouchMove}
               onTouchEnd={onTouchEnd}
+              data-aos="fade-up"
             >
               <div
                 className="transition-transform duration-200 will-change-transform"
@@ -163,7 +172,7 @@ export default function TestimonialSection() {
                 }}
               >
                 {/* avatar + badge */}
-                <div className="relative mx-auto mb-4 h-24 w-24">
+                <div className="relative mx-auto mb-4 h-24 w-24" data-aos="fade-right">
                   <img
                     src={item.avatar}
                     className="h-24 w-24 rounded-full ring-8 ring-white dark:ring-neutral-900 shadow-lg object-cover"
@@ -195,8 +204,8 @@ export default function TestimonialSection() {
                   key={idx}
                   onClick={() => setI(idx)}
                   className={`h-2.5 w-2.5 rounded-full ${i === idx
-                      ? "bg-[#D10806]"
-                      : "bg-black/20 dark:bg-white/30"
+                    ? "bg-[#D10806]"
+                    : "bg-black/20 dark:bg-white/30"
                     }`}
                   aria-label={`Go to slide ${idx + 1}`}
                 />

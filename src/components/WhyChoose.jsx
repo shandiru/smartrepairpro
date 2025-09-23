@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaCar, FaCog, FaFileAlt } from "react-icons/fa";
+import AOS from "aos"; // Import AOS
+import "aos/dist/aos.css"; // Import AOS CSS
 
 const WhyChoose = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 }); // Initialize AOS
+  }, []);
+
   return (
     <section className="py-20 bg-white dark:bg-neutral-900">
       <div className="container mx-auto px-4">
         {/* Heading */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-up">
           <h2
             className="text-3xl md:text-4xl font-bold"
             style={{ color: "#D10806" }}
@@ -18,7 +24,7 @@ const WhyChoose = () => {
         {/* Features Grid */}
         <div className="grid gap-12 md:grid-cols-3">
           {/* Item 1 */}
-          <div className="text-center">
+          <div className="text-center" data-aos="fade-up" data-aos-delay="300">
             <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 bg-gray-200 dark:bg-neutral-800 border border-gray-300 dark:border-neutral-700">
               <FaCar className="text-2xl text-black dark:text-white" />
             </div>
@@ -34,7 +40,7 @@ const WhyChoose = () => {
           </div>
 
           {/* Item 2 */}
-          <div className="text-center">
+          <div className="text-center" data-aos="fade-up" data-aos-delay="500">
             <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 bg-gray-200 dark:bg-neutral-800 border border-gray-300 dark:border-neutral-700">
               <FaCog className="text-2xl text-black dark:text-white" />
             </div>
@@ -50,7 +56,7 @@ const WhyChoose = () => {
           </div>
 
           {/* Item 3 */}
-          <div className="text-center">
+          <div className="text-center" data-aos="fade-up" data-aos-delay="700">
             <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 bg-gray-200 dark:bg-neutral-800 border border-gray-300 dark:border-neutral-700">
               <FaFileAlt className="text-2xl text-black dark:text-white" />
             </div>

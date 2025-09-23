@@ -71,7 +71,17 @@ const Footer = () => {
                   Sldetailingservices@gmail.com
                 </a>
               </li>
-              <li>Address: Leicester, Wigston LE18 3WJ</li>
+              <li>
+                Address:{" "}
+                <a
+                  href="https://www.google.com/maps?q=Leicester,+Wigston+LE18+3WJ"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#D10806] hover:underline"
+                >
+                  Leicester, Wigston LE18 3WJ
+                </a>
+              </li>
               <li><Link to="/privacy-policy" className="hover:text-gray-300">Privacy Policy</Link></li>
               <li><Link to="/terms-conditions" className="hover:text-gray-300">Terms & Conditions</Link></li>
             </ul>

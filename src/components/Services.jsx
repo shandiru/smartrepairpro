@@ -1,15 +1,11 @@
-import React, {
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-  Fragment
-} from "react";
+import React, { useEffect, useMemo, useRef, useState, Fragment } from "react";
 import { FiArrowRight, FiArrowLeft, FiX } from "react-icons/fi";
 import { FaCar, FaLightbulb, FaHammer, FaCog, FaFileAlt } from "react-icons/fa";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import AOS from "aos"; // Import AOS
+import "aos/dist/aos.css"; // Import AOS CSS
 
 // 📝 Example SERVICES data with unique IDs
 
@@ -222,20 +218,16 @@ export default function ServicesWithModal() {
   const dialogRef = useRef(null);
 
   useEffect(() => {
+    AOS.init({ duration: 1000, once: true }); // Initialize AOS with duration of 1000ms
+  }, []);
+
+  useEffect(() => {
     if (!active) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = prev;
     };
-  }, [active]);
-
-  useEffect(() => {
-    if (!active) return;
-    const onKey = (e) => e.key === "Escape" && setActiveId(null);
-    window.addEventListener("keydown", onKey);
-    setTimeout(() => dialogRef.current?.focus(), 0);
-    return () => window.removeEventListener("keydown", onKey);
   }, [active]);
 
   const modalSliderSettings = {
@@ -247,17 +239,14 @@ export default function ServicesWithModal() {
     slidesToScroll: 1,
     adaptiveHeight: true,
     nextArrow: <Arrow direction="next" />,
-    prevArrow: <Arrow direction="prev" />
+    prevArrow: <Arrow direction="prev" />,
   };
 
   return (
     <section id="services" className="py-20 scroll-mt-24">
       <div className="mx-auto max-w-7xl px-4">
-        <div className="mb-12 text-center">
-          <h2
-            className="mb-3 text-3xl font-bold md:text-4xl"
-            style={{ color: "#D10806" }}
-          >
+        <div className="mb-12 text-center" data-aos="fade-up">
+          <h2 className="mb-3 text-3xl font-bold md:text-4xl" style={{ color: "#D10806" }}>
             Our Expert Services
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-gray-500 dark:text-gray-300">
@@ -265,39 +254,31 @@ export default function ServicesWithModal() {
           </p>
         </div>
 
-        {/* 🔴 Service cards with unique IDs */}
+        {/* Service cards with unique IDs */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((service) => {
             const Icon = service.icon;
-            const cardPreview =
-              service.gallery?.[0]?.before ||
-              service.beforeImg ||
-              "/placeholder.svg?height=300&width=400";
+            const cardPreview = service.gallery?.[0]?.before || service.beforeImg || "/placeholder.svg?height=300&width=400";
 
             return (
               <article
                 key={service.id}
-                id={service.id} // ✅ add id here
+                id={service.id}
                 onClick={() => setActiveId(service.id)}
                 className="group flex cursor-pointer flex-col gap-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:bg-neutral-900 dark:border-neutral-800"
+                data-aos="fade-up"
+                data-aos-delay="300" // Delay to stagger animations
               >
                 <header className="flex items-center gap-3">
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 dark:bg-neutral-800">
-                    {Icon ? (
-                      <Icon className="text-black dark:text-white" />
-                    ) : null}
+                    {Icon ? <Icon className="text-black dark:text-white" /> : null}
                   </span>
-                  <h3
-                    className="text-xl font-semibold"
-                    style={{ color: "#D10806" }}
-                  >
+                  <h3 className="text-xl font-semibold" style={{ color: "#D10806" }}>
                     {service.title}
                   </h3>
                 </header>
 
-                <p className="text-gray-500 dark:text-gray-300">
-                  {service.blurb}
-                </p>
+                <p className="text-gray-500 dark:text-gray-300">{service.blurb}</p>
 
                 <div className="relative overflow-hidden rounded-lg">
                   <img
@@ -326,32 +307,23 @@ export default function ServicesWithModal() {
       {/* Modal */}
       {active && (
         <Fragment>
-          <div
-            className="fixed inset-0 z-50 bg-black/50"
-            aria-hidden="true"
-            onClick={() => setActiveId(null)}
-          />
+          <div className="fixed inset-0 z-50 bg-black/50" aria-hidden="true" onClick={() => setActiveId(null)} />
           <div
             role="dialog"
             aria-modal="true"
             aria-labelledby="service-title"
             className="fixed left-1/2 top-1/2 z-50 w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white shadow-2xl dark:bg-neutral-950"
+            data-aos="fade-in" // Apply fade-in animation to modal
           >
             <div className="flex items-start justify-between gap-4 border-b px-6 py-5 border-gray-200 dark:border-neutral-800">
               <div className="flex items-center gap-3">
                 <span className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-gray-100 dark:bg-neutral-800">
-                  {active.icon
-                    ? (() => {
-                        const Icon = active.icon;
-                        return <Icon className="text-black dark:text-white" />;
-                      })()
-                    : null}
+                  {active.icon ? (() => {
+                    const Icon = active.icon;
+                    return <Icon className="text-black dark:text-white" />;
+                  })() : null}
                 </span>
-                <h2
-                  id="service-title"
-                  className="text-2xl font-semibold"
-                  style={{ color: "#D10806" }}
-                >
+                <h2 id="service-title" className="text-2xl font-semibold" style={{ color: "#D10806" }}>
                   {active.title}
                 </h2>
               </div>
@@ -364,82 +336,53 @@ export default function ServicesWithModal() {
               </button>
             </div>
 
-            <div
-              ref={dialogRef}
-              tabIndex={-1}
-              className="max-h-[80vh] overflow-y-auto px-6 py-6 focus:outline-none"
-            >
-              <p className="text-lg text-gray-600 dark:text-gray-300">
-                {active.blurb}
-              </p>
+            <div ref={dialogRef} tabIndex={-1} className="max-h-[80vh] overflow-y-auto px-6 py-6 focus:outline-none">
+              <p className="text-lg text-gray-600 dark:text-gray-300">{active.blurb}</p>
 
               <div className="mt-6 relative">
                 <Slider {...modalSliderSettings}>
                   {(active.gallery && active.gallery.length > 0
                     ? active.gallery
-                    : [{ before: active.beforeImg, after: active.afterImg }]).map(
-                    (pair, idx) => (
-                      <div key={idx} className="px-2">
-                        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                          <div>
-                            <h3
-                              className="mb-2 text-base md:text-lg font-semibold"
-                              style={{ color: "#D10806" }}
-                            >
-                              Before
-                            </h3>
-                            <div className="rounded-2xl h-[320px] md:h-[360px] flex items-center justify-center p-3 bg-gray-50 dark:bg-neutral-900">
-                              <img
-                                src={pair.before}
-                                alt={`${active.title} — before`}
-                                className="h-full w-64 object-cover rounded-lg"
-                                loading="lazy"
-                              />
-                            </div>
+                    : [{ before: active.beforeImg, after: active.afterImg }]).map((pair, idx) => (
+                    <div key={idx} className="px-2">
+                      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                        <div>
+                          <h3 className="mb-2 text-base md:text-lg font-semibold" style={{ color: "#D10806" }}>
+                            Before
+                          </h3>
+                          <div className="rounded-2xl h-[320px] md:h-[360px] flex items-center justify-center p-3 bg-gray-50 dark:bg-neutral-900">
+                            <img src={pair.before} alt={`${active.title} — before`} className="h-full w-64 object-cover rounded-lg" loading="lazy" />
                           </div>
+                        </div>
 
-                          <div>
-                            <h3 className="mb-2 text-base md:text-lg font-semibold text-green-600 dark:text-green-400">
-                              After
-                            </h3>
-                            <div className="rounded-2xl h-[320px] md:h-[360px] flex items-center justify-center p-3 bg-gray-50 dark:bg-neutral-900">
-                              <img
-                                src={pair.after}
-                                alt={`${active.title} — after`}
-                                className="h-full w-64 object-cover rounded-lg"
-                                loading="lazy"
-                              />
-                            </div>
+                        <div>
+                          <h3 className="mb-2 text-base md:text-lg font-semibold text-green-600 dark:text-green-400">
+                            After
+                          </h3>
+                          <div className="rounded-2xl h-[320px] md:h-[360px] flex items-center justify-center p-3 bg-gray-50 dark:bg-neutral-900">
+                            <img src={pair.after} alt={`${active.title} — after`} className="h-full w-64 object-cover rounded-lg" loading="lazy" />
                           </div>
                         </div>
                       </div>
-                    )
-                  )}
+                    </div>
+                  ))}
                 </Slider>
               </div>
 
               <div className="mt-6 rounded-lg bg-gray-100/70 dark:bg-neutral-900 p-6">
-                <h3 className="mb-3 text-lg font-semibold text-gray-900 dark:text-white">
-                  About This Service
-                </h3>
-                <p className="mb-4 text-gray-600 dark:text-gray-300">
-                  {active.about}
-                </p>
+                <h3 className="mb-3 text-lg font-semibold text-gray-900 dark:text-white">About This Service</h3>
+                <p className="mb-4 text-gray-600 dark:text-gray-300">{active.about}</p>
 
                 {!!active.steps?.length && (
                   <>
-                    <h4 className="mb-2 font-semibold text-gray-900 dark:text-white">
-                      Our Process:
-                    </h4>
+                    <h4 className="mb-2 font-semibold text-gray-900 dark:text-white">Our Process:</h4>
                     <ul className="space-y-2">
                       {active.steps.map((step, i) => (
                         <li key={i} className="flex items-start gap-2">
                           <span className="mt-0.5 inline-flex min-w-6 justify-center rounded border px-2 text-xs font-medium border-gray-300 dark:border-neutral-700 text-gray-700 dark:text-gray-200">
                             {i + 1}
                           </span>
-                          <span className="text-sm text-gray-600 dark:text-gray-300">
-                            {step}
-                          </span>
+                          <span className="text-sm text-gray-600 dark:text-gray-300">{step}</span>
                         </li>
                       ))}
                     </ul>
@@ -468,12 +411,3 @@ export default function ServicesWithModal() {
     </section>
   );
 }
-
-
-
-
-
-
-
-
-

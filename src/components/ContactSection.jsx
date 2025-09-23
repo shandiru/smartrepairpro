@@ -1,5 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import emailjs from "emailjs-com";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
 
 const HOURS = [
   { day: "Monday", time: "9:00 am – 5:00 pm" },
@@ -123,6 +125,11 @@ export default function ContactSection() {
 
   const isSending = status.state === "sending";
 
+  // Initialize AOS when component is mounted
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
     <section
       id="contact"
@@ -130,19 +137,22 @@ export default function ContactSection() {
     >
       <div className="max-w-6xl mx-auto">
         <h2
+          data-aos="fade-up"
           className="text-center text-2xl md:text-3xl font-bold"
           style={{ color: "#D10806" }}
         >
           Ready to Get Your Car Fixed?
         </h2>
-        <p className="text-center text-gray-500 dark:text-gray-400 mt-2 max-w-2xl mx-auto">
-          Contact us to schedule a mobile repair service, ask questions, or
-          request a quote. Our team is ready to help.
+        <p data-aos="fade-up" className="text-center text-gray-500 dark:text-gray-400 mt-2 max-w-2xl mx-auto">
+          Contact us to schedule a mobile repair service, ask questions, or request a quote. Our team is ready to help.
         </p>
 
         <div className="mt-10 grid md:grid-cols-2 gap-8">
           {/* Left Side - Contact Information */}
-          <div className="bg-white dark:bg-neutral-800 rounded-2xl shadow p-6 md:p-8 transition-colors duration-300">
+          <div
+            data-aos="fade-right"
+            className="bg-white dark:bg-neutral-800 rounded-2xl shadow p-6 md:p-8 transition-colors duration-300"
+          >
             <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
               Contact Information
             </h3>
@@ -196,7 +206,10 @@ export default function ContactSection() {
           </div>
 
           {/* Right Side - Contact Form */}
-          <div className="bg-white dark:bg-neutral-800 rounded-2xl shadow p-6 md:p-8 transition-colors duration-300">
+          <div
+            data-aos="fade-left"
+            className="bg-white dark:bg-neutral-800 rounded-2xl shadow p-6 md:p-8 transition-colors duration-300"
+          >
             {/* Inline status message */}
             <div
               className="mb-4"
@@ -223,14 +236,13 @@ export default function ContactSection() {
 
             <form ref={formRef} onSubmit={sendEmail} className="space-y-4" noValidate>
               {/* Honeypot (should stay hidden) */}
-              <input type="text" name="website" tabIndex="-1" autoComplete="off"
-                     className="hidden" />
+              <input type="text" name="website" tabIndex="-1" autoComplete="off" className="hidden" />
 
               <div>
                 <input
                   type="text"
                   name="name"
-                  placeholder="Your name"
+                  placeholder="Your name*"
                   required
                   onBlur={handleBlur}
                   aria-invalid={!!errors.name}
@@ -247,7 +259,7 @@ export default function ContactSection() {
                 <input
                   type="email"
                   name="email"
-                  placeholder="your.email@example.com"
+                  placeholder="your.email@example.com*"
                   required
                   inputMode="email"
                   onBlur={handleBlur}
@@ -267,7 +279,7 @@ export default function ContactSection() {
                 <input
                   type="tel"
                   name="phone"
-                  placeholder="07912 345 678 or +44 7912 345 678"
+                  placeholder="07912 345 678 or +44 7912 345 678*"
                   inputMode="tel"
                   onBlur={handleBlur}
                   aria-invalid={!!errors.phone}
@@ -286,19 +298,19 @@ export default function ContactSection() {
                 <input
                   type="text"
                   name="car_registration"
-                  placeholder="Car Registration"
+                  placeholder="Car Registration*"
                   className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-700"
                 />
                 <input
                   type="text"
                   name="make_model"
-                  placeholder="Make and Model"
+                  placeholder="Make and Model*"
                   className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-700"
                 />
                 <input
                   type="text"
                   name="location"
-                  placeholder="Location"
+                  placeholder="Location*"
                   className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-700"
                 />
               </div>
@@ -306,7 +318,7 @@ export default function ContactSection() {
               <div>
                 <textarea
                   name="message"
-                  placeholder="Tell us about your car issue"
+                  placeholder="Tell us about your car issue*"
                   rows="4"
                   required
                   onBlur={handleBlur}

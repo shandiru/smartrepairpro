@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FiSettings, FiUser, FiTruck, FiAward } from "react-icons/fi";
+import AOS from "aos"; // Import AOS
+import "aos/dist/aos.css"; // Import AOS CSS
 
 const points = [
   { id: 1, icon: FiSettings, text: "Firefighter by Trade – Serving the community with dedication and pride." },
@@ -9,30 +11,26 @@ const points = [
 ];
 
 export default function Expertise({
-  imageSrcs = ["wash-1.jpeg","wash-2.jpeg","wash-3.jpeg","wash-4.jpeg","wash-5.jpeg","wash-6.jpeg","wash-7.jpeg","wash-8.jpeg","wash-9.jpeg","wash-10.jpeg","wash12.jpeg","wash13.jpeg","wash14.jpeg","wash15.jpeg"],
+  imageSrcs = ["wash-1.jpeg", "wash-2.jpeg", "wash-3.jpeg", "wash-4.jpeg", "wash-5.jpeg", "wash-6.jpeg", "wash-7.jpeg", "wash-8.jpeg", "wash-9.jpeg", "wash-10.jpeg", "wash12.jpeg", "wash13.jpeg", "wash14.jpeg", "wash15.jpeg"],
   secondsPerImage = 4,
   gapPx = 16,
   slideHeight = { base: 240, md: 320, lg: 380 }, // px heights per breakpoint
 }) {
   const n = imageSrcs.length || 1;
 
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true }); // Initialize AOS on mount
+  }, []);
+
   return (
     <section className="w-full py-12 bg-white dark:bg-neutral-900" id="Why-Choose-Us">
       <div className="mx-auto max-w-7xl px-4">
         <div className="grid items-center gap-8 lg:grid-cols-2">
           {/* Left: continuous auto-scroller with fixed height */}
-          <div
-            className="relative overflow-hidden rounded-lg group"
-            style={{ "--gap": `${gapPx}px` }}
-          >
+          <div className="relative overflow-hidden rounded-lg group" style={{ "--gap": `${gapPx}px` }} data-aos="fade-right">
             {/* Fixed-height frame (prevents jumpiness) */}
             <div
-              className="
-                relative
-                h-[var(--slide-h)]
-                md:h-[var(--slide-h-md)]
-                lg:h-[var(--slide-h-lg)]
-              "
+              className="relative h-[var(--slide-h)] md:h-[var(--slide-h-md)] lg:h-[var(--slide-h-lg)]"
               style={{
                 // set CSS vars for responsive heights
                 "--slide-h": `${slideHeight.base}px`,
@@ -84,10 +82,8 @@ export default function Expertise({
           </div>
 
           {/* Right: content */}
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-[#D10806]">
-  Always Ready, Always Nearby
-</h2>
+          <div data-aos="fade-left" data-aos-delay="300">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#D10806]">Always Ready, Always Nearby</h2>
 
             <div className="mt-1 h-0.5 w-14 bg-red-500" />
             <p className="mt-4 text-gray-600 dark:text-gray-300 text-base leading-relaxed max-w-2xl">
@@ -98,7 +94,7 @@ export default function Expertise({
 
             <ul className="mt-8 divide-y divide-gray-200 dark:divide-neutral-800 border-t border-b border-gray-200 dark:border-neutral-800">
               {points.map(({ id, icon: Icon, text }) => (
-                <li key={id} className="flex items-start gap-4 py-5">
+                <li key={id} className="flex items-start gap-4 py-5" data-aos="fade-up" data-aos-delay={id * 200}>
                   <span className="inline-flex h-9 w-9 flex-none items-center justify-center rounded-md border border-red-200 text-red-500 dark:border-red-400 dark:text-red-400">
                     <Icon className="h-5 w-5" />
                   </span>
