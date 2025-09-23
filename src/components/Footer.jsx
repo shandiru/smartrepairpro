@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-white dark:bg-neutral-950 border-t dark:border-neutral-800 py-14">
+    <footer className="bg-white dark:bg-neutral-950 border-t dark:border-neutral-800 py-8">
       <div className="mx-auto max-w-[1400px] px-6">
         {/* Top Grid */}
         <div className="grid gap-12 md:grid-cols-4">
@@ -61,13 +61,13 @@ const Footer = () => {
             <ul className="space-y-2 text-gray-500 dark:text-gray-300">
               <li>
                 Phone:{" "}
-                <a href="tel:07989668752" className="hover:text-gray-700 dark:hover:text-gray-200">
+                <a href="tel:07989668752" className="hover:text-gray-700 dark:hover:text-gray-200 hover:underline">
                   07989 668752
                 </a>
               </li>
               <li>
                 Email:{" "}
-                <a href="mailto:Sldetailingservices@gmail.com" className="hover:text-gray-700 dark:hover:text-gray-200">
+                <a href="mailto:Sldetailingservices@gmail.com" className="hover:text-gray-700 dark:hover:text-gray-200 hover:underline">
                   Sldetailingservices@gmail.com
                 </a>
               </li>
@@ -77,7 +77,7 @@ const Footer = () => {
                   href="https://www.google.com/maps?q=Leicester,+Wigston+LE18+3WJ"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#D10806] hover:underline"
+                  className="hover:text-gray-700 dark:hover:text-gray-200 hover:underline"
                 >
                   Leicester, Wigston LE18 3WJ
                 </a>
