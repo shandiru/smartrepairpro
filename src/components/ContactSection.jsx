@@ -100,10 +100,10 @@ export default function ContactSection() {
 
     try {
       await emailjs.sendForm(
-        "service_imwsuei",   // Your EmailJS service ID
-        "template_ph7ntdh",  // Your EmailJS template ID
+        "service_404lxe7",   // Your EmailJS service ID
+        "template_htvvsej",  // Your EmailJS template ID
         formRef.current,
-        "zGzzK5w9VeN4xE84h"  // Your EmailJS public key
+        "tmUgtXKf_TwGrV1iE"  // Your EmailJS public key
       );
 
       setStatus({
