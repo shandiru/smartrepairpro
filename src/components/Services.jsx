@@ -243,7 +243,7 @@ export default function ServicesWithModal() {
   };
 
   return (
-    <section id="services" className="py-20 scroll-mt-24">
+    <section id="services" className="py-20 scroll mt-12 md:mt-42">
       <div className="mx-auto max-w-7xl px-4">
         <div className="mb-12 text-center" data-aos="fade-up">
           <h2 className="mb-3 text-3xl font-bold md:text-4xl" style={{ color: "#D10806" }}>
