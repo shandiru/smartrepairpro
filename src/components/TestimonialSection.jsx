@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { Quote } from "lucide-react";
 import AOS from "aos"; // Import AOS
 import "aos/dist/aos.css"; // Import AOS CSS
+import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
 
 // background image
 const BG_IMG = "/src/assets/testimonials-bg.jpg";
@@ -137,24 +138,25 @@ export default function TestimonialSection() {
             {/* desktop/tablet arrows */}
             <button
               onClick={prev}
-              className="hidden sm:flex absolute left-4 sm:left-8 md:-left-10 lg:-left-12 top-1/2 -translate-y-1/2 h-14 w-14 items-center justify-center rounded bg-white text-black shadow hover:bg-gray-100 focus:outline-none
-                         dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800"
+              className="hidden sm:flex absolute left-4 sm:left-8 md:-left-10 lg:-left-12 top-1/2 -translate-y-1/2 h-14 w-14 items-center cursor-pointer active:bg-gray-200 justify-center rounded bg-white text-black shadow hover:bg-gray-200 focus:outline-none
+             dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800"
               aria-label="Previous"
             >
-              ‹
+              <HiChevronLeft className="w-7 h-7 hover:-translate-x-2 active:translate-x-2 duration-300 transform transform-all" />
             </button>
+
             <button
               onClick={next}
-              className="hidden sm:flex absolute right-4 sm:right-8 md:-right-10 lg:-right-12 top-1/2 -translate-y-1/2 h-14 w-14 items-center justify-center rounded bg-white text-black shadow hover:bg-gray-100 focus:outline-none
-                         dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800"
+              className="hidden sm:flex absolute right-4 sm:right-8 md:-right-10 lg:-right-12 top-1/2 -translate-y-1/2 h-14 w-14 items-center justify-center rounded bg-white text-black shadow hover:bg-gray-200 active:bg-gray-200 cursor-pointer focus:outline-none
+             dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800"
               aria-label="Next"
             >
-              ›
+              <HiChevronRight className="w-7 h-7 hover:translate-x-2 active:translate-x-2 duration-300 transform transform-all" />
             </button>
 
             {/* current slide */}
             <div
-              className="mx-auto max-w-5xl rounded-lg bg-white px-4 py-10 shadow-md sm:px-8 md:px-12 lg:px-16 overflow-hidden
+              className="mx-auto max-w-5xl rounded-lg bg-white px-4 py-10 shadow-md hover:shadow-lg hover:shadow-gray-300 active:shadow-lg active:shadow-gray-300 sm:px-8 md:px-12 lg:px-16 overflow-hidden
                          text-gray-800 dark:bg-neutral-900 dark:text-gray-100"
               style={{ minHeight: 380 }}
               onTouchStart={onTouchStart}

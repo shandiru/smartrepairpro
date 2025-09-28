@@ -34,7 +34,7 @@ const Pill = ({ children }) => (
 
 const CarCard = ({ car }) => {
   return (
-    <article className="group grid h-full grid-rows-[auto,1fr] overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900">
+    <article className="group grid h-full grid-rows-[auto,1fr] overflow-hidden rounded-2xl border shadow-lg hover:shadow-lg hover:shadow-red-600 active:shadow-lg active:shadow-red-600 border-zinc-200 bg-white hover:rounded-lg  transition dark:border-zinc-800 dark:bg-zinc-900">
       <div className="relative aspect-[16/10] w-full overflow-hidden">
         <img src={car.img} alt={car.title} className="h-full w-full object-cover transform transition-all duration-700 ease-in-out group-hover:scale-110 group-hover:opacity-95" loading="lazy" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-black/0 transition-opacity duration-700 group-hover:opacity-70" />
@@ -63,7 +63,7 @@ export default function AutoShowcaseCarousel({
 
   return (
     <section className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8" id="portfolio">
-      <div className="mx-auto max-w-3xl text-center">
+      <div className="mx-auto max-w-3xl text-center ">
         <span className="inline-flex items-center justify-center rounded-full border border-red-200 bg-red-50 px-3 py-1 text-[11px] font-semibold text-red-700 dark:border-red-900/60 dark:bg-red-950/40 dark:text-red-300">
           {kbd}
         </span>
