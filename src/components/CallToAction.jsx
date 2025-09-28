@@ -28,8 +28,7 @@ const CallToAction = ({
           {/* Filled button */}
           <a
             href="#contact"
-            className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-lg font-semibold shadow-sm transition text-white hover:opacity-90"
-            style={{ backgroundColor: "#D10806" }}
+            className="inline-flex items-center justify-center rounded-xl bg-[#D10806] px-6 py-3 text-lg font-semibold shadow-lg transition text-white hover:bg-red-600/100"
           >
             Get Free Quote
           </a>

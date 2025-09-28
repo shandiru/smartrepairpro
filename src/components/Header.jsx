@@ -49,23 +49,27 @@ const HeroSection = () => {
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           {/* Primary CTA */}
+
           <a
             href="#services"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 text-white font-semibold rounded-md transition hover:opacity-90"
+            className="group inline-flex items-center justify-center gap-2 px-6 py-3 text-white font-semibold rounded-md transition hover:opacity-90"
             style={{ backgroundColor: "#D10806" }}
             data-aos="fade-up"
             data-aos-delay="600"
             data-aos-duration="1500"
           >
-            View Our Services
-            <FiArrowRight className="text-lg" />
+            <span className="transition-transform duration-300 group-hover:-translate-x-2 group-active:-translate-x-2">
+              View Our Services
+            </span>
+            <FiArrowRight className="text-lg mt-1 transition-transform duration-300 group-hover:translate-x-1 group-active:translate-x-1" />
           </a>
+
 
           {/* Secondary CTA */}
           <a
             href="#contact"
             className="inline-flex items-center justify-center gap-2 px-6 py-3
-            border border-gray-300 bg-white text-gray-700 hover:bg-gray-100
+            border border-gray-300 bg-white text-gray-700 hover:bg-red-600 hover:border-gray-300 hover:text-white
             dark:border-neutral-700 dark:bg-neutral-900 dark:text-gray-100 dark:hover:bg-neutral-800
             font-semibold rounded-md transition"
             data-aos="fade-up"
