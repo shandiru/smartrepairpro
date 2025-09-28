@@ -5,6 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import AOS from "aos"; // Import AOS for animations
 import "aos/dist/aos.css"; // Import AOS CSS
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const CARS = [
   { id: "c1-aston-dbs", brand: "Aston Martin", title: "DBS Superleggera", subtitle: "Bumper Scuff Repair • Colour-Matched Respray", img: "/C1.jpeg" },
@@ -72,15 +73,18 @@ export default function AutoShowcaseCarousel({
       </div>
 
       <div className="relative mt-10">
-        <button className="nav-prev absolute -left-3 top-1/2 z-10 -translate-y-1/2 rounded-full border border-zinc-300 bg-white/90 p-2 shadow backdrop-blur transition hover:scale-105 hover:bg-white dark:border-zinc-700 dark:bg-zinc-800/90" aria-label="Previous">
-          <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M15 18l-6-6 6-6" />
-          </svg>
+        <button
+          className="nav-prev absolute -left-3 top-1/2 z-10 -translate-y-1/2  rounded-full border cursor-pointer border-zinc-300 bg-white/90 p-2 shadow backdrop-blur transition hover:scale-105 hover:bg-white dark:border-zinc-700 dark:bg-zinc-800/90"
+          aria-label="Previous"
+        >
+          <FiChevronLeft className="h-5 w-5 hover:-translate-x-2 active:-translate-x-2 duration-300 transform transfrom-all" />
         </button>
-        <button className="nav-next absolute -right-3 top-1/2 z-10 -translate-y-1/2 rounded-full border border-zinc-300 bg-white/90 p-2 shadow backdrop-blur transition hover:scale-105 hover:bg-white dark:border-zinc-700 dark:bg-zinc-800/90" aria-label="Next">
-          <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M9 6l6 6-6 6" />
-          </svg>
+
+        <button
+          className="nav-next absolute -right-3 top-1/2 z-10 -translate-y-1/2 rounded-full cursor-pointer  border border-zinc-300 bg-white/90 p-2 shadow backdrop-blur transition hover:scale-105 hover:bg-white dark:border-zinc-700 dark:bg-zinc-800/90"
+          aria-label="Next"
+        >
+          <FiChevronRight className="h-5 w-5 hover:translate-x-2 active:translate-x-2 duration-300 transform transfrom-all" />
         </button>
 
         <Swiper
