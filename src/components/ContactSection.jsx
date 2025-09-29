@@ -151,7 +151,7 @@ export default function ContactSection() {
           {/* Left Side - Contact Information */}
           <div
             data-aos="fade-right"
-            className="bg-white dark:bg-neutral-800 rounded-2xl shadow p-6 md:p-8 transition-colors duration-300"
+            className="bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-6 md:p-8 transition-colors duration-300"
           >
             <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
               Contact Information
@@ -208,7 +208,7 @@ export default function ContactSection() {
           {/* Right Side - Contact Form */}
           <div
             data-aos="fade-left"
-            className="bg-white dark:bg-neutral-800 rounded-2xl shadow p-6 md:p-8 transition-colors duration-300"
+            className="bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-6 md:p-8 transition-colors duration-300"
           >
             {/* Inline status message */}
             <div
@@ -354,10 +354,23 @@ export default function ContactSection() {
                   </>
                 ) : (
                   <>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                    <span className="transition-transform duration-300 group-hover:-translate-x-2">
+                      Send Message
+                    </span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                      />
                     </svg>
-                    Send Message
                   </>
                 )}
               </button>

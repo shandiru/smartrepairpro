@@ -7,22 +7,22 @@ import AOS from "aos"; // Import AOS for animations
 import "aos/dist/aos.css"; // Import AOS CSS
 
 const CARS = [
-  { id: "c1-aston-dbs", brand: "Aston Martin", title: "DBS Superleggera", subtitle: "Bumper Scuff Repair  • Paint Correction • Wheel Detailing", img: "/C1.jpeg" },
-  { id: "c2-ariel-atom", brand: "Ariel", title: "Atom", subtitle: "Paint Protection • Performance Detail", img: "/C2.jpeg" },
-  { id: "c3-bentley-gt", brand: "Bentley", title: "Continental GT", subtitle: "Luxury Detail • Alloy Decontamination • Wheel Detailing", img: "/C3.jpeg" },
-  { id: "c4-rolls-phantom", brand: "Rolls-Royce", title: "Phantom", subtitle: "Executive Detailing • One-Step Polish • Ceramic Protection", img: "/C4.jpeg" },
-  { id: "c5-aston-vantage", brand: "Aston Martin", title: "Vantage Roadster", subtitle: "Swirl Removal • Paint Enhancement • Ceramic Sealant", img: "/C5.jpeg" },
-  { id: "c6-ferrari-296", brand: "Ferrari", title: "296 GTB", subtitle: "Paint Protection Film • Paint Protection • Wheel Detailing", img: "/C6.jpeg" },
-  { id: "c7-bentley-gtc", brand: "Bentley", title: "Continental GTC", subtitle: "Paint Enhancement • Convertible Detailing ", img: "/C7.jpeg" },
-  { id: "c8-mercedes-sl63", brand: "Mercedes-Benz", title: "SL 63 AMG", subtitle: "Wheel Detailing  • Multi-Stage Paint Correction ", img: "/C8.jpeg" },
-  { id: "c9-vauxhall-vx220", brand: "Vauxhall", title: "VX220", subtitle: "Full Paint Correction • One-Step Polishl • Bumper Scuff Repair", img: "/C9.jpeg" },
-  { id: "c10-porsche-911", brand: "Porsche", title: "911 Carrera (991)", subtitle: "Decon Wash • One-Step Polish • Ceramic Sealant", img: "/C10.jpeg" },
-  { id: "c11-ford-mustang", brand: "Ford", title: "Mustang Convertible (S197)", subtitle: "Multi-Stage Paint Correction • Paint Enhancement", img: "/C11.jpeg" },
-  { id: "c12-mclaren-720s", brand: "McLaren", title: "720S Spider", subtitle: "Exotic Supercar Detail • Alloy Refurbishment", img: "/C12.jpeg" },
-  { id: "c13-ford-escort", brand: "Ford", title: "Escort XR3i", subtitle: "Classic Restoration • Interior Revival", img: "/C13.jpeg" },
-  { id: "c14-rolls-wraith", brand: "Rolls-Royce", title: "Wraith", subtitle: "Multi-Stage Polish • Wheel Detailing ", img: "/C14.jpeg" },
-  { id: "c15-ferrari-roma", brand: "Ferrari", title: "Roma", subtitle: "Wheel Detailing • Ceramic Protection ", img: "/C15.jpeg" },
-  { id: "c16-porsche-macan", brand: "Porsche", title: "Macan", subtitle: "Paint Correction • Ceramic Wheel Coat", img: "/C16.jpeg" },
+  { id: "c1-aston-dbs", brand: "Aston Martin", title: "DBS Superleggera", subtitle: "Bumper Scuff Repair • Colour-Matched Respray", img: "/C1.jpeg" },
+  { id: "c2-ariel-atom", brand: "Ariel", title: "Atom", subtitle: "Alloy Wheel Refurbishment • Kerb Damage Repair", img: "/C2.jpeg" },
+  { id: "c3-bentley-gt", brand: "Bentley", title: "Continental GT", subtitle: "Headlight Restoration • UV Protection", img: "/C3.jpeg" },
+  { id: "c4-rolls-phantom", brand: "Rolls-Royce", title: "Phantom", subtitle: "Dent Removal • Panel Refinishing", img: "/C4.jpeg" },
+  { id: "c5-aston-vantage", brand: "Aston Martin", title: "Vantage Roadster", subtitle: "Scratch Removal • Bumper Repair", img: "/C5.jpeg" },
+  { id: "c6-ferrari-296", brand: "Ferrari", title: "296 GTB", subtitle: "Scratch Repair • Scratch Removal", img: "/C6.jpeg" },
+  { id: "c7-bentley-gtc", brand: "Bentley", title: "Continental GTC", subtitle: "Dent Removal • Panel Respray", img: "/C7.jpeg" },
+  { id: "c8-mercedes-sl63", brand: "Mercedes-Benz", title: "SL 63 AMG", subtitle: "Alloy Refurbishment • Scuff Removal", img: "/C8.jpeg" },
+  { id: "c9-vauxhall-vx220", brand: "Vauxhall", title: "VX220", subtitle: "Scratch Repair • Headlight Restoration", img: "/C9.jpeg" },
+  { id: "c10-porsche-911", brand: "Porsche", title: "911 Carrera (991)", subtitle: "Dent Repair • Panel Respray", img: "/C10.jpeg" },
+  { id: "c11-ford-mustang", brand: "Ford", title: "Mustang Convertible (S197)", subtitle: "Alloy Refurbishment • Scratch Repair", img: "/C11.jpeg" },
+  { id: "c12-mclaren-720s", brand: "McLaren", title: "720S Spider", subtitle: "Scratch Removal • Alloy Refurbishment", img: "/C12.jpeg" },
+  { id: "c13-ford-escort", brand: "Ford", title: "Escort XR3i", subtitle: "Bumper Scuff Repair • Dent Removal", img: "/C13.jpeg" },
+  { id: "c14-rolls-wraith", brand: "Rolls-Royce", title: "Wraith", subtitle: "Alloy Wheel Repair • Scratch Removal", img: "/C14.jpeg" },
+  { id: "c15-ferrari-roma", brand: "Ferrari", title: "Roma", subtitle: "Alloy Refurbishment • Dent Removal", img: "/C15.jpeg" },
+  { id: "c16-porsche-macan", brand: "Porsche", title: "Macan", subtitle: "Dent Removal • Panel Respray", img: "/C16.jpeg" },
 ];
 
 const Pill = ({ children }) => (
@@ -34,7 +34,7 @@ const Pill = ({ children }) => (
 
 const CarCard = ({ car }) => {
   return (
-    <article className="group grid h-full grid-rows-[auto,1fr] overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900">
+    <article className="group grid h-full grid-rows-[auto,1fr] overflow-hidden rounded-2xl border shadow-lg hover:shadow-lg hover:shadow-red-600 active:shadow-lg active:shadow-red-600 border-zinc-200 bg-white hover:rounded-lg  transition dark:border-zinc-800 dark:bg-zinc-900">
       <div className="relative aspect-[16/10] w-full overflow-hidden">
         <img src={car.img} alt={car.title} className="h-full w-full object-cover transform transition-all duration-700 ease-in-out group-hover:scale-110 group-hover:opacity-95" loading="lazy" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-black/0 transition-opacity duration-700 group-hover:opacity-70" />
@@ -63,7 +63,7 @@ export default function AutoShowcaseCarousel({
 
   return (
     <section className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8" id="portfolio">
-      <div className="mx-auto max-w-3xl text-center">
+      <div className="mx-auto max-w-3xl text-center ">
         <span className="inline-flex items-center justify-center rounded-full border border-red-200 bg-red-50 px-3 py-1 text-[11px] font-semibold text-red-700 dark:border-red-900/60 dark:bg-red-950/40 dark:text-red-300">
           {kbd}
         </span>

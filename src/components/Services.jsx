@@ -265,7 +265,7 @@ export default function ServicesWithModal() {
                 key={service.id}
                 id={service.id}
                 onClick={() => setActiveId(service.id)}
-                className="group flex cursor-pointer flex-col gap-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:bg-neutral-900 dark:border-neutral-800"
+                className="group flex cursor-pointer flex-col gap-6 rounded-xl border hover:shadow-red-600 active:shadow-red-600 border-gray-200 bg-white p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:shadow-lg dark:bg-neutral-900 dark:border-neutral-800"
                 data-aos="fade-up"
                 data-aos-delay="300" // Delay to stagger animations
               >
