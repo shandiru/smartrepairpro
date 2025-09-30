@@ -54,7 +54,7 @@ export default function GDPRBanner() {
           hover:bg-gray-400 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600 
           transition"
         >
-          Reject
+          Reject Cookies
         </button>
       </div>
     </div>
