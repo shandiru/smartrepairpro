@@ -17,16 +17,27 @@ export default function GDPRBanner() {
   if (!visible) return null; // Hide if already accepted
 
   return (
-    <div className="fixed bottom-0 left-0 w-full bg-white text-black p-6 text-center shadow-lg border-t-4 border-red-600 z-50">
-      <p className="mb-3 text-gray-700">
+    <div
+      className="fixed bottom-0 left-0 w-full 
+      bg-white text-black dark:bg-black dark:text-gray-200
+      p-6 text-center shadow-lg border-t border-gray-200 dark:border-gray-700
+      z-50 transition-colors"
+    >
+      <p className="mb-4 text-gray-700 dark:text-gray-400 leading-relaxed">
         We use cookies to improve your experience.{" "}
-        <a href="/privacy-policy" className="underline text-red-600 font-semibold">
+        <a
+          href="/privacy-policy"
+          className="underline text-red-600 font-semibold dark:text-red-400 hover:opacity-80"
+        >
           Learn more
         </a>
       </p>
+
       <button
         onClick={handleAccept}
-        className="mt-2 px-6 py-2 bg-red-600 text-white rounded font-semibold hover:bg-red-700 transition"
+        className="px-8 py-3 bg-red-600 text-white rounded-md font-semibold 
+        hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-600 
+        transition"
       >
         Accept Cookies
       </button>
