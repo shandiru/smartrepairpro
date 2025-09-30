@@ -38,7 +38,7 @@ const HeroSection = () => {
 
         {/* Subheading */}
         <p
-          className="text-lg md:text-xl text-white-500 dark:text-white-600 mb-8 max-w-2xl mx-auto leading-relaxed"
+          className="text-lg md:text-xl text-white mb-8 max-w-2xl mx-auto leading-relaxed"
           data-aos="fade-up"
           data-aos-delay="300"
           data-aos-duration="1200"
