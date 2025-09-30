@@ -4,7 +4,7 @@ export default function GDPRBanner() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    // Check if user has already accepted
+    // Check if user has already accepted or rejected
     const consent = localStorage.getItem("gdprConsent");
     if (!consent) setVisible(true);
   }, []);
@@ -14,7 +14,12 @@ export default function GDPRBanner() {
     setVisible(false);
   };
 
-  if (!visible) return null; // Hide if already accepted
+  const handleReject = () => {
+    localStorage.setItem("gdprConsent", "false"); // optional
+    setVisible(false);
+  };
+
+  if (!visible) return null; // Hide if already accepted/rejected
 
   return (
     <div
@@ -33,14 +38,25 @@ export default function GDPRBanner() {
         </a>
       </p>
 
-      <button
-        onClick={handleAccept}
-        className="px-8 py-3 bg-red-600 text-white rounded-md font-semibold 
-        hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-600 
-        transition"
-      >
-        Accept Cookies
-      </button>
+      <div className="flex flex-col md:flex-row gap-4 justify-center">
+        <button
+          onClick={handleAccept}
+          className="px-8 py-3 bg-red-600 text-white rounded-md font-semibold 
+          hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-600 
+          transition"
+        >
+          Accept Cookies
+        </button>
+
+        <button
+          onClick={handleReject}
+          className="px-8 py-3 bg-gray-300 text-black rounded-md font-semibold 
+          hover:bg-gray-400 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600 
+          transition"
+        >
+          Reject
+        </button>
+      </div>
     </div>
   );
 }
