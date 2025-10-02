@@ -1,4 +1,7 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
+import { HashLink } from "react-router-hash-link";
 import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
@@ -25,55 +28,49 @@ const Navbar = () => {
             alt="SL Smart Repair logo (dark)"
             className="h-16 w-auto sm:h-20 hidden dark:block"
           />
-
-         
           <span className="sr-only">SL Smart Repair</span>
         </a>
 
         {/* Center: Nav (desktop only) */}
         <ul className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-10 text-lg text-gray-600 dark:text-gray-300 lg:flex">
           <li>
-            <a href="#services" className="transition-colors hover:text-[#D40000]">
+            <HashLink smooth to="/#services" className="transition-colors hover:text-[#D40000]">
               Services
-            </a>
+            </HashLink>
           </li>
           <li>
-            <a href="#Why-Choose-Us" className="transition-colors hover:text-[#D40000]">
+            <HashLink smooth to="/#Why-Choose-Us" className="transition-colors hover:text-[#D40000]">
               Why Choose Us
-            </a>
+            </HashLink>
           </li>
           <li>
-            <a href="#portfolio" className="transition-colors hover:text-[#D40000]">
+            <HashLink smooth to="/#portfolio" className="transition-colors hover:text-[#D40000]">
               Portfolio
-            </a>
+            </HashLink>
           </li>
           <li>
-            <a href="#Testimonials" className="transition-colors hover:text-[#D40000]">
+            <HashLink smooth to="/#Testimonials" className="transition-colors hover:text-[#D40000]">
               Testimonials
-            </a>
+            </HashLink>
           </li>
           <li>
-            <a href="#contact" className="transition-colors hover:text-[#D40000]">
+            <HashLink smooth to="/#contact" className="transition-colors hover:text-[#D40000]">
               Contact
-            </a>
+            </HashLink>
           </li>
         </ul>
 
         {/* Right: Toggles + CTA + Hamburger */}
         <div className="flex items-center gap-2">
-          <div className="md:hidden">
-            <ThemeToggle />
-          </div>
-          <div className="hidden md:block">
-            <ThemeToggle />
-          </div>
+          <ThemeToggle />
 
-          <a
-            href="#contact"
+          <HashLink
+            smooth
+            to="/#contact"
             className="hidden md:inline-block rounded-xl px-4 py-2 text-sm font-semibold text-white bg-black hover:opacity-90 dark:bg-white dark:text-black"
           >
             Get Quote
-          </a>
+          </HashLink>
 
           {/* Hamburger */}
           <button
@@ -107,59 +104,65 @@ const Navbar = () => {
         <div className="mx-auto px-4 py-4 sm:px-6 lg:px-8">
           <ul className="flex flex-col gap-2">
             <li>
-              <a
-                href="#services"
+              <HashLink
+                smooth
+                to="/#services"
                 onClick={() => setOpen(false)}
                 className="block rounded-xl px-3 py-3 text-base font-medium text-gray-800 dark:text-gray-100 hover:text-[#D40000] hover:bg-gray-50 dark:hover:bg-neutral-900"
               >
                 Services
-              </a>
+              </HashLink>
             </li>
             <li>
-              <a
-                href="#Why-Choose-Us"
+              <HashLink
+                smooth
+                to="/#Why-Choose-Us"
                 onClick={() => setOpen(false)}
                 className="block rounded-xl px-3 py-3 text-base font-medium text-gray-800 dark:text-gray-100 hover:text-[#D40000] hover:bg-gray-50 dark:hover:bg-neutral-900"
               >
                 Why Choose Us
-              </a>
+              </HashLink>
             </li>
             <li>
-              <a
-                href="#portfolio"
+              <HashLink
+                smooth
+                to="/#portfolio"
                 onClick={() => setOpen(false)}
                 className="block rounded-xl px-3 py-3 text-base font-medium text-gray-800 dark:text-gray-100 hover:text-[#D40000] hover:bg-gray-50 dark:hover:bg-neutral-900"
               >
                 Portfolio
-              </a>
+              </HashLink>
             </li>
             <li>
-              <a
-                href="#Testimonials"
+              <HashLink
+                smooth
+                to="/#Testimonials"
                 onClick={() => setOpen(false)}
                 className="block rounded-xl px-3 py-3 text-base font-medium text-gray-800 dark:text-gray-100 hover:text-[#D40000] hover:bg-gray-50 dark:hover:bg-neutral-900"
               >
                 Testimonials
-              </a>
+              </HashLink>
             </li>
             <li>
-              <a
-                href="#contact"
+              <HashLink
+                smooth
+                to="/#contact"
                 onClick={() => setOpen(false)}
                 className="block rounded-xl px-3 py-3 text-base font-medium text-gray-800 dark:text-gray-100 hover:text-[#D40000] hover:bg-gray-50 dark:hover:bg-neutral-900"
               >
                 Contact
-              </a>
+              </HashLink>
             </li>
           </ul>
 
-          <a
-            href="#contact"
+          <HashLink
+            smooth
+            to="/#contact"
             onClick={() => setOpen(false)}
             className="mt-3 inline-block w-full rounded-2xl px-5 py-3 text-center text-sm font-semibold text-white bg-black hover:opacity-90 dark:bg-white dark:text-black"
           >
             Get Quote
-          </a>
+          </HashLink>
         </div>
       </div>
     </header>
