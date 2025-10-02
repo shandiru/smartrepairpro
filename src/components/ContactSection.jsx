@@ -154,13 +154,13 @@ export default function ContactSection() {
             className="bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-6 md:p-8 transition-colors duration-300"
           >
             <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
-              Contact Information
+              Contact Informations
             </h3>
             <div className="mt-4 space-y-6 text-gray-600 dark:text-gray-300">
               <div>
                 <p className="font-medium dark:text-gray-200">Address</p>
                 <address className="not-italic">
-                  Leicester, Wigston LE18 3WJ
+                 30 laxton close, Leicester Wigson LE18 3WJ
                 </address>
               </div>
 
