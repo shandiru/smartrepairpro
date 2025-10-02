@@ -20,7 +20,7 @@ const points = [
 ];
 
 export default function Expertise({
-  imageSrcs = ["wash-1.jpeg", "wash-2.jpeg", "wash-3.jpeg", "wash-4.jpeg", "wash-5.jpeg"],
+  imageSrcs = ["wash-1.jpeg", "wash-2.jpeg", "wash-3.jpeg", "wash-4.jpeg", "wash-5.jpeg","wash-6.jpeg","wash-7.jpeg","wash-8.jpeg","wash-9.jpeg","wash-10.jpeg", "wash-11.jpeg", "wash13.jpeg", "wash14.jpeg", "wash15.jpeg","wash12.jpeg"],
   secondsPerImage = 4,
   gapPx = 16,
   slideHeight = { base: 240, md: 320, lg: 380 },
