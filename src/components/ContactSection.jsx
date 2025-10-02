@@ -141,10 +141,10 @@ export default function ContactSection() {
           className="text-center text-2xl md:text-3xl font-bold"
           style={{ color: "#D10806" }}
         >
-          Ready to Get Your Car Fixed?
+          Ready to Restore Your Car’s Look?
         </h2>
         <p data-aos="fade-up" className="text-center text-gray-500 dark:text-gray-400 mt-2 max-w-2xl mx-auto">
-          Contact us to schedule a mobile repair service, ask questions, or request a quote. Our team is ready to help.
+         Contact us today to book a dent or scratch repair, ask questions, or request a free quote. Our expert team is here to bring your vehicle back to flawless condition.
         </p>
 
         <div className="mt-10 grid md:grid-cols-2 gap-8">

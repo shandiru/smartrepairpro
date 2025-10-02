@@ -7,7 +7,7 @@ import Call from "../components/CallToAction";
 import TestimonialSection from "../components/TestimonialSection";
 import ContactSection from "../components/ContactSection"; 
 import AutoShowcaseCarousel from '../components/AutoShowcaseCarousel';
-
+import Findus from "../components/Findus"
 const Home = () => {
     return (
         <div>
@@ -19,6 +19,7 @@ const Home = () => {
             <AutoShowcaseCarousel />
             <TestimonialSection />
             <ContactSection /> {/* Added here */}
+            <Findus />
             
         </div>
     )

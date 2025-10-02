@@ -66,7 +66,7 @@ const SERVICES = [
     title: "Dent Removal",
     icon: FaHammer,
     blurb:
-      "Paintless dent repair that maintains your vehicle's original factory finish",
+      "We provide professional dent repair to restore damaged panels to a like-new condition",
     beforeImg: "dent-before-2.jpeg",
     afterImg: "dent-after-2.jpeg",
     about:
@@ -172,9 +172,10 @@ const SERVICES = [
       "Final quality assurance check",
     ],
     gallery: [
+        { before: "scratches-before-4.jpeg", after: "scratches-after-4.jpeg" },
         { before: "scratches-before-2.jpeg", after: "scratches-after-2.jpeg" },
     
-     { before: "scratches-before-4.jpeg", after: "scratches-after-4.jpeg" },
+   
      
        { before: "dent-before-3.jpeg", after: "dent-after-3.jpeg" },
         { before: "scratches-before-5.jpeg", after: "scratches-after-5.jpeg" },
@@ -259,9 +260,7 @@ export default function ServicesWithModal() {
             const Icon = service.icon;
             let cardPreview = service.gallery?.[0]?.before || service.beforeImg || "/placeholder.svg?height=300&width=400";
             // ✅ If service is "Lease Returns", show after image instead
-  if (service.id === "lease") {
-    cardPreview = service.gallery?.[0]?.after || service.afterImg || "/placeholder.svg?height=300&width=400";
-  }
+  
             return (
               <article
                 key={service.id}
