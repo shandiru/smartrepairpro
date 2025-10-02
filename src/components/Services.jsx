@@ -56,9 +56,9 @@ const SERVICES = [
       { before: "headlight-before.jpeg", after: "headlight-after.jpeg" },
       { before: "headlight-before-2.jpeg", after: "headlight-after-2.jpeg" },
       { before: "headlight-before-3.jpeg", after: "headlight-after-3.jpeg" },
-      { before: "headlight-before-4.jpeg", after: "headlight-after-4.jpeg" },
-      { before: "headlight-before-5.jpeg", after: "headlight-after-5.jpeg" },
-      { before: "headlight-before-6.jpeg", after: "headlight-after-6.jpeg" },
+      // { before: "headlight-before-4.jpeg", after: "headlight-after-4.jpeg" },
+      // { before: "headlight-before-5.jpeg", after: "headlight-after-5.jpeg" },
+      { before: "headlight-before-6.jpeg", after: "headlight-before-5.jpeg" },
     ],
   },
   {
@@ -172,8 +172,7 @@ const SERVICES = [
       "Final quality assurance check",
     ],
     gallery: [
-        { before: "dent-before.jpeg", after: "dent-after.jpeg" },
-     
+        { before: "scratches-before-2.jpeg", after: "scratches-after-2.jpeg" },
     
      { before: "scratches-before-4.jpeg", after: "scratches-after-4.jpeg" },
      
@@ -258,8 +257,11 @@ export default function ServicesWithModal() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((service) => {
             const Icon = service.icon;
-            const cardPreview = service.gallery?.[0]?.before || service.beforeImg || "/placeholder.svg?height=300&width=400";
-
+            let cardPreview = service.gallery?.[0]?.before || service.beforeImg || "/placeholder.svg?height=300&width=400";
+            // ✅ If service is "Lease Returns", show after image instead
+  if (service.id === "lease") {
+    cardPreview = service.gallery?.[0]?.after || service.afterImg || "/placeholder.svg?height=300&width=400";
+  }
             return (
               <article
                 key={service.id}

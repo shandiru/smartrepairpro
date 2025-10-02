@@ -74,12 +74,12 @@ const Footer = () => {
               <li>
                 Address:{" "}
                 <a
-                  href="https://www.google.com/maps?q=Leicester,+Wigston+LE18+3WJ"
+                  href="https://www.google.com/maps/dir//Leicester,+Wigston+LE18+3WJ,+United+Kingdom/@52.584005,-1.1724066,16933m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x4877668bb0745d0f:0xc4b6954416f42302!2m2!1d-1.0900064!2d52.5840336?entry=ttu&g_ep=EgoyMDI1MDkyOS4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-gray-700 dark:hover:text-gray-200 hover:underline"
                 >
-                  Leicester, Wigston LE18 3WJ
+                  30 laxton close, Leicester Wigson LE18 3WJ
                 </a>
               </li>
               <li><Link to="/privacy-policy" className="hover:text-gray-300">Privacy Policy</Link></li>
