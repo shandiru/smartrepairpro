@@ -49,7 +49,7 @@ export default function GDPRConsent() {
           <div className="flex justify-center gap-3">
             <button
               onClick={handleReject}
-              className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 text-sm"
+              className="bg-[#981921] text-white px-4 py-2 rounded hover:bg-red-700 text-sm"
             >
               Reject
             </button>
@@ -68,7 +68,7 @@ export default function GDPRConsent() {
         <div className="fixed bottom-6 right-6 z-40">
           <button
             onClick={handleIconClick}
-            className="w-10 h-10 rounded-full bg-red-600 shadow-lg border border-white flex items-center justify-center hover:scale-105 transition cursor-pointer"
+            className="w-10 h-10 rounded-full bg-[#981921] shadow-lg border border-white flex items-center justify-center hover:scale-105 transition cursor-pointer"
             title="Cookie Preferences"
           >
             <img
