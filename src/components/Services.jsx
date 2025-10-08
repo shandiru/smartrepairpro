@@ -113,8 +113,8 @@ const SERVICES = [
       { before: "wheels-before-4.jpeg", after: "wheels-after-4.jpeg" },
       { before: "wheels-before-5.jpeg", after: "wheels-after-5.jpeg" },
       { before: "wheels-before-6.jpeg", after: "wheels-after-6.jpeg" },
-      { before: "wheels-before-7.jpeg", after: "wheels-after-7.jpeg" },
-      { before: "wheels-before-8.jpeg", after: "wheels-after-8.jpeg" },
+      // { before: "wheels-before-7.jpeg", after: "wheels-after-7.jpeg" },
+      // { before: "wheels-before-8.jpeg", after: "wheels-after-8.jpeg" },
     ],
   },
 
