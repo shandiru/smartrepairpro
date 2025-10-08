@@ -260,7 +260,9 @@ export default function ServicesWithModal() {
             const Icon = service.icon;
             let cardPreview = service.gallery?.[0]?.before || service.beforeImg || "/placeholder.svg?height=300&width=400";
             // ✅ If service is "Lease Returns", show after image instead
-  
+           if (service.id === "wheels") {
+      cardPreview = "final.png";
+    }
             return (
               <article
                 key={service.id}
