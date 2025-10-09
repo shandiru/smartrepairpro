@@ -12,7 +12,7 @@ const HeroSection = () => {
   return (
     <section className="py-20 relative">
       {/* Background Video */}
-      <div className="absolute top-0 left-0 w-full h-142">
+      <div className="absolute top-0 left-0 w-full h-[100vh]">
         <video
           className="object-cover w-full h-full"
           autoPlay
@@ -28,7 +28,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 text-center relative z-10">
         {/* Heading */}
         <h1
-          className="text-4xl md:text-6xl font-bold mb-6"
+          className="text-4xl md:text-6xl font-bold mb-6 mt-25"
           style={{ color: "#D10806" }}
           data-aos="fade-up"
           data-aos-duration="1000"

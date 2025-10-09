@@ -14,13 +14,12 @@ function App() {
         <ScrollToTop />
         <Navbar />
         <Routes>
-         
           <Route path="/" element={<Home />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
         <Footer />
-         <GDPRBanner />
+        <GDPRBanner />
       </Router>
     </div>
   );
