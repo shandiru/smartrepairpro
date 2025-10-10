@@ -7,16 +7,27 @@ const Footer = () => {
     <footer className="bg-white dark:bg-neutral-950 border-t dark:border-neutral-800 py-8">
       <div className="mx-auto max-w-[1400px] px-6">
         {/* Top Grid */}
-        <div className="grid gap-12 md:grid-cols-4">
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="max-w-sm">
             <div className="mb-4 flex items-center gap-2">
-              <img src="/logo-dark.png" alt="SL Smart Repair logo" className="h-6 w-auto block dark:hidden" />
-              <img src="/logo.png" alt="SL Smart Repair logo (dark)" className="h-6 w-auto hidden dark:block" />
-              <span className="text-xl font-bold text-gray-900 dark:text-white">SL Smart Repair</span>
+              <img
+                src="/logo-dark.png"
+                alt="SL Smart Repair logo"
+                className="h-6 w-auto block dark:hidden"
+              />
+              <img
+                src="/logo.png"
+                alt="SL Smart Repair logo (dark)"
+                className="h-6 w-auto hidden dark:block"
+              />
+              <span className="text-xl font-bold text-gray-900 dark:text-white">
+                SL Smart Repair
+              </span>
             </div>
             <p className="text-gray-500 dark:text-gray-300 leading-relaxed">
-              Professional automotive repair services that restore your vehicle to perfect condition.
+              Professional automotive repair services that restore your vehicle
+              to perfect condition.
             </p>
 
             {/* Socials */}
@@ -42,54 +53,116 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="mb-4 font-semibold text-gray-900 dark:text-white">Services</h3>
+          {/* Services (add padding-start for balance) */}
+          <div className="ps-0 md:ps-18 lg:ps-0">
+            <h3 className="mb-4 font-semibold text-gray-900 dark:text-white">
+              Services
+            </h3>
             <ul className="space-y-2 text-gray-500 dark:text-gray-300">
-              <li><a href="#scratches" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">Scratches</a></li>
-              <li><a href="#headlights" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">Headlight Restoration</a></li>
-              <li><a href="#dent" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">Dent Removal</a></li>
-              <li><a href="#wheels" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">Wheels &amp; Calipers</a></li>
-              <li><a href="#lease" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">Lease Returns</a></li>
-              <li><a href="#bumper" className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors">Bumper Scuffs</a></li>
+              <li>
+                <a
+                  href="#scratches"
+                  className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
+                >
+                  Scratches
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#headlights"
+                  className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
+                >
+                  Headlight Restoration
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#dent"
+                  className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
+                >
+                  Dent Removal
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#wheels"
+                  className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
+                >
+                  Wheels &amp; Calipers
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#lease"
+                  className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
+                >
+                  Lease Returns
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#bumper"
+                  className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
+                >
+                  Bumper Scuffs
+                </a>
+              </li>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="mb-4 font-semibold text-gray-900 dark:text-white">Contact</h3>
+            <h3 className="mb-4 font-semibold text-gray-900 dark:text-white">
+              Contact
+            </h3>
             <ul className="space-y-2 text-gray-500 dark:text-gray-300">
               <li>
                 Phone:{" "}
-                <a href="tel:07989668752" className="hover:text-gray-700 dark:hover:text-gray-200 hover:underline">
+                <a
+                  href="tel:07989668752"
+                  className="hover:text-gray-700 dark:hover:text-gray-200 hover:underline"
+                >
                   07989 668752
                 </a>
               </li>
               <li>
                 Email:{" "}
-                <a href="mailto:Sldetailingservices@gmail.com" className="hover:text-gray-700 dark:hover:text-gray-200 hover:underline">
+                <a
+                  href="mailto:Sldetailingservices@gmail.com"
+                  className="hover:text-gray-700 dark:hover:text-gray-200 hover:underline"
+                >
                   Sldetailingservices@gmail.com
                 </a>
               </li>
               <li>
                 Address:{" "}
                 <a
-                  href="https://www.google.com/maps/dir//Leicester,+Wigston+LE18+3WJ,+United+Kingdom/@52.584005,-1.1724066,16933m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x4877668bb0745d0f:0xc4b6954416f42302!2m2!1d-1.0900064!2d52.5840336?entry=ttu&g_ep=EgoyMDI1MDkyOS4wIKXMDSoASAFQAw%3D%3D"
+                  href="https://www.google.com/maps/dir//Leicester,+Wigston+LE18+3WJ,+United+Kingdom"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-gray-700 dark:hover:text-gray-200 hover:underline"
                 >
-                  30 laxton close, Leicester Wigson LE18 3WJ
+                  30 Laxton Close, Leicester Wigston LE18 3WJ
                 </a>
               </li>
-              <li><Link to="/privacy-policy" className="hover:text-gray-300">Privacy Policy</Link></li>
-              <li><Link to="/terms-conditions" className="hover:text-gray-300">Terms & Conditions</Link></li>
+              <li>
+                <Link to="/privacy-policy" className="hover:text-gray-300">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/terms-conditions" className="hover:text-gray-300">
+                  Terms & Conditions
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Hours */}
-          <div>
-            <h3 className="mb-4 font-semibold text-gray-900 dark:text-white">Hours</h3>
+          {/* Hours (add padding-start for balance) */}
+          <div className="ps-0 md:ps-18 lg:ps-0">
+            <h3 className="mb-4 font-semibold text-gray-900 dark:text-white">
+              Hours
+            </h3>
             <ul className="space-y-2 text-gray-500 dark:text-gray-300">
               <li>Monday: 9 AM – 5 PM</li>
               <li>Tuesday: 9 AM – 6 PM</li>

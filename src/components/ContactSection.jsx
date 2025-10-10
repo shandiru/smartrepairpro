@@ -195,9 +195,10 @@ export default function ContactSection() {
                       <span className="text-gray-700 dark:text-gray-200">
                         {day}
                       </span>
-                      <span className="text-right font-medium text-gray-900 dark:text-gray-100">
-                        {time}
-                      </span>
+                     <span className="text-right font-medium text-gray-900 dark:text-gray-100 text-base md:text-sm lg:text-base">
+                      {time}
+                    </span>
+
                     </li>
                   ))}
                 </ul>

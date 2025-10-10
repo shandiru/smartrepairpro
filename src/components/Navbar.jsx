@@ -16,54 +16,55 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 w-full bg-white dark:bg-neutral-950 border-b border-gray-200 dark:border-neutral-800">
       <nav className="mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Left: Logo + Brand */}
+        {/* Logo */}
         <a href="/" className="flex items-center gap-3">
           <img
             src="/logo-dark.png"
             alt="SL Smart Repair logo"
-            className="h-16 w-auto sm:h-20 block dark:hidden"
+            className="h-14 w-auto sm:h-16 block dark:hidden"
           />
           <img
             src="/logo.png"
             alt="SL Smart Repair logo (dark)"
-            className="h-16 w-auto sm:h-20 hidden dark:block"
+            className="h-14 w-auto sm:h-16 hidden dark:block"
           />
           <span className="sr-only">SL Smart Repair</span>
         </a>
 
-        {/* Center: Nav (desktop only) */}
-        <ul className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-10 text-lg text-gray-600 dark:text-gray-300 lg:flex">
+        {/* Center Nav (desktop ≥1024px only) */}
+        <ul className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 text-base text-gray-600 dark:text-gray-300 lg:flex">
           <li>
-            <HashLink smooth to="/#services" className="transition-colors hover:text-[#D40000]">
+            <HashLink smooth to="/#services" className="hover:text-[#D40000] transition-colors">
               Services
             </HashLink>
           </li>
           <li>
-            <HashLink smooth to="/#Why-Choose-Us" className="transition-colors hover:text-[#D40000]">
+            <HashLink smooth to="/#Why-Choose-Us" className="hover:text-[#D40000] transition-colors">
               Why Choose Us
             </HashLink>
           </li>
           <li>
-            <HashLink smooth to="/#portfolio" className="transition-colors hover:text-[#D40000]">
+            <HashLink smooth to="/#portfolio" className="hover:text-[#D40000] transition-colors">
               Portfolio
             </HashLink>
           </li>
           <li>
-            <HashLink smooth to="/#Testimonials" className="transition-colors hover:text-[#D40000]">
+            <HashLink smooth to="/#Testimonials" className="hover:text-[#D40000] transition-colors">
               Testimonials
             </HashLink>
           </li>
           <li>
-            <HashLink smooth to="/#contact" className="transition-colors hover:text-[#D40000]">
+            <HashLink smooth to="/#contact" className="hover:text-[#D40000] transition-colors">
               Contact
             </HashLink>
           </li>
         </ul>
 
-        {/* Right: Toggles + CTA + Hamburger */}
+        {/* Right: Theme Toggle + CTA + Hamburger */}
         <div className="flex items-center gap-2">
           <ThemeToggle />
 
+          {/* CTA visible from tablet upward */}
           <HashLink
             smooth
             to="/#contact"
@@ -72,7 +73,7 @@ const Navbar = () => {
             Get Quote
           </HashLink>
 
-          {/* Hamburger */}
+          {/* Hamburger (only <1024px) */}
           <button
             aria-label="Toggle menu"
             aria-expanded={open}
@@ -99,60 +100,30 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Mobile drawer */}
-      <div className={`${open ? "block" : "hidden"} lg:hidden border-b border-gray-200 dark:border-neutral-800`}>
-        <div className="mx-auto px-4 py-4 sm:px-6 lg:px-8">
+      {/* Mobile Drawer (<1024px) */}
+      <div
+        className={`${open ? "block" : "hidden"} lg:hidden border-b border-gray-200 dark:border-neutral-800`}
+      >
+        <div className="mx-auto px-4 py-4 sm:px-6">
           <ul className="flex flex-col gap-2">
-            <li>
-              <HashLink
-                smooth
-                to="/#services"
-                onClick={() => setOpen(false)}
-                className="block rounded-xl px-3 py-3 text-base font-medium text-gray-800 dark:text-gray-100 hover:text-[#D40000] hover:bg-gray-50 dark:hover:bg-neutral-900"
-              >
-                Services
-              </HashLink>
-            </li>
-            <li>
-              <HashLink
-                smooth
-                to="/#Why-Choose-Us"
-                onClick={() => setOpen(false)}
-                className="block rounded-xl px-3 py-3 text-base font-medium text-gray-800 dark:text-gray-100 hover:text-[#D40000] hover:bg-gray-50 dark:hover:bg-neutral-900"
-              >
-                Why Choose Us
-              </HashLink>
-            </li>
-            <li>
-              <HashLink
-                smooth
-                to="/#portfolio"
-                onClick={() => setOpen(false)}
-                className="block rounded-xl px-3 py-3 text-base font-medium text-gray-800 dark:text-gray-100 hover:text-[#D40000] hover:bg-gray-50 dark:hover:bg-neutral-900"
-              >
-                Portfolio
-              </HashLink>
-            </li>
-            <li>
-              <HashLink
-                smooth
-                to="/#Testimonials"
-                onClick={() => setOpen(false)}
-                className="block rounded-xl px-3 py-3 text-base font-medium text-gray-800 dark:text-gray-100 hover:text-[#D40000] hover:bg-gray-50 dark:hover:bg-neutral-900"
-              >
-                Testimonials
-              </HashLink>
-            </li>
-            <li>
-              <HashLink
-                smooth
-                to="/#contact"
-                onClick={() => setOpen(false)}
-                className="block rounded-xl px-3 py-3 text-base font-medium text-gray-800 dark:text-gray-100 hover:text-[#D40000] hover:bg-gray-50 dark:hover:bg-neutral-900"
-              >
-                Contact
-              </HashLink>
-            </li>
+            {[
+              { to: "/#services", label: "Services" },
+              { to: "/#Why-Choose-Us", label: "Why Choose Us" },
+              { to: "/#portfolio", label: "Portfolio" },
+              { to: "/#Testimonials", label: "Testimonials" },
+              { to: "/#contact", label: "Contact" },
+            ].map(({ to, label }) => (
+              <li key={to}>
+                <HashLink
+                  smooth
+                  to={to}
+                  onClick={() => setOpen(false)}
+                  className="block rounded-xl px-3 py-3 text-base font-medium text-gray-800 dark:text-gray-100 hover:text-[#D40000] hover:bg-gray-50 dark:hover:bg-neutral-900"
+                >
+                  {label}
+                </HashLink>
+              </li>
+            ))}
           </ul>
 
           <HashLink

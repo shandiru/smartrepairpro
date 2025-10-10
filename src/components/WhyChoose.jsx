@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { FaCar, FaCog, FaFileAlt } from "react-icons/fa";
-import AOS from "aos"; // Import AOS
-import "aos/dist/aos.css"; // Import AOS CSS
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const WhyChoose = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000 }); // Initialize AOS
+    AOS.init({ duration: 1000 });
   }, []);
 
   const cardClasses =
@@ -28,7 +28,7 @@ const WhyChoose = () => {
         </div>
 
         {/* Features Grid */}
-        <div className="grid gap-12 md:grid-cols-3">
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
           {/* Item 1 */}
           <div className={cardClasses} data-aos="fade-up" data-aos-delay="300">
             <div className={iconWrapperClasses}>
