@@ -1,11 +1,13 @@
+
 import { useRef, useState, useEffect } from "react";
 import { Quote } from "lucide-react";
-import AOS from "aos"; // Import AOS
-import "aos/dist/aos.css"; // Import AOS CSS
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
 
-// background image
 const BG_IMG = "/src/assets/testimonials-bg.jpg";
+
+
 
 // 10 reviews (UK)
 const DATA = [
@@ -71,7 +73,6 @@ Superb work — you cannot tell my bumper has been repaired — and fast turnaro
     avatar: "Alistair Singer.png",
   },
 ];
-
 export default function TestimonialSection() {
   const [i, setI] = useState(0);
   const [dragX, setDragX] = useState(0);
@@ -79,14 +80,12 @@ export default function TestimonialSection() {
   const touchActive = useRef(false);
 
   useEffect(() => {
-    // Initialize AOS
     AOS.init({ duration: 1000, once: true });
   }, []);
 
   const next = () => setI((p) => (p + 1) % DATA.length);
   const prev = () => setI((p) => (p - 1 + DATA.length) % DATA.length);
 
-  // touch handlers (mobile)
   const onTouchStart = (e) => {
     touchActive.current = true;
     touchStartX.current = e.touches[0].clientX;
@@ -113,14 +112,13 @@ export default function TestimonialSection() {
         className="relative w-full bg-center bg-cover"
         style={{ backgroundImage: `url(${BG_IMG})` }}
       >
-        {/* brand red overlay */}
+        {/* Red overlay */}
         <div className="absolute inset-0 bg-[#D10806]/90" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-28 text-center text-white">
           <h2
             id="testimonials-title"
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight"
-            data-aos="fade-up"
           >
             What People Are Saying
           </h2>
@@ -129,43 +127,52 @@ export default function TestimonialSection() {
             <span className="h-1 w-16 rounded-full bg-white/80" />
           </div>
 
-          <p className="mx-auto mt-5 max-w-3xl text-sm sm:text-base leading-6 sm:leading-7 text-white/90" data-aos="fade-up" data-aos-delay="200">
+          <p className="mx-auto mt-5 max-w-3xl text-sm sm:text-base leading-6 sm:leading-7 text-white/90">
             Real feedback from happy customers across the UK. Swipe on mobile or use the arrows.
           </p>
 
-          {/* slider area */}
-          <div className="relative mt-12 sm:mt-16 lg:mt-20 md:px-12 lg:px-16">
-            {/* desktop/tablet arrows */}
+          {/* Slider */}
+          <div className="relative mt-12 sm:mt-16 lg:mt-20 md:px-10 lg:px-16">
+            {/* Prev Arrow */}
             <button
               onClick={prev}
-              className="hidden sm:flex absolute left-4 sm:left-8 md:-left-10 lg:-left-12 top-1/2 -translate-y-1/2 h-14 w-14 items-center cursor-pointer active:bg-gray-200 justify-center rounded bg-white text-black shadow hover:bg-gray-200 focus:outline-none
-             dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800"
+              className="hidden sm:flex absolute left-2 sm:left-4 md:-left-6 lg:-left-8 xl:-left-12 top-1/2 -translate-y-1/2 
+                       h-10 w-10 md:h-12 md:w-12 lg:h-14 lg:w-14
+                       items-center justify-center rounded-full bg-white/90 text-black shadow 
+                       hover:bg-white dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800 
+                       cursor-pointer focus:outline-none transition-all duration-300"
               aria-label="Previous"
             >
-              <HiChevronLeft className="w-7 h-7 hover:-translate-x-2 active:translate-x-2 duration-300 transform transform-all" />
+              <HiChevronLeft className="w-6 h-6 md:w-7 md:h-7 hover:-translate-x-1 duration-300 transform" />
             </button>
 
+            {/* Next Arrow */}
             <button
               onClick={next}
-              className="hidden sm:flex absolute right-4 sm:right-8 md:-right-10 lg:-right-12 top-1/2 -translate-y-1/2 h-14 w-14 items-center justify-center rounded bg-white text-black shadow hover:bg-gray-200 active:bg-gray-200 cursor-pointer focus:outline-none
-             dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800"
+              className="hidden sm:flex absolute right-2 sm:right-4 md:-right-6 lg:-right-8 xl:-right-12 top-1/2 -translate-y-1/2 
+                       h-10 w-10 md:h-12 md:w-12 lg:h-14 lg:w-14
+                       items-center justify-center rounded-full bg-white/90 text-black shadow 
+                       hover:bg-white dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800 
+                       cursor-pointer focus:outline-none transition-all duration-300"
               aria-label="Next"
             >
-              <HiChevronRight className="w-7 h-7 hover:translate-x-2 active:translate-x-2 duration-300 transform transform-all" />
+              <HiChevronRight className="w-6 h-6 md:w-7 md:h-7 hover:translate-x-1 duration-300 transform" />
             </button>
 
-            {/* current slide */}
+            {/* Current Slide */}
             <div
-              className="mx-auto max-w-5xl rounded-lg bg-white px-4 py-10 shadow-md hover:shadow-lg hover:shadow-gray-300 active:shadow-lg active:shadow-gray-300 sm:px-8 md:px-12 lg:px-16 overflow-hidden
-                         text-gray-800 dark:bg-neutral-900 dark:text-gray-100"
+              className="mx-auto max-w-[90%] sm:max-w-3xl md:max-w-4xl lg:max-w-5xl 
+                         rounded-lg bg-white px-4 py-10 shadow-md hover:shadow-lg 
+                         sm:px-8 md:px-12 lg:px-16 overflow-hidden
+                         text-gray-800 dark:bg-neutral-900 dark:text-gray-100 
+                         transition-all duration-500 ease-in-out"
               style={{ minHeight: 380 }}
               onTouchStart={onTouchStart}
               onTouchMove={onTouchMove}
               onTouchEnd={onTouchEnd}
-              data-aos="fade-up"
             >
               <div
-                className="transition-transform duration-200 will-change-transform"
+                className="transition-transform duration-300 will-change-transform ease-in-out"
                 style={{
                   transform:
                     dragX !== 0
@@ -173,42 +180,45 @@ export default function TestimonialSection() {
                       : "translateX(0)",
                 }}
               >
-                {/* avatar + badge */}
-                <div className="relative mx-auto mb-4 h-24 w-24" data-aos="fade-right">
+                <div className="relative mx-auto mb-4 h-24 w-24">
                   <img
                     src={item.avatar}
                     className="h-24 w-24 rounded-full ring-8 ring-white dark:ring-neutral-900 shadow-lg object-cover"
                     alt={item.name}
                   />
-                  {/* bottom-left badge */}
                   <span className="absolute bottom-0 -left-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#D10806] text-white shadow-md">
                     <Quote className="h-4 w-4 text-white rotate-180" strokeWidth={2} />
                   </span>
                 </div>
 
                 <blockquote className="mx-auto max-w-4xl">
-                  <p className="text-base sm:text-lg md:text-xl italic leading-7 sm:leading-8 md:leading-9">
+                  <p className="text-base sm:text-lg md:text-lg italic leading-7 sm:leading-8 md:leading-8">
                     {item.quote}
                   </p>
                 </blockquote>
 
                 <div className="mt-8">
-                  <h3 className="text-xl sm:text-2xl font-semibold text-black dark:text-white">{item.name}</h3>
-                  <p className="mt-1 text-sm sm:text-base text-[#D10806] italic">{item.city}</p>
+                  <h3 className="text-xl sm:text-2xl font-semibold text-black dark:text-white">
+                    {item.name}
+                  </h3>
+                  <p className="mt-1 text-sm sm:text-base text-[#D10806] italic">
+                    {item.city}
+                  </p>
                 </div>
               </div>
             </div>
 
-            {/* mobile dots */}
+            {/* Mobile Dots */}
             <div className="mt-6 flex items-center justify-center gap-2 sm:hidden">
               {DATA.map((_, idx) => (
                 <button
                   key={idx}
                   onClick={() => setI(idx)}
-                  className={`h-2.5 w-2.5 rounded-full ${i === idx
-                    ? "bg-[#D10806]"
-                    : "bg-black/20 dark:bg-white/30"
-                    }`}
+                  className={`h-2.5 w-2.5 rounded-full ${
+                    i === idx
+                      ? "bg-[#D10806]"
+                      : "bg-black/20 dark:bg-white/30"
+                  }`}
                   aria-label={`Go to slide ${idx + 1}`}
                 />
               ))}
@@ -219,3 +229,5 @@ export default function TestimonialSection() {
     </section>
   );
 }
+
+
