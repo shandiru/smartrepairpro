@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,20 +7,24 @@
   <link rel="icon" type="image" href="/logo-dark.png" />
   <title>SL Smart Repair</title>
 
-  <!-- Set initial theme before app mounts to avoid flash -->
+  <style>
+    html {
+      background-color: #000; /* ✅ prevents white flash */
+    }
+  </style>
+
   <script>
     (() => {
-      const stored = localStorage.getItem('theme'); // 'dark' | 'light' | null
+      const stored = localStorage.getItem('theme');
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const useDark = stored ? stored === 'dark' : prefersDark;
+      const useDark = stored ? stored === 'dark' : true; // ✅ force dark default
       document.documentElement.classList.toggle('dark', useDark);
     })();
   </script>
 </head>
 
-<body>
+<body class="bg-black text-white">
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
-
 </html>
