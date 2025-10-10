@@ -1,6 +1,7 @@
 import React from "react";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const Footer = () => {
   return (
@@ -53,59 +54,65 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Services (add padding-start for balance) */}
+          {/* Services */}
           <div className="ps-0 md:ps-18 lg:ps-0">
             <h3 className="mb-4 font-semibold text-gray-900 dark:text-white">
               Services
             </h3>
             <ul className="space-y-2 text-gray-500 dark:text-gray-300">
               <li>
-                <a
-                  href="#scratches"
+                <HashLink
+                  smooth
+                  to="/#scratches"
                   className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
                 >
                   Scratches
-                </a>
+                </HashLink>
               </li>
               <li>
-                <a
-                  href="#headlights"
+                <HashLink
+                  smooth
+                  to="/#headlights"
                   className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
                 >
                   Headlight Restoration
-                </a>
+                </HashLink>
               </li>
               <li>
-                <a
-                  href="#dent"
+                <HashLink
+                  smooth
+                  to="/#dent"
                   className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
                 >
                   Dent Removal
-                </a>
+                </HashLink>
               </li>
               <li>
-                <a
-                  href="#wheels"
+                <HashLink
+                  smooth
+                  to="/#wheels"
                   className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
                 >
                   Wheels &amp; Calipers
-                </a>
+                </HashLink>
               </li>
               <li>
-                <a
-                  href="#lease"
+                <HashLink
+                  smooth
+                  to="/#lease"
                   className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
                 >
                   Lease Returns
-                </a>
+                </HashLink>
               </li>
               <li>
-                <a
-                  href="#bumper"
+                <HashLink
+                  smooth
+                  to="/#bumper"
                   className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
                 >
                   Bumper Scuffs
-                </a>
+                </HashLink>
               </li>
             </ul>
           </div>
@@ -158,7 +165,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Hours (add padding-start for balance) */}
+          {/* Hours */}
           <div className="ps-0 md:ps-18 lg:ps-0">
             <h3 className="mb-4 font-semibold text-gray-900 dark:text-white">
               Hours

@@ -133,7 +133,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="bg-gray-50 dark:bg-neutral-900 py-12 px-4 transition-colors duration-300 scroll-mt-24"
+      className="bg-gray-50 dark:bg-neutral-900 py-12 px-4 transition-colors duration-300"
     >
       <div className="max-w-6xl mx-auto">
         <h2
