@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import { HashLink } from "react-router-hash-link";
-import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -62,7 +61,6 @@ const Navbar = () => {
 
         {/* Right: Theme Toggle + CTA + Hamburger */}
         <div className="flex items-center gap-2">
-          <ThemeToggle />
 
           {/* CTA visible from tablet upward */}
           <HashLink
