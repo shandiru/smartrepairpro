@@ -99,12 +99,13 @@ export default function ContactSection() {
     setStatus({ state: "sending", message: "Sending your message..." });
 
     try {
-      await emailjs.sendForm(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-        formRef.current,
-        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
-      );
+     await emailjs.sendForm(
+  import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  formRef.current,
+  import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+);
+
 
       setStatus({
         state: "success",
