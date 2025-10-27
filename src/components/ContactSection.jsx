@@ -100,10 +100,10 @@ export default function ContactSection() {
 
     try {
       await emailjs.sendForm(
-        "service_404lxe7",   // Your EmailJS service ID
-        "template_htvvsej",  // Your EmailJS template ID
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
         formRef.current,
-        "tmUgtXKf_TwGrV1iE"  // Your EmailJS public key
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
       );
 
       setStatus({
@@ -144,7 +144,7 @@ export default function ContactSection() {
           Ready to Restore Your Car’s Look?
         </h2>
         <p data-aos="fade-up" className="text-center text-gray-500 dark:text-gray-400 mt-2 max-w-2xl mx-auto">
-         Contact us today to book a dent or scratch repair, ask questions, or request a free quote. Our expert team is here to bring your vehicle back to flawless condition.
+          Contact us today to book a dent or scratch repair, ask questions, or request a free quote. Our expert team is here to bring your vehicle back to flawless condition.
         </p>
 
         <div className="mt-10 grid md:grid-cols-2 gap-8">
@@ -160,7 +160,7 @@ export default function ContactSection() {
               <div>
                 <p className="font-medium dark:text-gray-200">Address</p>
                 <address className="not-italic">
-                 30 laxton close, Leicester Wigson LE18 3WJ
+                  30 laxton close, Leicester Wigson LE18 3WJ
                 </address>
               </div>
 
@@ -195,9 +195,9 @@ export default function ContactSection() {
                       <span className="text-gray-700 dark:text-gray-200">
                         {day}
                       </span>
-                     <span className="text-right font-medium text-gray-900 dark:text-gray-100 text-base md:text-sm lg:text-base">
-                      {time}
-                    </span>
+                      <span className="text-right font-medium text-gray-900 dark:text-gray-100 text-base md:text-sm lg:text-base">
+                        {time}
+                      </span>
 
                     </li>
                   ))}
