@@ -1,7 +1,7 @@
+"use client";
 import React, { useRef, useState, useEffect } from "react";
-import emailjs from "emailjs-com";
 import AOS from "aos";
-import "aos/dist/aos.css"; // Import AOS styles
+import "aos/dist/aos.css";
 
 const HOURS = [
   { day: "Monday", time: "9:00 am – 5:00 pm" },
@@ -13,23 +13,16 @@ const HOURS = [
   { day: "Sunday", time: "Closed" },
 ];
 
-// Very reasonable client-side patterns (not “perfect”, but practical)
-const EMAIL_REGEX =
-  /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-
-// UK-friendly phone pattern; also accepts +44, spaces, dashes, parentheses
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 const PHONE_REGEX =
   /^(?:\+?44\s?7\d{3}|\(?07\d{3}\)?)\s?\d{3}\s?\d{3}$|^[0-9+\-\s()]{7,}$/;
 
 export default function ContactSection() {
   const formRef = useRef(null);
   const [status, setStatus] = useState({ state: "idle", message: "" });
-
-  // Track touched + errors for better UX
   const [touched, setTouched] = useState({});
   const [errors, setErrors] = useState({});
 
-  // Validate a single field value
   const validateField = (name, value) => {
     switch (name) {
       case "name":
@@ -38,16 +31,18 @@ export default function ContactSection() {
         return "";
       case "email":
         if (!value?.trim()) return "Please enter your email.";
-        if (!EMAIL_REGEX.test(value.trim())) return "Enter a valid email address.";
+        if (!EMAIL_REGEX.test(value.trim()))
+          return "Enter a valid email address.";
         return "";
       case "phone":
-        if (!value) return ""; // optional
+        if (!value?.trim()) return "Please enter your phone number.";
         if (!PHONE_REGEX.test(value.trim()))
-          return "Enter a valid phone (e.g. 07912 345 678 or +44 7912 345 678).";
+          return "Enter a valid UK phone number.";
         return "";
       case "message":
-        if (!value?.trim()) return "Please tell us a bit about the issue.";
-        if (value.trim().length < 10) return "Message should be at least 10 characters.";
+        if (!value?.trim()) return "Please enter a short message.";
+        if (value.trim().length < 10)
+          return "Message should be at least 10 characters.";
         return "";
       default:
         return "";
@@ -62,10 +57,6 @@ export default function ContactSection() {
       const msg = validateField(f, fd.get(f));
       if (msg) newErrors[f] = msg;
     });
-    // Honeypot check
-    if (fd.get("website")) {
-      newErrors.website = "Bot detected.";
-    }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -77,10 +68,9 @@ export default function ContactSection() {
     setErrors((prev) => ({ ...prev, [name]: msg }));
   };
 
-  const sendEmail = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (!formRef.current) return;
-
     if (!validateForm(formRef.current)) {
       setStatus({
         state: "error",
@@ -89,44 +79,46 @@ export default function ContactSection() {
       return;
     }
 
-    // block basic bots via honeypot
-    const hp = new FormData(formRef.current).get("website");
-    if (hp) {
-      setStatus({ state: "error", message: "Submission blocked." });
-      return;
-    }
+    const fd = new FormData(formRef.current);
+    const name = fd.get("name");
+    const email = fd.get("email");
+    const phone = fd.get("phone");
+    const carReg = fd.get("car_registration");
+    const makeModel = fd.get("make_model");
+    const location = fd.get("location");
+    const message = fd.get("message");
 
-    setStatus({ state: "sending", message: "Sending your message..." });
+    // Clean, professional WhatsApp message
+    const whatsappMessage = `
+New Repair Enquiry
+----------------------------
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Car Registration: ${carReg || "N/A"}
+Make & Model: ${makeModel || "N/A"}
+Location: ${location || "N/A"}
+Message: ${message}
+----------------------------
+Sent from the website contact form.
+    `;
 
-    try {
-     await emailjs.sendForm(
-  import.meta.env.VITE_EMAILJS_SERVICE_ID,
-  import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-  formRef.current,
-  import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-);
+    const WHATSAPP_NUMBER = "447989668752"; // without +
+    const encoded = encodeURIComponent(whatsappMessage);
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
 
+    window.open(url, "_blank");
 
-      setStatus({
-        state: "success",
-        message: "Thanks! Your message has been sent. We'll get back to you shortly.",
-      });
-      formRef.current.reset();
-      setTouched({});
-      setErrors({});
-    } catch (err) {
-      console.error("EmailJS error:", err);
-      setStatus({
-        state: "error",
-        message:
-          "Sorry, something went wrong while sending. Please try again, or call us directly.",
-      });
-    }
+    setStatus({
+      state: "success",
+      message:
+        "Redirecting to WhatsApp… You can send your message directly there.",
+    });
+    formRef.current.reset();
+    setTouched({});
+    setErrors({});
   };
 
-  const isSending = status.state === "sending";
-
-  // Initialize AOS when component is mounted
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
@@ -144,24 +136,29 @@ export default function ContactSection() {
         >
           Ready to Restore Your Car’s Look?
         </h2>
-        <p data-aos="fade-up" className="text-center text-gray-500 dark:text-gray-400 mt-2 max-w-2xl mx-auto">
-          Contact us today to book a dent or scratch repair, ask questions, or request a free quote. Our expert team is here to bring your vehicle back to flawless condition.
+        <p
+          data-aos="fade-up"
+          className="text-center text-gray-500 dark:text-gray-400 mt-2 max-w-2xl mx-auto"
+        >
+          Contact us today to book a dent or scratch repair, ask questions, or
+          request a free quote. Our expert team is here to bring your vehicle
+          back to flawless condition.
         </p>
 
         <div className="mt-10 grid md:grid-cols-2 gap-8">
-          {/* Left Side - Contact Information */}
+          {/* Left Side */}
           <div
             data-aos="fade-right"
-            className="bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-6 md:p-8 transition-colors duration-300"
+            className="bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-6 md:p-8"
           >
             <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
-              Contact Informations
+              Contact Information
             </h3>
             <div className="mt-4 space-y-6 text-gray-600 dark:text-gray-300">
               <div>
                 <p className="font-medium dark:text-gray-200">Address</p>
                 <address className="not-italic">
-                  30 laxton close, Leicester Wigson LE18 3WJ
+                  30 Laxton Close, Leicester Wigston LE18 3WJ
                 </address>
               </div>
 
@@ -196,10 +193,9 @@ export default function ContactSection() {
                       <span className="text-gray-700 dark:text-gray-200">
                         {day}
                       </span>
-                      <span className="text-right font-medium text-gray-900 dark:text-gray-100 text-base md:text-sm lg:text-base">
+                      <span className="text-right font-medium text-gray-900 dark:text-gray-100">
                         {time}
                       </span>
-
                     </li>
                   ))}
                 </ul>
@@ -207,174 +203,116 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* Right Side - Contact Form */}
+          {/* Right Side - Form */}
           <div
             data-aos="fade-left"
-            className="bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-6 md:p-8 transition-colors duration-300"
+            className="bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-6 md:p-8"
           >
-            {/* Inline status message */}
-            <div
-              className="mb-4"
-              aria-live="polite"
-              aria-atomic="true"
-              role="status"
-            >
-              {status.state === "success" && (
-                <div className="rounded-md border border-green-200 bg-green-50 px-4 py-3 text-green-800">
-                  {status.message}
-                </div>
-              )}
-              {status.state === "error" && (
-                <div className="rounded-md border border-red-200 bg-red-50 px-4 py-3 text-red-800">
-                  {status.message}
-                </div>
-              )}
-              {status.state === "sending" && (
-                <div className="rounded-md border border-amber-200 bg-amber-50 px-4 py-3 text-amber-800">
-                  {status.message}
-                </div>
-              )}
-            </div>
-
-            <form ref={formRef} onSubmit={sendEmail} className="space-y-4" noValidate>
-              {/* Honeypot (should stay hidden) */}
-              <input type="text" name="website" tabIndex="-1" autoComplete="off" className="hidden" />
-
-              <div>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your name*"
-                  required
-                  onBlur={handleBlur}
-                  aria-invalid={!!errors.name}
-                  aria-describedby={errors.name ? "name-error" : undefined}
-                  className={`w-full border bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-700
-                    ${errors.name && touched.name ? "border-red-500" : "border-gray-300 dark:border-gray-600"}`}
-                />
-                {errors.name && touched.name && (
-                  <p id="name-error" className="mt-1 text-sm text-red-600">{errors.name}</p>
-                )}
+            {status.message && (
+              <div
+                className={`mb-4 px-4 py-3 rounded-md text-sm ${
+                  status.state === "success"
+                    ? "bg-green-50 text-green-700 border border-green-200"
+                    : status.state === "error"
+                    ? "bg-red-50 text-red-700 border border-red-200"
+                    : "bg-amber-50 text-amber-700 border border-amber-200"
+                }`}
+              >
+                {status.message}
               </div>
+            )}
 
-              <div>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="your.email@example.com*"
-                  required
-                  inputMode="email"
-                  onBlur={handleBlur}
-                  aria-invalid={!!errors.email}
-                  aria-describedby={errors.email ? "email-error" : undefined}
-                  pattern={EMAIL_REGEX.source}
-                  title="Enter a valid email like name@example.com"
-                  className={`w-full border bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-700
-                    ${errors.email && touched.email ? "border-red-500" : "border-gray-300 dark:border-gray-600"}`}
-                />
-                {errors.email && touched.email && (
-                  <p id="email-error" className="mt-1 text-sm text-red-600">{errors.email}</p>
-                )}
-              </div>
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your name*"
+                required
+                onBlur={handleBlur}
+                className={`w-full border rounded-lg p-3 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 ${
+                  errors.name && touched.name
+                    ? "border-red-500"
+                    : "border-gray-300 dark:border-gray-600"
+                }`}
+              />
+              {errors.name && touched.name && (
+                <p className="text-sm text-red-600">{errors.name}</p>
+              )}
 
-              <div>
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="07912 345 678 or +44 7912 345 678*"
-                  inputMode="tel"
-                  onBlur={handleBlur}
-                  aria-invalid={!!errors.phone}
-                  aria-describedby={errors.phone ? "phone-error" : undefined}
-                  pattern={PHONE_REGEX.source}
-                  title="UK phone example: 07912 345 678 or +44 7912 345 678"
-                  className={`w-full border bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-700
-                    ${errors.phone && touched.phone ? "border-red-500" : "border-gray-300 dark:border-gray-600"}`}
-                />
-                {errors.phone && touched.phone && (
-                  <p id="phone-error" className="mt-1 text-sm text-red-600">{errors.phone}</p>
-                )}
-              </div>
+              <input
+                type="email"
+                name="email"
+                placeholder="your.email@example.com*"
+                required
+                onBlur={handleBlur}
+                className={`w-full border rounded-lg p-3 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 ${
+                  errors.email && touched.email
+                    ? "border-red-500"
+                    : "border-gray-300 dark:border-gray-600"
+                }`}
+              />
+              {errors.email && touched.email && (
+                <p className="text-sm text-red-600">{errors.email}</p>
+              )}
+
+              <input
+                type="tel"
+                name="phone"
+                placeholder="07912 345 678 or +44 7912 345 678*"
+                required
+                onBlur={handleBlur}
+                className={`w-full border rounded-lg p-3 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 ${
+                  errors.phone && touched.phone
+                    ? "border-red-500"
+                    : "border-gray-300 dark:border-gray-600"
+                }`}
+              />
+              {errors.phone && touched.phone && (
+                <p className="text-sm text-red-600">{errors.phone}</p>
+              )}
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <input
                   type="text"
                   name="car_registration"
                   placeholder="Car Registration*"
-                  className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-700"
+                  className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3"
                 />
                 <input
                   type="text"
                   name="make_model"
                   placeholder="Make and Model*"
-                  className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-700"
+                  className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3"
                 />
                 <input
                   type="text"
                   name="location"
                   placeholder="Location*"
-                  className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-700"
+                  className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3"
                 />
               </div>
 
-              <div>
-                <textarea
-                  name="message"
-                  placeholder="Tell us about your car issue*"
-                  rows="4"
-                  required
-                  onBlur={handleBlur}
-                  aria-invalid={!!errors.message}
-                  aria-describedby={errors.message ? "message-error" : undefined}
-                  className={`w-full border bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-700
-                    ${errors.message && touched.message ? "border-red-500" : "border-gray-300 dark:border-gray-600"}`}
-                />
-                {errors.message && touched.message && (
-                  <p id="message-error" className="mt-1 text-sm text-red-600">{errors.message}</p>
-                )}
-              </div>
+              <textarea
+                name="message"
+                placeholder="Tell us about your car issue*"
+                rows="4"
+                required
+                onBlur={handleBlur}
+                className={`w-full border rounded-lg p-3 bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-100 ${
+                  errors.message && touched.message
+                    ? "border-red-500"
+                    : "border-gray-300 dark:border-gray-600"
+                }`}
+              ></textarea>
+              {errors.message && touched.message && (
+                <p className="text-sm text-red-600">{errors.message}</p>
+              )}
 
               <button
                 type="submit"
-                disabled={isSending}
-                className={`w-full text-white font-semibold py-3 rounded-full flex items-center justify-center gap-2 transition
-                  ${isSending ? "opacity-70 cursor-not-allowed" : ""}`}
-                style={{ backgroundColor: "#D10806" }}
+                className="w-full text-white font-semibold py-3 rounded-full bg-[#D10806] hover:bg-red-700 transition"
               >
-                {isSending ? (
-                  <>
-                    <svg
-                      className="animate-spin h-5 w-5 text-white"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                    >
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
-                    </svg>
-                    Sending…
-                  </>
-                ) : (
-                  <>
-                    <span className="transition-transform duration-300 group-hover:-translate-x-2">
-                      Send Message
-                    </span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
-                      />
-                    </svg>
-                  </>
-                )}
+                Send via WhatsApp
               </button>
 
               <p className="text-sm text-gray-600 text-center">
