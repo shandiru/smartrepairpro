@@ -4,20 +4,40 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light dark" />
-  <link rel="icon" type="image" href="/logo-dark.png" />
+
+  <!-- 🌟 Website Title -->
   <title>SL Smart Repair</title>
 
+  <!-- 🌟 Favicon (your image) -->
+  <link rel="icon" type="image/jpeg" href="/bg-black.jpeg" />
+
+  <!-- 🌟 Open Graph for WhatsApp / Facebook / Instagram -->
+  <meta property="og:title" content="SL Smart Repair" />
+  <meta property="og:description" content="Fast, trusted mobile phone repair service. Screens, batteries, charging issues – we fix it all." />
+  <meta property="og:image" content="https://slsmartrepair.co.uk/bg-black.jpeg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://slsmartrepair.co.uk/" />
+  <meta property="og:site_name" content="SL Smart Repair" />
+
+  <!-- 🌟 Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SL Smart Repair" />
+  <meta name="twitter:description" content="Fast, trusted mobile phone repair service." />
+  <meta name="twitter:image" content="https://slsmartrepair.co.uk/bg-black.jpeg" />
+
+  <!-- 🌙 Prevent white flash -->
   <style>
     html {
-      background-color: #000; /* ✅ prevents white flash */
+      background-color: #000;
     }
   </style>
 
+  <!-- 🌙 Dark mode default -->
   <script>
     (() => {
       const stored = localStorage.getItem('theme');
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const useDark = stored ? stored === 'dark' : true; // ✅ force dark default
+      const useDark = stored ? stored === 'dark' : true;
       document.documentElement.classList.toggle('dark', useDark);
     })();
   </script>
@@ -25,6 +45,8 @@
 
 <body class="bg-black text-white">
   <div id="root"></div>
+
+  <!-- React App -->
   <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
