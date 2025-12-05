@@ -318,6 +318,7 @@ Sent from the website contact form.
               <p className="text-sm text-gray-600 text-center">
                 Same-day appointments often available • No obligation consultation
               </p>
+              <p class="text-xs text-center dark:text-gray-300">By submitting this form, you agree to us processing your details to respond to your enquiry. Your information is handled securely and in line with our Privacy Policy.</p>
             </form>
           </div>
         </div>
