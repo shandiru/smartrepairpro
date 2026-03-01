@@ -2,15 +2,6 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 
-const HOURS = [
-  { day: "Monday", time: "9:00 am – 5:00 pm" },
-  { day: "Tuesday", time: "9:00 am – 6:00 pm" },
-  { day: "Wednesday", time: "9:00 am – 6:00 pm" },
-  { day: "Thursday", time: "9:00 am – 6:00 pm" },
-  { day: "Friday", time: "9:00 am – 6:00 pm" },
-  { day: "Saturday", time: "Closed" },
-  { day: "Sunday", time: "Closed" },
-];
 
 const TermsConditions = () => {
   // Initialize AOS when the component mounts
@@ -106,7 +97,7 @@ const TermsConditions = () => {
               <p><strong>S.L Smart repairs</strong></p>
               <p>Email: <a href="mailto:Sldetailingservices@gmail.com" className="text-[#D10806] hover:underline">Sldetailingservices@gmail.com</a></p>
               <p>Phone: 07989 668752</p>
-              <p>Address: Leicester, Wigston LE18 3WJ</p>
+              <p>Address: 30 Laxton Close, Leicester Wigston LE18 3WJ</p>
             </div>
           </section>
         </div>
