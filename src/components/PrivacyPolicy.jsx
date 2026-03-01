@@ -61,7 +61,7 @@ const PrivacyPolicy = () => {
           </p>
           <ul className="list-disc ml-6 text-white">
             <li>Respond to inquiries and provide quotes</li>
-            <li>Deliver scaffolding services</li>
+            <li>Deliver S.L Smart repairs services</li>
             <li>Communicate with you about your project</li>
             <li>Maintain business records and comply with legal requirements</li>
           </ul>
@@ -130,7 +130,7 @@ const PrivacyPolicy = () => {
             <p><strong>S.L Smart repairs</strong></p>
             <p>Email: <a href="mailto:Sldetailingservices@gmail.com" className="text-[#D10806] hover:underline">Sldetailingservices@gmail.com</a></p>
             <p>Phone: 07989 668752</p>
-            <p>Address: Leicester, Wigston LE18 3WJ</p>
+            <p>Address: 30 Laxton Close, Leicester Wigston LE18 3WJ</p>
           </div>
           <p className="mt-2 text-white">
             If you are not satisfied with our response, you have the right to lodge a complaint with the{' '}
